@@ -95,7 +95,7 @@ def page(title, description, body, filename, css_class, depth=0):
 def catalog_heading(kind):
     authors = kind == 'authors'
     title = '출제자' if authors else '문제 아카이브'
-    subtitle = '사진을 누르면 GitHub로, 문제를 누르면 대회 지문으로' if authors else '2026 MSG CTF에 나왔던 일반 문제 30개와 KOTH 6개'
+    subtitle = '일반 문제 30개 · KOTH 6개' if authors else '2026 MSG CTF에 나왔던 일반 문제 30개와 KOTH 6개'
     return f'''
     <section class="catalog-heading container" aria-labelledby="page-title">
       <a class="back-link" href="index.html">← 대회 기록</a>

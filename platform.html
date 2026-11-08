@@ -14,8 +14,9 @@
   <link rel="canonical" href="https://msg-ctf.github.io/platform.html">
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
   <link rel="preload" href="assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site.css?v=cd67512d5960">
-  <script src="assets/site.js?v=b1be28f3a785" defer></script>
+  <link rel="stylesheet" href="assets/site.css?v=3780eca4766e">
+  <script src="assets/site.js?v=9f52743bae67" defer></script>
+  <script src="assets/platform-motion.js?v=5daeaed42d9b" defer></script>
 </head>
 <body class="page-platform" id="page-top">
   <a class="skip-link" href="#main">본문으로 이동</a>
@@ -43,17 +44,30 @@
     </section>
     <section class="platform-section section container" id="platform" aria-labelledby="platform-title">
       <div class="section-heading">
-        <h2 id="platform-title">플랫폼 화면</h2>
+        <h2 id="platform-title">참가자 화면</h2>
       </div>
       <div class="screen-tabs" role="tablist" aria-label="플랫폼 화면 선택" hidden>
-        <button type="button" id="tab-board" role="tab" aria-selected="true" aria-controls="panel-board" tabindex="0"><span>01</span> 보드와 주사위</button>
+        <button type="button" id="tab-intro" role="tab" aria-selected="true" aria-controls="panel-intro" tabindex="0">보드 등장</button>
+        <button type="button" id="tab-board" role="tab" aria-selected="false" aria-controls="panel-board" tabindex="-1">주사위 굴리기</button>
         <button type="button" id="tab-challenge" role="tab" aria-selected="false" aria-controls="panel-challenge" tabindex="-1"><span>02</span> 문제 풀이</button>
         <button type="button" id="tab-festival" role="tab" aria-selected="false" aria-controls="panel-festival" tabindex="-1"><span>03</span> 동아리 부스</button>
       </div>
       <div class="screen-stage">
+        <div class="screen-panel" role="tabpanel" id="panel-intro" aria-labelledby="tab-intro" tabindex="0">
+          <video class="platform-video" controls muted playsinline preload="none" poster="assets/motion/board-intro-poster.jpg" aria-label="START부터 보드판이 나타나는 첫 진입 화면">
+            <source src="assets/motion/board-intro.mp4" type="video/mp4">
+            <a href="assets/motion/board-intro.mp4">보드 등장 영상 열기</a>
+          </video>
+          <div class="screen-caption"><p>처음 접속하면 START부터 보드판이 펼쳐집니다</p><button type="button" class="video-replay" aria-label="보드 등장 다시 보기" hidden><span aria-hidden="true">↻</span> 다시 보기</button></div>
+          <p class="video-error" hidden>영상을 불러오지 못했습니다 <a href="assets/motion/board-intro.mp4">영상 직접 열기 ↗</a></p>
+        </div>
         <div class="screen-panel" role="tabpanel" id="panel-board" aria-labelledby="tab-board" tabindex="0">
-          <img src="assets/screens/board.jpg" width="1229" height="556" alt="가을 축제 광장 위 원형 보드, 주사위와 찬스카드가 있는 참가자 화면" loading="lazy">
-          <div class="screen-caption"><p>주사위를 굴려 이동하고, 도착한 칸에서 문제를 고릅니다</p></div>
+          <video class="platform-video" controls muted playsinline preload="none" poster="assets/motion/dice-roll-poster.jpg" aria-label="보드 중앙에서 두 개의 3D 주사위가 굴러가는 화면">
+            <source src="assets/motion/dice-roll.mp4" type="video/mp4">
+            <a href="assets/motion/dice-roll.mp4">주사위 굴림 영상 열기</a>
+          </video>
+          <div class="screen-caption"><p>주사위를 굴려 이동하고, 도착한 칸에서 문제를 고릅니다</p><button type="button" class="video-replay" aria-label="주사위 굴리기 다시 보기" hidden><span aria-hidden="true">↻</span> 다시 보기</button></div>
+          <p class="video-error" hidden>영상을 불러오지 못했습니다 <a href="assets/motion/dice-roll.mp4">영상 직접 열기 ↗</a></p>
         </div>
         <div class="screen-panel" role="tabpanel" id="panel-challenge" aria-labelledby="tab-challenge" tabindex="0">
           <img src="assets/screens/challenge.jpg" width="1229" height="556" alt="문제 지문, 첨부 파일, 인스턴스 제어와 플래그 제출을 모은 화면" loading="lazy">
@@ -64,7 +78,7 @@
           <div class="screen-caption"><p>동아리별 시그니처 문제와 마일리지·QR 결제를 연결했습니다</p></div>
         </div>
       </div>
-      <p class="source-note">프론트엔드 저장소의 화면 기록 · 개발 화면 포함</p>
+      <p class="source-note">프론트 원본 화면을 로컬에서 재생한 영상 · 개발 화면 포함</p>
     </section>
 
     <section class="system-section section" id="architecture" aria-labelledby="system-title">

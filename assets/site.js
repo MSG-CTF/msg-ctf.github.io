@@ -41,6 +41,7 @@
       tab.tabIndex = active ? 0 : -1;
       document.getElementById(tab.getAttribute("aria-controls")).hidden = !active;
     }
+    document.dispatchEvent(new Event("platform-screen-change"));
   };
   for (const tab of tabs) {
     tab.addEventListener("click", () => activate(tab));
