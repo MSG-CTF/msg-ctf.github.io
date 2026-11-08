@@ -144,24 +144,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 .button-secondary:hover { background: #3a2b1a; }
 .button:focus-visible { outline: none; box-shadow: inset 0 0 0 3px #fff2bc; }
 .button-primary:focus-visible { box-shadow: inset 0 0 0 3px #251a0d; }
-.hero-facts {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 42px;
-  padding: 23px 20px;
-  border: 1px solid #d1ae735e;
-  background: #231a12d6;
-}
-.hero-facts > div { text-align: center; border-left: 1px solid #d1ae7340; }
-.hero-facts > div:first-child { border-left: 0; }
-.hero-facts dt { font: 14px var(--title); color: #dbcbb5; }
-.hero-facts dd { font-size: 15px; line-height: 1.2; margin-top: 12px; }
-.hero-facts strong { font: 500 35px/1 var(--font); font-variant-numeric: tabular-nums; }
-.hero-facts .cost-proof strong { color: var(--accent); }
-.hero-facts .cost-note { margin-top: 8px; font-size: 10px; color: #c6b59e; }
-.hero-facts .fact-note { margin-top: 8px; font-size: 12px; color: #dbcbb5; }
 
 /* The six leaves and their paths come from the original event intro. */
 .autumn-leaves { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
@@ -345,7 +327,7 @@ a.detail-author:hover { color: var(--accent); }
 .video-error a { text-decoration: underline; text-underline-offset: 4px; }
 .source-note { font-size: 12px; color: #bcb6ab; margin-top: 12px; text-align: right; }
 .page-platform .section-description, .page-platform .repo-description, .page-platform .repo-people p { font-size: 14px; }
-.page-platform .roster-person, .page-platform .repo-people a { font-size: 14px; }
+.page-platform .repo-people a { font-size: 14px; }
 .page-platform .lifecycle p, .page-platform .step-detail { font-size: 14px; }
 .page-platform .screen-tabs button { font-weight: 600; }
 .page-platform .section-heading h2, .page-platform .lifecycle h3, .page-platform .repository-heading h3 { font-weight: 700; }
@@ -389,12 +371,16 @@ details[open] > summary .plus::after { transform: rotate(0); }
 .performance-result a { display: inline-block; font-size: 12px; margin-top: 12px; text-decoration: underline; text-underline-offset: 4px; }
 .verification-note { grid-column: 1/-1; color: var(--muted); font-size: 11px; padding-top: 10px; }
 
-.contributor-roster { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 28px 12px; margin: 40px 0 54px; }
-.roster-person { display: flex; flex-direction: column; align-items: center; gap: 12px; font-size: 12px; color: var(--muted); text-align: center; }
+.role-directory { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 56px; margin: 32px 0 56px; }
+.role-group { border-top: 1px solid var(--line); padding: 24px 0 28px; min-width: 0; }
+.role-group h3 { font: 600 17px/1.5 var(--font); color: var(--accent); }
+.role-people { display: flex; flex-wrap: wrap; gap: 16px 24px; list-style: none; padding: 0; margin: 20px 0 0; }
+.role-people li { min-width: 0; }
+.role-person { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); font-size: 15px; font-weight: 500; line-height: 1.5; }
 .avatar { border-radius: 50%; object-fit: cover; background: #332f28; border: 1px solid #e0bc8633; flex-shrink: 0; }
-.roster-person .avatar { width: 64px; height: 64px; }
-.roster-person:hover { color: var(--accent); }
-.roster-person:hover .avatar { border-color: var(--accent); }
+.role-person .avatar { width: 40px; height: 40px; }
+.role-person:hover { color: var(--accent); }
+.role-person:hover .avatar { border-color: var(--accent); }
 .repository-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
 .repository-heading h3 { font: 22px/1.5 var(--title); }
 .repository-heading p { color: var(--muted); font-size: 12px; }
@@ -452,7 +438,7 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .step-detail { font-size: 11px; }
   .lifecycle p { font-size: 10px; }
   .lifecycle h3 { font-size: 19px; }
-  .contributor-roster { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .role-directory { column-gap: 32px; }
   .author-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .challenge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail-body { gap: 36px; grid-template-columns: minmax(0, 1fr) 210px; }
@@ -480,14 +466,6 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .hero-actions .button-primary { grid-column: 1/-1; }
   .hero-cost-scope { font-size: 11px; padding-inline: 12px; }
   .button { min-width: 144px; min-height: 48px; padding: 11px 18px; font-size: 15px; gap: 25px; }
-  .hero-facts { grid-template-columns: repeat(2,minmax(0,1fr)); padding: 20px 0; margin-top: 32px; row-gap: 19px; }
-  .hero-facts > div:nth-child(3) { border-left: 0; }
-  .hero-facts > div:nth-child(n+3) { border-top: 1px solid #d1ae7333; padding-top: 18px; }
-  .hero-facts dt { font-size: 13px; }
-  .hero-facts dd { font-size: 13px; margin-top: 9px; }
-  .hero-facts strong { font-size: 28px; }
-  .hero-facts .cost-note { font-size: 10px; margin-top: 7px; }
-  .hero-facts .fact-note { font-size: 11px; margin-top: 7px; }
   .motion-toggle { top: 10px; right: 12px; font-size: 10px; padding: 9px 7px; gap: 4px; }
   .autumn-leaves i:nth-child(n+5) { display: none; }
   .event-story { font-size: 13px; }
@@ -574,9 +552,10 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .repo-filters { gap: 3px; margin: 24px 0 20px; }
   .repo-filters button { padding: 7px 9px; font-size: 11px; }
   .repo-filters button span { font-size: 10px; }
-  .contributor-roster { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 25px 10px; margin-block: 30px 40px; }
-  .roster-person { gap: 10px; font-size: 10px; }
-  .roster-person .avatar { width: 52px; height: 52px; }
+  .role-directory { grid-template-columns: 1fr; margin-block: 28px 40px; }
+  .role-group { padding-block: 22px 26px; }
+  .role-people { gap: 15px 22px; margin-top: 16px; }
+  .role-person { font-size: 14px; }
   .repository-heading { display: block; }
   .repository-heading h3 { font-size: 20px; }
   .repository-heading p { margin-top: 8px; font-size: 11px; }
@@ -612,7 +591,6 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .screen-tabs button { font-size: 13px; }
   .people-grid { grid-template-columns: 1fr; }
   .repo-filters button { padding-inline: 7px; }
-  .contributor-roster { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .club-lineup { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 600px) {
@@ -636,7 +614,7 @@ details[open] > summary .plus::after { transform: rotate(0); }
 }
 @media print {
   .site-header, .hero-backdrop, .hero-logo, .hero-actions, .repo-filters, .footer-links, .autumn-leaves, .motion-toggle { display: none; }
-  body, .hero, .system-section, .hero-facts { background: #fff; color: #222; }
+  body, .hero, .system-section { background: #fff; color: #222; }
   .hero::after { display: none; }
   .container { width: 100%; }
   .section { padding-block: 25px; }

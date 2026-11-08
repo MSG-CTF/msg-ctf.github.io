@@ -1,0 +1,165 @@
+{
+  "verified_on": "2026-11-09",
+  "basis": "노션의 팀 구분·작업 담당자와 GitHub 병합 기록을 함께 확인했습니다 여러 저장소에 걸친 기여는 저장소별 기여에 남겼습니다",
+  "roles": [
+    {
+      "id": "frontend",
+      "label": "프론트엔드",
+      "members": [
+        "tortoiese",
+        "yes0r"
+      ],
+      "sources": [
+        "https://app.notion.com/p/3aa0f19c72be80acbffbfafaad73d92b"
+      ]
+    },
+    {
+      "id": "backend",
+      "label": "백엔드",
+      "members": [
+        "gimgyumin0207",
+        "samdi70",
+        "jiwonnii",
+        "dnehdx"
+      ],
+      "sources": [
+        "https://app.notion.com/p/3790f19c72be8016be50f2342b287ce2"
+      ]
+    },
+    {
+      "id": "broker",
+      "label": "리소스 브로커",
+      "members": [
+        "gonas0919"
+      ],
+      "sources": [
+        "https://app.notion.com/p/3790f19c72be80deaf89f960d3c0468c"
+      ]
+    },
+    {
+      "id": "scheduler",
+      "label": "인스턴스 스케줄러",
+      "members": [
+        "tember8003"
+      ],
+      "sources": [
+        "https://app.notion.com/p/3790f19c72be808b8eacd4d0e178fc96"
+      ]
+    },
+    {
+      "id": "runtime",
+      "label": "런타임 · 격리 보안",
+      "members": [
+        "goldsimchoi"
+      ],
+      "sources": [
+        "https://app.notion.com/p/3790f19c72be80ebb2a2d4c4c26bb468"
+      ]
+    },
+    {
+      "id": "devsecops",
+      "label": "DevSecOps",
+      "members": [
+        "wlsdnd2367",
+        "woalseee",
+        "Giheon-Jeon"
+      ],
+      "sources": [
+        "https://app.notion.com/p/3790f19c72be80d8b805fd3a52aee588"
+      ]
+    },
+    {
+      "id": "sla",
+      "label": "SLA · 모니터링",
+      "members": [
+        "minsoo0506"
+      ],
+      "sources": [
+        "https://app.notion.com/p/3790f19c72be80ad88f2c118ffbbe94f"
+      ]
+    },
+    {
+      "id": "operations",
+      "label": "운영 · 통합 QA",
+      "members": [
+        "jongcoding"
+      ],
+      "sources": [
+        "https://github.com/MSG-CTF/msg-backend/pull/263",
+        "https://github.com/MSG-CTF/instance-scheduler/pull/95"
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "login": "tortoiese",
+      "url": "https://github.com/tortoiese",
+      "avatar": "https://avatars.githubusercontent.com/u/268766155?v=4&s=128"
+    },
+    {
+      "login": "yes0r",
+      "url": "https://github.com/yes0r",
+      "avatar": "https://avatars.githubusercontent.com/u/230512345?v=4&s=128"
+    },
+    {
+      "login": "gimgyumin0207",
+      "url": "https://github.com/gimgyumin0207",
+      "avatar": "https://avatars.githubusercontent.com/u/244885819?v=4&s=128"
+    },
+    {
+      "login": "samdi70",
+      "url": "https://github.com/samdi70",
+      "avatar": "https://avatars.githubusercontent.com/u/46455764?v=4&s=128"
+    },
+    {
+      "login": "jiwonnii",
+      "url": "https://github.com/jiwonnii",
+      "avatar": "https://avatars.githubusercontent.com/u/224767982?v=4&s=128"
+    },
+    {
+      "login": "dnehdx",
+      "url": "https://github.com/dnehdx",
+      "avatar": "https://avatars.githubusercontent.com/u/178199953?v=4&s=128"
+    },
+    {
+      "login": "gonas0919",
+      "url": "https://github.com/gonas0919",
+      "avatar": "https://avatars.githubusercontent.com/u/143320324?v=4&s=128"
+    },
+    {
+      "login": "tember8003",
+      "url": "https://github.com/tember8003",
+      "avatar": "https://avatars.githubusercontent.com/u/104021663?v=4&s=128"
+    },
+    {
+      "login": "goldsimchoi",
+      "url": "https://github.com/goldsimchoi",
+      "avatar": "https://avatars.githubusercontent.com/u/173701392?v=4&s=128"
+    },
+    {
+      "login": "wlsdnd2367",
+      "url": "https://github.com/wlsdnd2367",
+      "avatar": "https://avatars.githubusercontent.com/u/230291092?v=4&s=128"
+    },
+    {
+      "login": "woalseee",
+      "url": "https://github.com/woalseee",
+      "avatar": "https://avatars.githubusercontent.com/u/109592496?v=4&s=128"
+    },
+    {
+      "login": "Giheon-Jeon",
+      "url": "https://github.com/Giheon-Jeon",
+      "avatar": "https://avatars.githubusercontent.com/u/64824907?v=4&s=128"
+    },
+    {
+      "login": "minsoo0506",
+      "url": "https://github.com/minsoo0506",
+      "avatar": "https://avatars.githubusercontent.com/u/68321360?v=4&s=128"
+    },
+    {
+      "login": "jongcoding",
+      "url": "https://github.com/jongcoding",
+      "avatar": "https://avatars.githubusercontent.com/u/128033808?v=4&s=128"
+    }
+  ]
+}

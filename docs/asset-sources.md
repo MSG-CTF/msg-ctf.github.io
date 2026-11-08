@@ -11,6 +11,7 @@
 | 색상·타이포그래피 기준 | [기존 대회 소개 페이지 스타일](https://github.com/MSG-CTF/front-team/blob/3975fa447fc934b1e2ba253c360ec5dc186b22c6/src/features/intro/intro.css) |
 | 낙엽 효과 | [기존 대회 소개 페이지의 AutumnLeaves](https://github.com/MSG-CTF/front-team/blob/3975fa447fc934b1e2ba253c360ec5dc186b22c6/src/features/intro/components/AutumnLeaves.jsx)와 intro.css, 정적 페이지에서 동작하도록 연결 |
 | 최종 스코어보드 | 운영자가 제공한 대회 종료 후 화면 원본, 외부 트랙은 왼쪽·내부 트랙은 오른쪽 |
+| 플랫폼 역할별 프로필 | [노션의 팀 구분](https://app.notion.com/p/1280f19c72be8300abd701cdac2219fa)·각 팀의 작업 담당자와 GitHub 병합 기록 대조, [역할별 계정과 출처](../data/platform-team.json) |
 | 참여자 사진 | 각 참여자의 GitHub 공개 프로필 사진, 프로필 링크와 함께 표시 |
 | 주최 동아리 6곳 | [기존 대회 페이지의 주최 목록](https://github.com/MSG-CTF/front-team/blob/94771a1118b70624d73714e16b55b63744f3d4fb/src/features/intro/components/OrganizerLogos.jsx)과 원본 SVG |
 | 후원사 3곳 | [기존 대회 페이지의 후원 목록](https://github.com/MSG-CTF/front-team/blob/94771a1118b70624d73714e16b55b63744f3d4fb/src/features/intro/components/SponsorLogos.jsx)과 원본 로고 |
