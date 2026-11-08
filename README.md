@@ -1,6 +1,6 @@
 # MSG CTF 2026
 
-[대회 기록 보기](https://msg-ctf.github.io/)
+[대회 결과](https://msg-ctf.github.io/) · [분야별 출제자](https://msg-ctf.github.io/authors.html) · [플랫폼 개발 기록](https://msg-ctf.github.io/platform.html)
 
 **75팀·150명이 참가한 보드게임형 해킹 대회**
 
@@ -19,6 +19,21 @@
 
 이미지를 누르면 원본 크기로 볼 수 있습니다
 참가해주신 모든 분께 감사드립니다
+
+## 주최와 후원
+
+| 주최 동아리 | 학교 |
+| --- | --- |
+| MJSEC | 명지대학교 |
+| SWING | 서울여자대학교 |
+| Y-CERT | 연세대학교 미래캠퍼스 |
+| seKUrity | 건국대학교 글로컬캠퍼스 |
+| CodeCure | 상명대학교 천안캠퍼스 |
+| Aegis | 단국대학교 |
+
+후원: HSPACE · 시야인사이트 · MONSTER ENERGY
+
+분야별 출제자와 만든 문제는 [출제자 페이지](https://msg-ctf.github.io/authors.html)에 모았습니다
 
 ## 대회 운영 클라우드 추가 결제액 0원
 

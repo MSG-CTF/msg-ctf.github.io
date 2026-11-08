@@ -1,6 +1,11 @@
 (() => {
   "use strict";
 
+  if (document.body.classList.contains("page-home") && ["#platform", "#architecture", "#contributors"].includes(location.hash)) {
+    location.replace("platform.html" + location.hash);
+    return;
+  }
+
   const leaves = document.querySelector(".autumn-leaves");
   const motionToggle = document.querySelector(".motion-toggle");
   if (leaves && motionToggle) {
@@ -76,6 +81,24 @@
         if (visible) shown += Number(repository.dataset.repoCount || 1);
       }
       status.textContent = `${button.textContent.trim()} · 저장소 ${shown}개`;
+    });
+  }
+
+  const authorFilters = document.querySelector(".author-filters");
+  if (authorFilters) {
+    const categories = Array.from(document.querySelectorAll(".author-category"));
+    const authorStatus = document.getElementById("author-status");
+    authorFilters.hidden = false;
+    authorFilters.addEventListener("click", (event) => {
+      const button = event.target.closest("button[data-author-filter]");
+      if (!button) return;
+      for (const option of authorFilters.querySelectorAll("button")) {
+        option.setAttribute("aria-pressed", String(option === button));
+      }
+      for (const section of categories) {
+        section.hidden = button.dataset.authorFilter !== "all" && section.dataset.category !== button.dataset.authorFilter;
+      }
+      authorStatus.textContent = `${button.textContent.trim()} 분야 출제자를 표시합니다`;
     });
   }
 })();
