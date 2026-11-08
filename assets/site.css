@@ -123,9 +123,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
   left: 0;
   filter: brightness(0) invert(96%) sepia(9%) saturate(331%);
 }
-.hero h1 { font: 27px/1.5 var(--title); margin-top: 5px; letter-spacing: -.02em; }
-.hero-description { margin-top: 12px; font-size: 14px; color: #e1d6c6; }
-.hero-cost-scope { margin-top: 7px; font-size: 12px; color: #dbcbb5; }
+.hero h1 { font: 600 clamp(28px, 3.1vw, 42px)/1.4 var(--font); margin: 5px auto 0; letter-spacing: -.035em; text-wrap: balance; }
+.hero-description { margin-top: 20px; font-size: 20px; font-weight: 500; color: var(--fg); text-wrap: balance; }
+.hero-cost-scope { margin-top: 10px; font-size: 16px; color: #e1d6c6; text-wrap: balance; }
 .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin: 25px auto 0; max-width: 700px; }
 .button {
   display: inline-flex;
@@ -371,14 +371,30 @@ details[open] > summary .plus::after { transform: rotate(0); }
 .performance-result a { display: inline-block; font-size: 12px; margin-top: 12px; text-decoration: underline; text-underline-offset: 4px; }
 .verification-note { grid-column: 1/-1; color: var(--muted); font-size: 11px; padding-top: 10px; }
 
-.role-directory { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 56px; margin: 32px 0 56px; }
-.role-group { border-top: 1px solid var(--line); padding: 24px 0 28px; min-width: 0; }
-.role-group h3 { font: 600 17px/1.5 var(--font); color: var(--accent); }
-.role-people { display: flex; flex-wrap: wrap; gap: 16px 24px; list-style: none; padding: 0; margin: 20px 0 0; }
+.team-section > .section-heading h2 { font: 600 36px/1.4 var(--font); letter-spacing: -.03em; }
+.team-section > .section-heading .section-description { font-size: 15px; }
+.team-directory { margin: 32px 0 60px; }
+.team-lead { display: flex; align-items: center; justify-content: center; gap: 24px; padding: 6px 0 40px; }
+.team-lead h3 { font: 600 18px/1.5 var(--font); color: var(--accent); margin-bottom: 2px; }
+.team-lead .role-person { font-size: 26px; }
+.team-lead .avatar { width: 80px; height: 80px; }
+.team-lead p { color: var(--muted); font-size: 16px; margin-top: 5px; }
+.role-directory { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 32px; }
+.role-group { grid-column: span 2; border-top: 1px solid var(--line); padding: 24px 0 30px; min-width: 0; }
+.role-group[data-role="frontend"], .role-group[data-role="backend"] { grid-column: span 3; }
+.role-group[data-role="devsecops"] { grid-column: span 4; }
+.role-group h3 { font: 600 21px/1.5 var(--font); color: var(--fg); }
+.role-scope { color: var(--accent); font-size: 14px; margin-top: 4px; }
+.role-people { display: grid; gap: 20px; list-style: none; padding: 0; margin: 22px 0 0; }
+.role-group[data-role="backend"] .role-people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.role-group[data-role="devsecops"] .role-people { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .role-people li { min-width: 0; }
-.role-person { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); font-size: 15px; font-weight: 500; line-height: 1.5; }
+.role-person { display: flex; align-items: center; gap: 12px; color: var(--fg); font-size: 16px; font-weight: 600; line-height: 1.5; }
+.role-copy { min-width: 0; }
+.role-name { display: block; }
+.role-duty { display: block; font-size: 14px; font-weight: 400; color: var(--muted); margin-top: 4px; }
 .avatar { border-radius: 50%; object-fit: cover; background: #332f28; border: 1px solid #e0bc8633; flex-shrink: 0; }
-.role-person .avatar { width: 40px; height: 40px; }
+.role-person .avatar { width: 52px; height: 52px; }
 .role-person:hover { color: var(--accent); }
 .role-person:hover .avatar { border-color: var(--accent); }
 .repository-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
@@ -438,7 +454,9 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .step-detail { font-size: 11px; }
   .lifecycle p { font-size: 10px; }
   .lifecycle h3 { font-size: 19px; }
-  .role-directory { column-gap: 32px; }
+  .role-directory { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
+  .role-group, .role-group[data-role="frontend"], .role-group[data-role="backend"], .role-group[data-role="devsecops"] { grid-column: auto; }
+  .role-group[data-role="backend"] .role-people, .role-group[data-role="devsecops"] .role-people { grid-template-columns: 1fr; }
   .author-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .challenge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail-body { gap: 36px; grid-template-columns: minmax(0, 1fr) 210px; }
@@ -460,11 +478,11 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .hero-date { font-size: 15px; }
   .hero-logo { width: min(530px,100vw); margin-top: 16px; }
   .hero-content { padding: 0; }
-  .hero h1 { font-size: 23px; margin-top: 16px; }
-  .hero-description { font-size: 12px; margin-top: 12px; padding-inline: 15px; }
+  .hero h1 { font-size: clamp(28px, 7.8vw, 36px); margin-top: 16px; padding-inline: 22px; }
+  .hero-description { font-size: 18px; margin-top: 20px; padding-inline: 22px; }
   .hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px; width: min(360px, calc(100% - 40px)); }
   .hero-actions .button-primary { grid-column: 1/-1; }
-  .hero-cost-scope { font-size: 11px; padding-inline: 12px; }
+  .hero-cost-scope { font-size: 15px; padding-inline: 22px; }
   .button { min-width: 144px; min-height: 48px; padding: 11px 18px; font-size: 15px; gap: 25px; }
   .motion-toggle { top: 10px; right: 12px; font-size: 10px; padding: 9px 7px; gap: 4px; }
   .autumn-leaves i:nth-child(n+5) { display: none; }
@@ -552,10 +570,17 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .repo-filters { gap: 3px; margin: 24px 0 20px; }
   .repo-filters button { padding: 7px 9px; font-size: 11px; }
   .repo-filters button span { font-size: 10px; }
-  .role-directory { grid-template-columns: 1fr; margin-block: 28px 40px; }
-  .role-group { padding-block: 22px 26px; }
-  .role-people { gap: 15px 22px; margin-top: 16px; }
-  .role-person { font-size: 14px; }
+  .team-section > .section-heading h2 { font-size: 29px; }
+  .team-section > .section-heading .section-description { font-size: 14px; }
+  .team-directory { margin-block: 28px 40px; }
+  .team-lead { justify-content: flex-start; gap: 20px; padding: 0 0 30px; }
+  .team-lead .avatar { width: 64px; height: 64px; }
+  .team-lead .role-person { font-size: 23px; }
+  .team-lead p { font-size: 14px; }
+  .role-directory { grid-template-columns: 1fr; }
+  .role-group { padding-block: 24px 30px; }
+  .role-group h3 { font-size: 20px; }
+  .role-people { gap: 18px; margin-top: 20px; }
   .repository-heading { display: block; }
   .repository-heading h3 { font-size: 20px; }
   .repository-heading p { margin-top: 8px; font-size: 11px; }
@@ -586,7 +611,6 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .header-inner nav { gap: 15px; font-size: 14px; }
   .hero-actions { gap: 10px; }
   .button { min-width: 133px; padding-inline: 16px; }
-  .hero-description { font-size: 11px; }
   .screen-tabs { gap: 21px; }
   .screen-tabs button { font-size: 13px; }
   .people-grid { grid-template-columns: 1fr; }
