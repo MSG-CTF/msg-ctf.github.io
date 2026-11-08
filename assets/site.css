@@ -88,8 +88,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 .header-inner nav a { padding: 14px 0; }
 .header-inner nav a[aria-current="page"] { color: var(--accent); }
 .header-inner nav a:hover, .header-github:hover, .footer-links a:hover { color: var(--accent); }
-.header-github { display: flex; align-items: center; gap: 16px; font-size: 13px; }
+.header-github { display: flex; align-items: center; gap: 9px; font-size: 13px; }
 .header-github span { color: var(--accent); }
+.github-icon { display: inline-block; width: 18px; height: 18px; flex: 0 0 auto; background-color: currentColor; mask: url("icons/github.svg") center / contain no-repeat; -webkit-mask: url("icons/github.svg") center / contain no-repeat; }
+.github-link { display: inline-flex; align-items: center; gap: 8px; }
 
 .hero {
   position: relative;
@@ -389,7 +391,7 @@ details[open] > summary .plus::after { transform: rotate(0); }
 
 .team-section > .section-heading h2 { font: 600 36px/1.4 var(--font); letter-spacing: -.03em; }
 .team-section > .section-heading .section-description { font-size: 15px; }
-.team-directory { margin: 32px 0 60px; }
+.team-directory { margin: 32px 0 12px; }
 .team-lead { display: flex; align-items: center; justify-content: center; gap: 24px; padding: 6px 0 40px; }
 .team-lead h3 { font: 600 18px/1.5 var(--font); color: var(--accent); margin-bottom: 2px; }
 .team-lead .role-person { font-size: 26px; }
@@ -400,6 +402,12 @@ details[open] > summary .plus::after { transform: rotate(0); }
 .role-group[data-role="frontend"], .role-group[data-role="backend"] { grid-column: span 3; }
 .role-group[data-role="devsecops"] { grid-column: span 4; }
 .role-group h3 { font: 600 21px/1.5 var(--font); color: var(--fg); }
+.role-repository { display: inline-flex; align-items: center; gap: 10px; }
+.role-repository .github-icon { color: var(--accent); opacity: .8; }
+.role-repository:hover { color: var(--accent); }
+.role-repository:hover .github-icon { opacity: 1; }
+.role-resources { margin-top: 8px; font-size: 13px; color: var(--muted); }
+.role-resources .github-icon { width: 14px; height: 14px; }
 .role-scope { color: var(--accent); font-size: 14px; margin-top: 4px; }
 .role-people { display: grid; gap: 20px; list-style: none; padding: 0; margin: 22px 0 0; }
 .role-group[data-role="backend"] .role-people { grid-template-columns: repeat(2, minmax(0, 1fr)); }

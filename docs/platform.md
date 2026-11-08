@@ -92,7 +92,7 @@ KOTH는 별도 게임 서버와 제출·채점 경로를 사용합니다
 
 | 참여자 | 플랫폼에서 맡은 일 |
 | --- | --- |
-| <img src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="32" height="32" alt=""> [jongcoding](https://github.com/jongcoding) | 총괄, 플랫폼 연동·운영·QA, 장애 재현과 복구, 성능 개선, SLA·배포 연결 |
+| <img src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="32" height="32" alt=""> [jongcoding](https://github.com/jongcoding) | PM, 플랫폼 연동·운영·QA, 장애 재현과 복구, 성능 개선, SLA·배포 연결 |
 | <img src="https://avatars.githubusercontent.com/u/244885819?v=4&amp;s=128" width="32" height="32" alt=""> [gimgyumin0207](https://github.com/gimgyumin0207) | 문제·인스턴스 API, 발행본·제공 파일·배포 버전 관리 |
 | <img src="https://avatars.githubusercontent.com/u/46455764?v=4&amp;s=128" width="32" height="32" alt=""> [samdi70](https://github.com/samdi70) | 인증·팀·관리자 API, 마일리지·QR 결제 |
 | <img src="https://avatars.githubusercontent.com/u/224767982?v=4&amp;s=128" width="32" height="32" alt=""> [jiwonnii](https://github.com/jiwonnii) | 보드 규칙·보상과 KOTH API·채점·문제별 토큰 |

@@ -63,28 +63,6 @@
     document.querySelector(".screen-tabs").hidden = false;
   }
 
-  const filters = document.querySelector(".repo-filters");
-  const repositories = Array.from(document.querySelectorAll(".repository"));
-  const status = document.getElementById("repo-status");
-  if (filters) {
-    filters.hidden = false;
-    filters.addEventListener("click", (event) => {
-      const button = event.target.closest("button[data-filter]");
-      if (!button) return;
-      const category = button.dataset.filter;
-      for (const option of filters.querySelectorAll("button")) {
-        option.setAttribute("aria-pressed", String(option === button));
-      }
-      let shown = 0;
-      for (const repository of repositories) {
-        const visible = category === "all" || repository.dataset.category === category;
-        repository.hidden = !visible;
-        if (visible) shown += Number(repository.dataset.repoCount || 1);
-      }
-      status.textContent = `${button.textContent.trim()} · 저장소 ${shown}개`;
-    });
-  }
-
   const catalog = document.querySelector("[data-catalog]");
   if (catalog) {
     const isAuthors = catalog.dataset.catalog === "authors";

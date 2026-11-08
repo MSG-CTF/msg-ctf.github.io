@@ -1,6 +1,6 @@
 {
   "verified_on": "2026-11-09",
-  "basis": "노션의 팀 구분·작업 담당자와 GitHub 병합 기록을 함께 확인했습니다 여러 저장소에 걸친 기여는 저장소별 기여에 남겼습니다",
+  "basis": "노션의 역할 구분과 GitHub 병합 기록 기준",
   "roles": [
     {
       "id": "frontend",
@@ -12,7 +12,13 @@
       "sources": [
         "https://app.notion.com/p/3aa0f19c72be80acbffbfafaad73d92b"
       ],
-      "scope": "참가자·관리자 화면"
+      "scope": "참가자·관리자 화면",
+      "repositories": [
+        {
+          "label": "Frontend",
+          "url": "https://github.com/MSG-CTF/front-team"
+        }
+      ]
     },
     {
       "id": "backend",
@@ -26,7 +32,13 @@
       "sources": [
         "https://app.notion.com/p/3790f19c72be8016be50f2342b287ce2"
       ],
-      "scope": "대회 규칙과 서비스 API"
+      "scope": "대회 규칙과 서비스 API",
+      "repositories": [
+        {
+          "label": "Backend",
+          "url": "https://github.com/MSG-CTF/msg-backend"
+        }
+      ]
     },
     {
       "id": "broker",
@@ -37,7 +49,13 @@
       "sources": [
         "https://app.notion.com/p/3790f19c72be80deaf89f960d3c0468c"
       ],
-      "scope": "클라우드 자원 배정"
+      "scope": "클라우드 자원 배정",
+      "repositories": [
+        {
+          "label": "Resource Broker",
+          "url": "https://github.com/MSG-CTF/resource-broker"
+        }
+      ]
     },
     {
       "id": "scheduler",
@@ -48,7 +66,13 @@
       "sources": [
         "https://app.notion.com/p/3790f19c72be808b8eacd4d0e178fc96"
       ],
-      "scope": "문제 실행 요청과 상태 관리"
+      "scope": "문제 실행 요청과 상태 관리",
+      "repositories": [
+        {
+          "label": "Scheduler",
+          "url": "https://github.com/MSG-CTF/instance-scheduler"
+        }
+      ]
     },
     {
       "id": "runtime",
@@ -59,7 +83,13 @@
       "sources": [
         "https://app.notion.com/p/3790f19c72be80ebb2a2d4c4c26bb468"
       ],
-      "scope": "문제 실행과 격리 보안"
+      "scope": "문제 실행과 격리 보안",
+      "repositories": [
+        {
+          "label": "Runtime",
+          "url": "https://github.com/MSG-CTF/secure-provisioner/tree/dev"
+        }
+      ]
     },
     {
       "id": "devsecops",
@@ -72,7 +102,17 @@
       "sources": [
         "https://app.notion.com/p/3790f19c72be80d8b805fd3a52aee588"
       ],
-      "scope": "검사부터 발행·자동 배포까지"
+      "scope": "검사부터 발행·자동 배포까지",
+      "repositories": [
+        {
+          "label": "DevSecOps",
+          "url": "https://github.com/MSG-CTF/msgctf-devsecops"
+        },
+        {
+          "label": "플랫폼 CI",
+          "url": "https://github.com/MSG-CTF/jm_devsecops/tree/main"
+        }
+      ]
     },
     {
       "id": "sla",
@@ -83,7 +123,17 @@
       "sources": [
         "https://app.notion.com/p/3790f19c72be80ad88f2c118ffbbe94f"
       ],
-      "scope": "서비스 상태와 장애 감시"
+      "scope": "서비스 상태와 장애 감시",
+      "repositories": [
+        {
+          "label": "SLA",
+          "url": "https://github.com/MSG-CTF/sentinel"
+        },
+        {
+          "label": "Mock API",
+          "url": "https://github.com/MSG-CTF/ctf-mock"
+        }
+      ]
     }
   ],
   "profiles": [
@@ -173,7 +223,8 @@
     }
   ],
   "lead": {
-    "label": "Lead",
-    "login": "jongcoding"
+    "label": "PM",
+    "login": "jongcoding",
+    "url": "https://github.com/MSG-CTF"
   }
 }

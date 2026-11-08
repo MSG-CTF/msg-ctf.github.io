@@ -76,14 +76,14 @@ def page(title, description, body, filename, css_class, depth=0):
         <span class="brand-divider" aria-hidden="true"></span><span class="brand-label">2026</span>
       </a>
       <nav aria-label="주요 메뉴"><a href="{prefix}index.html#results">결과</a><a href="{prefix}authors.html" aria-current="page">출제자</a><a href="{prefix}platform.html">플랫폼</a></nav>
-      <a class="header-github" href="https://github.com/MSG-CTF">GitHub <span aria-hidden="true">↗</span></a>
+      <a class="header-github" href="https://github.com/MSG-CTF" aria-label="MSG CTF GitHub">GitHub <span class="github-icon" aria-hidden="true"></span></a>
     </div>
   </header>
   <main id="main">{body}</main>
   <footer class="site-footer">
     <div class="container footer-inner">
       <div><span class="footer-title">MSG CTF 2026</span><p>2026년 11월 8일의 대회와 개발 기록</p></div>
-      <div class="footer-links"><a href="{prefix}challenges.html">문제 아카이브</a><a href="https://github.com/MSG-CTF">GitHub ↗</a><a href="#page-top">맨 위로 ↑</a></div>
+      <div class="footer-links"><a href="{prefix}challenges.html">문제 아카이브</a><a class="github-link" href="https://github.com/MSG-CTF"><span class="github-icon" aria-hidden="true"></span>GitHub</a><a href="#page-top">맨 위로 ↑</a></div>
     </div>
   </footer>
 </body>
