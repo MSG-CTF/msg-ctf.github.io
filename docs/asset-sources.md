@@ -16,6 +16,7 @@
 | 플랫폼 역할별 프로필 | [노션의 팀 구분](https://app.notion.com/p/1280f19c72be8300abd701cdac2219fa)·각 팀의 작업 담당자와 GitHub 병합 기록 대조, [역할별 계정과 출처](../data/platform-team.json) |
 | 참여자 사진 | 각 참여자의 GitHub 공개 프로필 사진, 프로필 링크와 함께 표시 |
 | 기술 아이콘 | Devicon·Simple Icons의 로고를 공통 타일에 배치, [출처와 라이선스](tech-icons.md) |
+| AWS·Google Cloud·Azure 로고 | Devicon 원본 SVG, [파일별 출처와 해시](../data/cloud-icons.json) · [MIT 라이선스](../assets/tech/DEVICON-LICENSE.txt) |
 | 주최 동아리 6곳 | [기존 대회 페이지의 주최 목록](https://github.com/MSG-CTF/front-team/blob/94771a1118b70624d73714e16b55b63744f3d4fb/src/features/intro/components/OrganizerLogos.jsx)과 원본 SVG |
 | 후원사 3곳 | [기존 대회 페이지의 후원 목록](https://github.com/MSG-CTF/front-team/blob/94771a1118b70624d73714e16b55b63744f3d4fb/src/features/intro/components/SponsorLogos.jsx)과 원본 로고 |
 | Pretendard | [라이선스](../assets/fonts/Pretendard-LICENSE.txt) |

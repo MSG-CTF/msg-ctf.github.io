@@ -330,29 +330,59 @@ a.detail-author:hover { color: var(--accent); }
 .screen-caption p { font-size: 15px; color: #dfd1bd; }
 .screen-caption .text-link { flex-shrink: 0; font-size: 13px; }
 
-.cost-section { display: grid; grid-template-columns: .9fr 1.35fr; gap: 32px 80px; border-top: 1px solid var(--line); }
+.cost-section { border-top: 1px solid var(--line); }
+.cost-heading { display: flex; justify-content: space-between; align-items: center; gap: 32px; }
 .cost-eyebrow { color: var(--accent); font-size: 13px; letter-spacing: .05em; }
-.cost-heading h2 { margin-top: 14px; font: 500 26px/1.4 var(--font); }
-.cost-heading h2 strong { display: block; color: var(--accent); font-size: clamp(86px, 9vw, 122px); font-weight: 600; letter-spacing: -.06em; line-height: 1.2; }
-.cost-heading h2 strong span { font-size: 34px; margin-left: 10px; letter-spacing: 0; }
-.cost-heading > p:not(.cost-eyebrow) { margin: 12px 0 22px; color: var(--muted); }
-.cost-heading .text-link { font-size: 14px; }
-.cost-methods { list-style: none; margin: 0; padding: 0; }
-.cost-methods li { display: flex; gap: 20px; padding: 25px 0; border-bottom: 1px solid var(--line); }
-.cost-methods li:first-child { padding-top: 0; }
-.cost-methods li:last-child { border-bottom: 0; padding-bottom: 0; }
-.cost-step { flex: 0 0 22px; white-space: nowrap; color: var(--accent); font: 14px/1.9 var(--font); }
-.cost-methods h3 { font-size: 19px; font-weight: 600; line-height: 1.5; }
-.cost-methods p { margin-top: 9px; font-size: 15px; color: var(--muted); line-height: 1.8; }
-.cost-scope { grid-column: 1/-1; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.cost-heading h2 { margin-top: 12px; font: 600 clamp(26px, 3vw, 36px)/1.4 var(--font); letter-spacing: -.03em; }
+.cost-result { text-align: right; font-size: 14px; color: var(--muted); flex-shrink: 0; }
+.cost-result strong { display: block; color: var(--accent); font-size: 90px; font-weight: 600; letter-spacing: -.06em; line-height: 1.15; }
+.cost-result strong span { font-size: 30px; margin-left: 8px; letter-spacing: 0; }
+.cloud-flow { margin-top: 42px; }
+.cloud-flow-diagram { display: grid; grid-template-columns: minmax(180px, 1fr) minmax(45px, .5fr) minmax(220px, 1.2fr) minmax(65px, .5fr) minmax(170px, .85fr); align-items: center; }
+.cloud-providers { display: grid; gap: 32px; list-style: none; padding: 0; margin: 0; }
+.cloud-providers li { display: flex; align-items: center; gap: 18px; min-height: 72px; }
+.cloud-logo { display: grid; place-items: center; width: 72px; height: 72px; flex: 0 0 auto; background: #f5f1e9; border-radius: 16px; }
+.cloud-logo img { width: 48px; height: 48px; object-fit: contain; }
+.cloud-providers strong { display: block; font-size: 18px; font-weight: 600; }
+.cloud-providers li div > span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+.cloud-merge { width: 100%; height: 280px; fill: none; stroke: var(--accent); stroke-width: 1.4; }
+.cloud-merge-mobile { display: none; }
+.cloud-broker { border: 1px solid #b7935d; background: linear-gradient(140deg, #43321e55, #211e1922); padding: 28px 18px; text-align: center; }
+.cloud-node-icon { width: 48px; height: 48px; margin: 0 auto 18px; color: var(--accent); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.cloud-broker h3, .cloud-workload h3 { font-size: 22px; font-weight: 600; line-height: 1.4; }
+.cloud-broker p, .cloud-workload p { font-size: 15px; margin-top: 8px; }
+.cloud-broker > span, .cloud-workload > span { display: block; font-size: 13px; color: var(--muted); margin-top: 9px; }
+.cloud-transfer { padding-inline: 12px; color: var(--accent); text-align: center; font-size: 12px; }
+.cloud-transfer svg { display: block; width: 100%; height: 44px; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.cloud-workload { text-align: center; }
+.cloud-flow figcaption { margin-top: 30px; color: var(--muted); font-size: 15px; text-align: center; }
+.cost-footer { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; border-top: 1px solid var(--line); padding-top: 24px; margin-top: 30px; }
+.cost-footer p { color: var(--muted); font-size: 13px; }
+.cost-footer .text-link { font-size: 13px; flex-shrink: 0; }
 @media (max-width: 760px) {
-  .cost-section { grid-template-columns: 1fr; gap: 32px; }
-  .cost-heading h2 { font-size: 23px; }
-  .cost-heading h2 strong { font-size: 86px; }
-  .cost-methods h3 { font-size: 17px; }
-  .cost-methods p { font-size: 14px; }
-  .cost-methods li { gap: 14px; padding-block: 20px; }
-  .cost-scope { font-size: 12px; }
+  .cost-heading { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .cost-heading h2 { font-size: 26px; }
+  .cost-result { display: flex; align-items: baseline; flex-direction: row-reverse; gap: 16px; font-size: 12px; }
+  .cost-result strong { font-size: 66px; }
+  .cost-result strong span { font-size: 24px; }
+  .cloud-flow { margin-top: 30px; }
+  .cloud-flow-diagram { grid-template-columns: 1fr; }
+  .cloud-providers { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .cloud-providers li { flex-direction: column; gap: 10px; text-align: center; min-height: 0; }
+  .cloud-logo { width: 60px; height: 60px; border-radius: 13px; }
+  .cloud-logo img { width: 42px; height: 42px; }
+  .cloud-providers strong { font-size: 13px; }
+  .cloud-providers li div > span { font-size: 12px; }
+  .cloud-merge-desktop { display: none; }
+  .cloud-merge-mobile { display: block; height: 58px; margin-top: 14px; }
+  .cloud-broker { width: min(100%, 280px); justify-self: center; padding: 22px 16px; }
+  .cloud-node-icon { width: 38px; height: 38px; margin-bottom: 10px; }
+  .cloud-broker h3, .cloud-workload h3 { font-size: 20px; }
+  .cloud-transfer { display: grid; grid-template-columns: 1fr 44px 1fr; align-items: center; justify-self: center; width: 140px; height: 76px; padding: 0; gap: 12px; }
+  .cloud-transfer svg { width: 64px; height: 28px; transform: rotate(90deg) scaleY(-1); justify-self: center; }
+  .cloud-flow figcaption { font-size: 14px; }
+  .cost-footer { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .cost-footer p { font-size: 12px; }
 }
 .video-replay { display: inline-flex; gap: 7px; align-items: center; flex-shrink: 0; border: 1px solid #806c50; border-radius: 4px; background: #35281a; color: #f2d7ac; padding: 8px 12px; font-size: 13px; }
 .video-replay:hover { background: #4a3520; }
@@ -405,11 +435,11 @@ details[open] > summary .plus::after { transform: rotate(0); }
 .performance-result a { display: inline-block; font-size: 12px; margin-top: 12px; text-decoration: underline; text-underline-offset: 4px; }
 .verification-note { grid-column: 1/-1; color: var(--muted); font-size: 11px; padding-top: 10px; }
 
-.tech-stack { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 32px; }
-.tech-stack > h3 { font: 600 26px/1.4 var(--font); }
+.tech-stack { border-top: 1px solid var(--line); }
+.tech-stack > h2 { font: 600 32px/1.4 var(--font); }
 .tech-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 40px; margin-top: 28px; }
 .tech-group[data-tech-group="infrastructure"] { grid-column: 1/-1; }
-.tech-group h4 { margin: 0 0 16px; color: var(--accent); font: 500 16px/1.5 var(--font); }
+.tech-group h3 { margin: 0 0 16px; color: var(--accent); font: 500 16px/1.5 var(--font); }
 .tech-items { display: flex; flex-wrap: wrap; gap: 18px 20px; list-style: none; padding: 0; margin: 0; }
 .tech-items li { width: 88px; text-align: center; }
 .tech-items img { margin: 0 auto 9px; width: 52px; height: 52px; }
@@ -418,34 +448,38 @@ details[open] > summary .plus::after { transform: rotate(0); }
 
 .team-section > .section-heading h2 { font: 600 36px/1.4 var(--font); letter-spacing: -.03em; }
 .team-section > .section-heading .section-description { font-size: 15px; }
-.team-directory { margin: 32px 0 12px; }
-.team-lead { display: flex; align-items: center; justify-content: center; gap: 24px; padding: 6px 0 40px; }
-.team-lead h3 { font: 600 18px/1.5 var(--font); color: var(--accent); margin-bottom: 2px; }
-.team-lead .role-person { font-size: 26px; }
-.team-lead .avatar { width: 80px; height: 80px; }
-.team-lead p { color: var(--muted); font-size: 16px; margin-top: 5px; }
-.role-directory { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 32px; }
-.role-group { grid-column: span 2; border-top: 1px solid var(--line); padding: 24px 0 30px; min-width: 0; }
-.role-group[data-role="frontend"], .role-group[data-role="backend"] { grid-column: span 3; }
-.role-group[data-role="devsecops"] { grid-column: span 4; }
-.role-group h3 { font: 600 21px/1.5 var(--font); color: var(--fg); }
+.team-directory { margin: 24px 0 12px; }
+.team-section > .section-heading { justify-content: center; text-align: center; }
+.team-directory { max-width: 980px; margin-inline: auto; }
+.team-lead { padding: 0 0 24px; text-align: center; }
+.team-lead-identity { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.team-lead h3 { font: 600 17px/1.5 var(--font); color: var(--accent); }
+.team-lead .role-person { flex-direction: row; gap: 12px; font-size: 17px; }
+.team-lead .avatar { width: 52px; height: 52px; }
+.team-lead p { color: var(--muted); font-size: 14px; margin-top: 10px; }
+.role-directory { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.role-group { border-top: 1px solid var(--line); padding: 14px 16px 18px; min-width: 0; text-align: center; }
+.role-group[data-role="frontend"], .role-group[data-role="backend"], .role-group[data-role="devsecops"] { grid-column: 1/-1; }
+.role-heading { display: flex; justify-content: center; align-items: baseline; flex-wrap: wrap; gap: 5px 12px; }
+.role-group h3 { font: 600 18px/1.5 var(--font); color: var(--fg); }
 .role-repository { display: inline-flex; align-items: center; gap: 10px; }
 .role-repository .github-icon { color: var(--accent); opacity: .8; }
 .role-repository:hover { color: var(--accent); }
 .role-repository:hover .github-icon { opacity: 1; }
-.role-resources { margin-top: 8px; font-size: 13px; color: var(--muted); }
+.role-resources { font-size: 12px; color: var(--muted); }
 .role-resources .github-icon { width: 14px; height: 14px; }
-.role-scope { color: var(--accent); font-size: 14px; margin-top: 4px; }
-.role-people { display: grid; gap: 20px; list-style: none; padding: 0; margin: 22px 0 0; }
-.role-group[data-role="backend"] .role-people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.role-people { display: grid; gap: 16px; list-style: none; padding: 0; margin: 12px 0 0; }
+.role-group[data-role="frontend"] .role-people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.role-group[data-role="backend"] .role-people { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .role-group[data-role="devsecops"] .role-people { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .role-people li { min-width: 0; }
-.role-person { display: flex; align-items: center; gap: 12px; color: var(--fg); font-size: 16px; font-weight: 600; line-height: 1.5; }
+.role-person { display: flex; flex-direction: column; align-items: center; gap: 7px; color: var(--fg); font-size: 15px; font-weight: 600; line-height: 1.5; }
 .role-copy { min-width: 0; }
 .role-name { display: block; }
 .role-duty { display: block; font-size: 14px; font-weight: 400; color: var(--muted); margin-top: 4px; }
 .avatar { border-radius: 50%; object-fit: cover; background: #332f28; border: 1px solid #e0bc8633; flex-shrink: 0; }
-.role-person .avatar { width: 52px; height: 52px; }
+.role-person .avatar { width: 52px; height: 52px; border-radius: 12px; }
+.team-lead .role-person .avatar { width: 52px; height: 52px; }
 .role-person:hover { color: var(--accent); }
 .role-person:hover .avatar { border-color: var(--accent); }
 .repository-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
@@ -505,9 +539,10 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .step-detail { font-size: 11px; }
   .lifecycle p { font-size: 10px; }
   .lifecycle h3 { font-size: 19px; }
-  .role-directory { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
-  .role-group, .role-group[data-role="frontend"], .role-group[data-role="backend"], .role-group[data-role="devsecops"] { grid-column: auto; }
-  .role-group[data-role="backend"] .role-people, .role-group[data-role="devsecops"] .role-people { grid-template-columns: 1fr; }
+  .cloud-flow-diagram { grid-template-columns: minmax(155px, 1fr) minmax(35px, .3fr) minmax(200px, 1fr) minmax(55px, .3fr) minmax(145px, .8fr); }
+  .cloud-logo { width: 60px; height: 60px; }
+  .cloud-providers li { gap: 12px; }
+  .cloud-providers strong { font-size: 16px; }
   .author-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .challenge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail-body { gap: 36px; grid-template-columns: minmax(0, 1fr) 210px; }
@@ -628,17 +663,24 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .team-section > .section-heading h2 { font-size: 29px; }
   .team-section > .section-heading .section-description { font-size: 14px; }
   .team-directory { margin-block: 28px 40px; }
-  .team-lead { justify-content: flex-start; gap: 20px; padding: 0 0 30px; }
-  .team-lead .avatar { width: 64px; height: 64px; }
-  .team-lead .role-person { font-size: 23px; }
+  .team-lead .role-person { font-size: 16px; }
   .team-lead p { font-size: 14px; }
-  .role-directory { grid-template-columns: 1fr; }
+  .role-directory { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tech-grid { grid-template-columns: 1fr; gap: 28px; }
   .tech-items { gap: 16px 12px; }
   .tech-items li { width: 78px; }
-  .role-group { padding-block: 24px 30px; }
-  .role-group h3 { font-size: 20px; }
-  .role-people { gap: 18px; margin-top: 20px; }
+  .role-group { padding: 18px 6px 22px; }
+  .role-group h3 { font-size: 16px; }
+  .role-repository { gap: 6px; }
+  .role-repository .github-icon { width: 15px; height: 15px; }
+  .role-people { gap: 18px 12px; margin-top: 18px; }
+  .role-group[data-role="backend"] .role-people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .role-group[data-role="devsecops"] .role-people { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .role-person { font-size: 14px; }
+  .role-person .avatar { width: 52px; height: 52px; }
+  .role-heading { min-height: 44px; align-content: center; }
+  .cloud-flow-diagram { grid-template-columns: 1fr; }
+  .cloud-providers strong { font-size: 13px; }
   .repository-heading { display: block; }
   .repository-heading h3 { font-size: 20px; }
   .repository-heading p { margin-top: 8px; font-size: 11px; }

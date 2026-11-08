@@ -21,7 +21,7 @@ for group in data['groups']:
     extra='<br><sub>'+escape(group['note'])+'</sub>' if group.get('note') else ''
     rows.append(f'<tr><th align="left" width="135">{escape(group["label"])}</th><td align="center" width="640"><p>{" &nbsp; ".join(icons)}<br><sub>{names}</sub>{extra}</p></td></tr>')
     note='<p class="tech-note">'+escape(group['note'])+'</p>' if group.get('note') else ''
-    groups.append(f'<section class="tech-group" data-tech-group="{group["id"]}" aria-labelledby="tech-{group["id"]}"><h4 id="tech-{group["id"]}">{escape(group["label"])}</h4><ul class="tech-items">{"".join(tiles)}</ul>{note}</section>')
+    groups.append(f'<section class="tech-group" data-tech-group="{group["id"]}" aria-labelledby="tech-{group["id"]}"><h3 id="tech-{group["id"]}">{escape(group["label"])}</h3><ul class="tech-items">{"".join(tiles)}</ul>{note}</section>')
 
 def replace(path,body):
     content=path.read_text(encoding='utf-8')

@@ -42,25 +42,25 @@ def replace_block(path, marker, body):
 
 leader = profiles[lead['login']]
 lead_html = f'''<section class="team-lead" aria-labelledby="role-lead">
-          {avatar(leader, 80)}
-          <div><h3 id="role-lead">{repository_link(lead['label'], lead['url'])}</h3>
-            <a class="role-person" href="{escape(leader['url'], quote=True)}"><span class="role-name">@{escape(leader['login'])}</span></a>
-            <p>{escape(leader['duty'])}</p>
-          </div>
+          <div class="team-lead-identity"><a class="role-person" href="{escape(leader['url'], quote=True)}">{avatar(leader, 52)}<span class="role-name">{escape(leader['login'])}</span></a><span aria-hidden="true">·</span><h3 id="role-lead">{repository_link(lead['label'], lead['url'])}</h3></div>
+          <p>{escape(leader['duty'])}</p>
         </section>'''
 
 groups = []
-for role in data['roles']:
+web_order = ['frontend', 'backend', 'devsecops', 'broker', 'scheduler', 'runtime', 'sla']
+for role_id in web_order:
+    role = next(item for item in data['roles'] if item['id'] == role_id)
     people = []
     for login in role['members']:
         person = profiles[login]
-        people.append(f'''<li><a class="role-person" href="{escape(person['url'], quote=True)}">{avatar(person)}<span class="role-copy"><span class="role-name">@{escape(login)}</span><span class="role-duty">{escape(person['duty'])}</span></span></a></li>''')
+        parts = person['duty'].split(' · ')
+        duty = escape(parts[0]) + ('<br>' + escape(' · '.join(parts[1:])) if len(parts) > 1 else '')
+        people.append(f'''<li><a class="role-person" href="{escape(person['url'], quote=True)}">{avatar(person, 52)}<span class="role-copy"><span class="role-name">{escape(login)}</span><span class="role-duty">{duty}</span></span></a></li>''')
     role_id = escape(role['id'], quote=True)
     primary, *extra = role['repositories']
     extra_links = ('<div class="role-resources">' + ''.join(repository_link(repo['label'], repo['url']) for repo in extra) + '</div>') if extra else ''
     groups.append(f'''<section class="role-group" aria-labelledby="role-{role_id}" data-role="{role_id}">
-          <h3 id="role-{role_id}">{repository_link(role['label'], primary['url'])}</h3>
-          <p class="role-scope">{escape(role['scope'])}</p>{extra_links}
+          <div class="role-heading"><h3 id="role-{role_id}">{repository_link(role['label'], primary['url'])}</h3>{extra_links}</div>
           <ul class="role-people">{''.join(people)}</ul>
         </section>''')
 
