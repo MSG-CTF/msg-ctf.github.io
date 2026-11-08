@@ -4,7 +4,6 @@
 <p>2026. 11. 08 · 10:00 ~ 22:00 KST</p>
 <p><a href="https://msg-ctf.github.io/">대회 기록</a> · <a href="https://msg-ctf.github.io/authors.html">출제자</a> · <a href="https://msg-ctf.github.io/challenges.html">문제 아카이브</a> · <a href="https://msg-ctf.github.io/platform.html">플랫폼</a></p>
 <a href="assets/brand/msg-ctf-2026-poster.png"><img src="assets/brand/msg-ctf-2026-poster.png" width="480" alt="2026 MSG CTF 대회 포스터"></a>
-<p>주사위로 이동하고, 문제를 풀고, 모은 마일리지로 동아리 부스를 즐겼습니다</p>
 </div>
 
 <br>
@@ -14,7 +13,6 @@
 <tr><th></th><th width="280">External</th><th width="280">Internal</th></tr>
 <tr><th>Participants</th><td align="center"><b>50팀 · 100명</b></td><td align="center"><b>25팀 · 50명</b></td></tr>
 <tr><th>Challenges</th><td colspan="2" align="center">일반 문제 30개 · KOTH 6개</td></tr>
-<tr><th>Cloud</th><td colspan="2" align="center"><b>추가 결제액 0원</b><br><sub>무료 크레딧 적용 후 실제 추가 결제액 기준</sub></td></tr>
 </table>
 
 <p align="center">주최 · MJSEC · SWING · Y-CERT · seKUrity · CodeCure · Aegis<br>후원 · HSPACE · 시야인사이트 · MONSTER ENERGY</p>
@@ -22,7 +20,7 @@
 <h3 align="center">Final Scoreboard</h3>
 
 <table align="center">
-<tr><th width="420">External · 50팀 / 100명</th><th width="420">Internal · 25팀 / 50명</th></tr>
+<tr><th width="420">External</th><th width="420">Internal</th></tr>
 <tr><td align="center"><a href="assets/results/external-scoreboard.png"><img src="assets/results/external-scoreboard.png" width="420" alt="외부 트랙 최종 스코어보드"></a></td><td align="center"><a href="assets/results/internal-scoreboard.png"><img src="assets/results/internal-scoreboard.png" width="420" alt="내부 트랙 최종 스코어보드"></a></td></tr>
 </table>
 
@@ -35,14 +33,14 @@
 </picture>
 </a>
 </p>
-<p align="center">여러 클라우드의 자원을 모아 쓰고, 종료 후 다시 활용했습니다<br><a href="docs/cloud-cost.md">운영 구조 보기 ↗</a></p>
+<p align="center"><sub>무료 크레딧 적용 후 추가 결제액 기준</sub> · <a href="docs/cloud-cost.md">운영 구조 ↗</a></p>
 
 <br>
 <h2 align="center">Archive</h2>
 
 <table align="center">
 <tr><th width="260">Challenges</th><th width="260">Platform</th><th width="260">Development</th></tr>
-<tr><td align="center"><a href="https://msg-ctf.github.io/challenges.html">문제 지문과 출제자</a><br><sub>일반 문제 30개 · KOTH 6개</sub></td><td align="center"><a href="https://msg-ctf.github.io/platform.html">플랫폼 둘러보기</a><br><sub>보드 · 주사위 · KOTH</sub></td><td align="center"><a href="docs/platform.md">개발·운영 기록</a><br><sub>구성 · 장애 복구 · 성능 검증</sub></td></tr>
+<tr><td align="center"><a href="https://msg-ctf.github.io/challenges.html">지문·출제자</a></td><td align="center"><a href="https://msg-ctf.github.io/platform.html">보드·주사위·KOTH</a></td><td align="center"><a href="docs/platform.md">개발·운영 기록</a></td></tr>
 </table>
 
 <br>
@@ -82,7 +80,7 @@
 </table>
 <!-- END_TEAM_CREDITS -->
 
-<p align="center"><a href="https://msg-ctf.github.io/authors.html">출제자 30명과 만든 문제</a> · <a href="docs/platform.md#개인별-기여-기록">개인별 기여 기록</a></p>
+<p align="center"><a href="https://msg-ctf.github.io/authors.html">출제자</a> · <a href="docs/platform.md#개인별-기여-기록">기여 기록</a></p>
 
 <h2 align="center">Tech Stack</h2>
 

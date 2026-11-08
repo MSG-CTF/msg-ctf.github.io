@@ -79,7 +79,7 @@ def page(title, description, body, filename, css_class, depth=0):
   <main id="main">{body}</main>
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div><span class="footer-title">MSG CTF 2026</span><p>2026년 11월 8일의 대회와 개발 기록</p></div>
+      <div><span class="footer-title">MSG CTF 2026</span></div>
       <div class="footer-links"><a href="{prefix}challenges.html">문제 아카이브</a><a class="github-link" href="https://github.com/MSG-CTF"><span class="github-icon" aria-hidden="true"></span>GitHub</a><a href="#page-top">맨 위로 ↑</a></div>
     </div>
   </footer>
@@ -92,11 +92,10 @@ def page(title, description, body, filename, css_class, depth=0):
 def catalog_heading(kind):
     authors = kind == 'authors'
     title = '출제자' if authors else '문제 아카이브'
-    subtitle = '일반 문제 30개 · KOTH 6개' if authors else '2026 MSG CTF에 나왔던 일반 문제 30개와 KOTH 6개'
     return f'''
     <section class="catalog-heading container" aria-labelledby="page-title">
       <a class="back-link" href="index.html">← 대회 기록</a>
-      <div class="catalog-title"><h1 id="page-title">{title}</h1><p>{subtitle}</p></div>
+      <div class="catalog-title"><h1 id="page-title">{title}</h1></div>
       <nav class="catalog-tabs" aria-label="출제자와 문제">
         <a href="authors.html"{' aria-current="page"' if authors else ''}>출제자 <span>30</span></a>
         <a href="challenges.html"{' aria-current="page"' if not authors else ''}>문제 아카이브 <span>36</span></a>
@@ -136,7 +135,7 @@ def author_directory():
       {controls('authors', counts)}
       <div class="author-grid" id="catalog-items">{''.join(cards)}</div>
       {empty_state()}
-      <p class="author-basis">출제자 표기는 문제 README와 최초 등록 기록을 기준으로 정리했습니다 <a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/challenge-authors.md">출제 기록 ↗</a></p>
+      <p class="author-basis"><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/challenge-authors.md">출제 기록 ↗</a></p>
     </div>'''
     (ROOT / 'authors.html').write_text(page('출제자', 'MSG CTF 출제자 30명과 함께 만든 문제들', body, 'authors.html', 'page-authors'), encoding='utf-8')
 
@@ -163,7 +162,6 @@ def archive_index():
       {controls('challenges', counts)}
       <div class="challenge-grid" id="catalog-items">{''.join(cards)}</div>
       {empty_state()}
-      <p class="author-basis">문제를 누르면 출제자가 작성한 대회 지문을 볼 수 있습니다</p>
     </div>'''
     (ROOT / 'challenges.html').write_text(page('문제 아카이브', '일반 문제 30개와 KOTH 6개의 지문과 출제 기록', body, 'challenges.html', 'page-archive'), encoding='utf-8')
 
@@ -214,9 +212,9 @@ def detail_pages():
           <h2 id="statement-title">대회 지문</h2>
           <div class="statement-prose">{statement(c['description'])}</div>
         </section>
-        <aside class="related-challenges" aria-labelledby="related-title"><h2 id="related-title">함께 출제된 {c['category'].upper()} 문제</h2>{other_links}<a class="all-challenges-link" href="../challenges.html">전체 36문제 보기 →</a></aside>
+        <aside class="related-challenges" aria-labelledby="related-title"><h2 id="related-title">다른 {c['category'].upper()} 문제</h2>{other_links}<a class="all-challenges-link" href="../challenges.html">전체 문제 →</a></aside>
       </div>
-      <p class="statement-source">2026년 11월 8일 대회 기록 <span aria-hidden="true">·</span> <a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/challenge-archive.md">아카이브 출처 ↗</a></p>
+      <p class="statement-source"><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/challenge-archive.md">지문 출처 ↗</a></p>
     </article>'''
         filename = f'challenges/{c["slug"]}.html'
         (ROOT / filename).write_text(page(c['name'], excerpt(c), body, filename, 'page-challenge', depth=1), encoding='utf-8')
