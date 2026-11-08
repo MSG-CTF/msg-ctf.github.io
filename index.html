@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#181715">
-  <meta name="description" content="보드 위의 CTF, 그 뒤의 클라우드 — 2026 MSG CTF 플랫폼 개발·운영 기록과 함께 만든 사람들">
-  <meta property="og:title" content="MSG CTF · 보드 위의 CTF, 그 뒤의 클라우드">
-  <meta property="og:description" content="직접 만들고 운영한 해킹 대회 플랫폼 · 크레딧 적용 후 클라우드 추가 결제 0원">
+  <meta name="description" content="2026 MSG CTF에서 사용한 플랫폼의 개발·운영 기록과 저장소별 참여자">
+  <meta property="og:title" content="MSG CTF · 플랫폼 개발·운영">
+  <meta property="og:description" content="2026 MSG CTF 개발·운영 기록 · 크레딧 적용 후 클라우드 추가 결제 0원">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://msg-ctf.github.io/">
   <meta property="og:image" content="https://msg-ctf.github.io/assets/screens/board.jpg">
-  <title>MSG CTF · Cloud Platform</title>
+  <title>MSG CTF · 플랫폼 개발·운영</title>
   <link rel="canonical" href="https://msg-ctf.github.io/">
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
   <link rel="preload" href="assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
@@ -24,53 +24,44 @@
       <a class="brand" href="#top" aria-label="MSG CTF Platform 처음으로">
         <span class="brand-mark"><img src="assets/brand/event-logo.webp" alt="MSG CTF" width="1254" height="1254"></span>
         <span class="brand-divider" aria-hidden="true"></span>
-        <span class="brand-label">CLOUD PLATFORM</span>
+        <span class="brand-label">플랫폼</span>
       </a>
       <nav aria-label="주요 메뉴">
-        <a href="#platform">플랫폼</a>
+        <a href="#platform">화면</a>
         <a href="#architecture">구성</a>
-        <a href="#contributors">기여</a>
+        <a href="#contributors">참여자</a>
       </nav>
       <a class="header-github" href="https://github.com/MSG-CTF">GitHub <span aria-hidden="true">↗</span></a>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero container" id="top" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="small-line" aria-hidden="true"></span>2026 MSG CTF · PROJECT ARCHIVE</p>
-        <h1 id="hero-title">보드 위의 CTF,<br>그 뒤의 <em>클라우드</em></h1>
-        <p class="hero-description">주사위를 굴려 문제를 푸는 해킹 대회<br>참가자 화면부터 문제 실행과 운영 감시까지<br class="desktop-break"> 함께 만들었습니다</p>
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <picture class="hero-backdrop">
+        <source media="(max-width: 600px)" srcset="assets/brand/hero-plaza-mobile.webp">
+        <img class="hero-art" src="assets/brand/hero-plaza.webp" width="1536" height="1024" alt="" fetchpriority="high">
+      </picture>
+      <div class="hero-content">
+        <p class="hero-date">2026. 11. 08</p>
+        <div class="hero-logo"><img src="assets/brand/event-logo.webp" alt="MSG CTF" width="1254" height="1254"></div>
+        <h1 id="hero-title">플랫폼 개발·운영</h1>
+        <p class="hero-description">2026 MSG CTF에서 사용한 플랫폼입니다</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#platform">플랫폼 둘러보기 <span aria-hidden="true">↓</span></a>
-          <a class="text-link" href="https://github.com/MSG-CTF/msg-ctf.github.io#readme">개발 기록 <span aria-hidden="true">↗</span></a>
-        </div>
-        <p class="hero-date">2026. 11. 08 <span aria-hidden="true">/</span> MSG CTF 개발·운영 기록</p>
-      </div>
-      <div class="hero-visual">
-        <picture>
-          <source media="(max-width: 600px)" srcset="assets/brand/hero-plaza-mobile.webp">
-          <img class="hero-art" src="assets/brand/hero-plaza.webp" width="1536" height="1024" alt="단풍과 등불이 둘러싼 MSG CTF 축제 광장" fetchpriority="high">
-        </picture>
-        <div class="art-caption"><span>MSG CTF 2026</span><span>THE AUTUMN FESTIVAL</span></div>
-        <div class="cost-seal">
-          <span class="cost-label">대회 운영 클라우드</span>
-          <span class="cost-value"><b>0</b><span>원</span></span>
-          <span class="cost-note">크레딧 적용 후 추가 결제액</span>
+          <a class="button button-primary" href="#platform">화면 보기 <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="https://github.com/MSG-CTF/msg-ctf.github.io#readme">개발 기록 <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <dl class="hero-facts">
-        <div><dt>일반 문제</dt><dd><span>30</span> CHALLENGES</dd></div>
-        <div><dt>킹 오브 더 힐</dt><dd><span>6</span> KOTH GAMES</dd></div>
-        <div><dt>분리된 참가 환경</dt><dd><span>2</span> TRACKS</dd></div>
-        <div class="facts-note"><dt>직접 만든 플랫폼으로</dt><dd>대회 한 번을 끝까지</dd></div>
+      <dl class="hero-facts container">
+        <div class="cost-proof"><dt>클라우드 추가 결제</dt><dd><strong>0</strong> 원</dd><dd class="cost-note">크레딧 적용 후</dd></div>
+        <div><dt>일반 문제</dt><dd><strong>30</strong> 개</dd></div>
+        <div><dt>KOTH</dt><dd><strong>6</strong> 개</dd></div>
+        <div><dt>참가 환경</dt><dd class="track-names">내부 · 외부</dd><dd class="cost-note">계정·팀·점수 분리</dd></div>
       </dl>
     </section>
 
     <section class="platform-section section container" id="platform" aria-labelledby="platform-title">
       <div class="section-heading">
-        <div><p class="eyebrow">01 / THE EXPERIENCE</p><h2 id="platform-title">해킹 대회를<br class="mobile-break"> 하나의 보드게임으로</h2></div>
-        <p class="section-description">문제 풀이부터 동아리 부스까지<br>한 흐름으로 이어지는 대회 화면</p>
+        <h2 id="platform-title">플랫폼 화면</h2>
       </div>
       <div class="screen-tabs" role="tablist" aria-label="플랫폼 화면 선택" hidden>
         <button type="button" id="tab-board" role="tab" aria-selected="true" aria-controls="panel-board" tabindex="0"><span>01</span> 보드와 주사위</button>
@@ -80,15 +71,15 @@
       <div class="screen-stage">
         <div class="screen-panel" role="tabpanel" id="panel-board" aria-labelledby="tab-board" tabindex="0">
           <img src="assets/screens/board.jpg" width="1229" height="556" alt="가을 축제 광장 위 원형 보드, 주사위와 찬스카드가 있는 참가자 화면" loading="lazy">
-          <div class="screen-caption"><h3>한 칸씩 이동하며, 다음 문제를 만납니다</h3><p>주사위 · 찬스카드 · 문제 선택</p></div>
+          <div class="screen-caption"><p>주사위를 굴려 이동하고, 도착한 칸에서 문제를 고릅니다</p></div>
         </div>
         <div class="screen-panel" role="tabpanel" id="panel-challenge" aria-labelledby="tab-challenge" tabindex="0">
           <img src="assets/screens/challenge.jpg" width="1229" height="556" alt="문제 지문, 첨부 파일, 인스턴스 제어와 플래그 제출을 모은 화면" loading="lazy">
-          <div class="screen-caption"><h3>읽고, 실행하고, 정답을 제출합니다</h3><p>지문·파일 · 인스턴스 실행 · 플래그 제출</p></div>
+          <div class="screen-caption"><p>문제 파일 다운로드, 인스턴스 실행, 플래그 제출을 한 화면에서 처리합니다</p></div>
         </div>
         <div class="screen-panel" role="tabpanel" id="panel-festival" aria-labelledby="tab-festival" tabindex="0">
           <img src="assets/screens/festival.jpg" width="1229" height="556" alt="여섯 동아리의 부스가 가을 축제 거리처럼 놓인 화면" loading="lazy">
-          <div class="screen-caption"><h3>풀이로 모은 마일리지는 축제 속으로</h3><p>동아리 부스 · 시그니처 문제 · 마일리지·QR 결제</p></div>
+          <div class="screen-caption"><p>동아리별 시그니처 문제와 마일리지·QR 결제를 연결했습니다</p></div>
         </div>
       </div>
       <p class="source-note">프론트엔드 저장소의 화면 기록 · 개발 화면 포함</p>
@@ -97,24 +88,23 @@
     <section class="system-section section" id="architecture" aria-labelledby="system-title">
       <div class="container">
         <div class="section-heading">
-          <div><p class="eyebrow">02 / UNDER THE BOARD</p><h2 id="system-title">실행부터 반납까지,<br>보드 뒤에서 돌아가는 일</h2></div>
-          <p class="section-description">문제는 버전별로 가져오고<br>실행 자원은 격리한 뒤 회수합니다</p>
+          <h2 id="system-title">플랫폼 구성</h2>
         </div>
         <ol class="lifecycle">
-          <li><span class="step-no">01</span><h3>발행</h3><p>GitHub Actions · GHCR</p><span class="step-detail">문제 검사와 이미지·파일 발행</span></li>
-          <li><span class="step-no">02</span><h3>수집</h3><p>Backend</p><span class="step-detail">버전·환경변수·제공 파일 관리</span></li>
-          <li><span class="step-no">03</span><h3>실행</h3><p>Scheduler · Broker · Runtime</p><span class="step-detail">자원 예약·격리·비밀값 주입</span></li>
-          <li><span class="step-no">04</span><h3>정리</h3><p>Runtime · Scheduler · Broker</p><span class="step-detail">실제 자원 삭제 후 예약 반납</span></li>
+          <li><h3>문제 발행</h3><p>GitHub Actions · GHCR</p><span class="step-detail">이미지와 참가자 파일 발행</span></li>
+          <li><h3>버전 등록</h3><p>Backend</p><span class="step-detail">파일·환경변수·비밀값 연결</span></li>
+          <li><h3>문제 실행</h3><p>Scheduler · Broker · Runtime</p><span class="step-detail">자원 예약 후 격리 환경에 배포</span></li>
+          <li><h3>자원 반납</h3><p>Runtime · Scheduler · Broker</p><span class="step-detail">실제 자원을 삭제한 뒤 예약 반납</span></li>
         </ol>
         <details class="architecture-details">
-          <summary><span><span class="detail-overline">ARCHITECTURE</span>전체 구성도</span><span class="detail-action"><span class="expand-label">펼쳐보기</span><span class="collapse-label">접기</span><span class="plus" aria-hidden="true"></span></span></summary>
+          <summary><span>전체 구성도</span><span class="detail-action"><span class="expand-label">펼치기</span><span class="collapse-label">접기</span><span class="plus" aria-hidden="true"></span></span></summary>
           <div class="architecture-body">
             <a class="architecture-image" href="assets/architecture.svg" target="_blank" rel="noopener" aria-label="플랫폼 전체 구성도 새 탭에서 크게 보기"><img src="assets/architecture.svg" width="1460" height="965" alt="내부·외부 트랙, 스케줄러·브로커·런타임, K3s·전용 VM, 문제 발행과 SLA 관측 구성" loading="lazy"></a>
             <div class="architecture-notes"><p>두 트랙의 데이터 저장소를 분리하고, 공통 제어 서비스와 연결했습니다<br>공통 Edge와 Active/Standby 자동 승격은 설계·추가 검증 범위입니다</p><a class="text-link" href="assets/architecture.svg" target="_blank" rel="noopener">크게 보기 ↗</a></div>
           </div>
         </details>
         <details class="verification-details">
-          <summary><span><span class="detail-overline">VERIFICATION</span>운영 전, 이렇게 다듬었습니다</span><span class="detail-action"><span class="expand-label">검수 기록</span><span class="collapse-label">접기</span><span class="plus" aria-hidden="true"></span></span></summary>
+          <summary><span>생성·삭제 속도 개선</span><span class="detail-action"><span class="expand-label">시험 결과</span><span class="collapse-label">접기</span><span class="plus" aria-hidden="true"></span></span></summary>
           <div class="verification-body">
             <div class="performance-result"><span>Open House 생성 중앙값</span><strong><s>52.7</s><span aria-hidden="true">→</span>23.1<small>초</small></strong><p>기동 CPU 부스트 전후 · 총 12개 중 해당 문제 4개</p><a href="https://github.com/MSG-CTF/instance-scheduler/pull/92">시험 기록 ↗</a></div>
             <div class="performance-result"><span>Cashout 삭제 중앙값</span><strong><s>34.98</s><span aria-hidden="true">→</span>12.39<small>초</small></strong><p>전용 K3s 노드 · 12개 동시 종료 비교</p><a href="https://github.com/MSG-CTF/secure-provisioner/pull/117">시험 기록 ↗</a></div>
@@ -126,8 +116,8 @@
 
     <section class="team-section section container" id="contributors" aria-labelledby="team-title">
       <div class="section-heading">
-        <div><p class="eyebrow">03 / BUILT TOGETHER</p><h2 id="team-title">함께 만든 사람들</h2></div>
-        <p class="section-description">화면, 실행, 자원 관리와 운영까지<br>각 저장소에서 맡은 일을 모았습니다</p>
+        <h2 id="team-title">참여자와 저장소</h2>
+        <p class="section-description">저장소를 누르면 참여자와 맡은 일을 볼 수 있습니다</p>
       </div>
       <div class="repo-filters" role="group" aria-label="저장소 분야 선택" hidden>
         <button type="button" data-filter="all" aria-pressed="true">전체 <span>10</span></button>
@@ -254,15 +244,15 @@
 <div class="person"><a href="https://github.com/Giheon-Jeon">Giheon-Jeon</a><p>프론트 CI·Nginx 프록시·Semgrep 검사 연결</p></div>
 <div class="person"><a href="https://github.com/minsoo0506">minsoo0506</a><p>SLA 초기 구조·health worker·Prometheus와 장애 모사 API</p></div>
 <!-- END_PLATFORM_CREDITS --></div>
-        <p class="credit-basis">2026. 11. 09까지의 병합 PR·커밋 기준 · 저장소별 상세 기여와 근거는 개발 기록에 남겼습니다</p>
+        <p class="credit-basis">2026. 11. 09까지의 병합 PR·커밋 기준</p>
       </details>
-      <div class="archive-link"><p>장애 재현과 복구, 성능 개선, 저장소별 기여 기록</p><a class="text-link" href="https://github.com/MSG-CTF/msg-ctf.github.io#readme">전체 README 읽기 <span aria-hidden="true">↗</span></a></div>
+      <div class="archive-link"><a class="text-link" href="https://github.com/MSG-CTF/msg-ctf.github.io#readme">개발·운영 기록 전체 보기 <span aria-hidden="true">↗</span></a></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div><span class="footer-title">MSG CTF</span><p>우리가 만들고 운영한, 2026년의 기록</p></div>
+      <div><span class="footer-title">MSG CTF 2026</span><p>플랫폼 개발·운영</p></div>
       <div class="footer-links"><a href="https://github.com/MSG-CTF">GitHub ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/asset-sources.md">화면·에셋 출처 ↗</a><a href="#top">맨 위로 ↑</a></div>
     </div>
   </footer>

@@ -9,8 +9,7 @@
 | 보드·문제·동아리 부스 화면 | [프론트엔드 화면 기록](https://github.com/MSG-CTF/front-team/tree/3975fa447fc934b1e2ba253c360ec5dc186b22c6/docs/readme), 개발 화면 포함 |
 | 색상·타이포그래피 기준 | [기존 대회 소개 페이지 스타일](https://github.com/MSG-CTF/front-team/blob/3975fa447fc934b1e2ba253c360ec5dc186b22c6/src/features/intro/intro.css) |
 | Pretendard | [라이선스](../assets/fonts/Pretendard-LICENSE.txt) |
-| 송명체 | [라이선스](../assets/fonts/SongMyung-OFL.txt) |
-| IM FELL English | [라이선스](../assets/fonts/IMFellEnglish-OFL.txt) |
+| 감탄로드 바탕체 | 태백시 · 공공누리 제1유형 · [원본 출처와 사용 조건](../assets/fonts/MSG-FONT-SOURCES.md) |
 
 이미지와 글꼴은 원본 파일을 그대로 옮겼으며 배치는 이 소개 페이지에 맞게 구성했습니다
 참가자 화면의 예시 문제명과 일정은 화면 기록에 포함된 값입니다
