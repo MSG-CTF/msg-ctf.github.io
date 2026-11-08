@@ -6,7 +6,7 @@
 | 저장소 | 대상 브랜치 | README 변경 PR |
 | --- | --- | --- |
 | [msg-backend](https://github.com/MSG-CTF/msg-backend) | main | [#270](https://github.com/MSG-CTF/msg-backend/pull/270) |
-| [front-team](https://github.com/MSG-CTF/front-team) | main | [#300](https://github.com/MSG-CTF/front-team/pull/300) |
+| [front-team](https://github.com/MSG-CTF/front-team) | main | [#301](https://github.com/MSG-CTF/front-team/pull/301) |
 | [instance-scheduler](https://github.com/MSG-CTF/instance-scheduler) | dev | [#97](https://github.com/MSG-CTF/instance-scheduler/pull/97) |
 | [resource-broker](https://github.com/MSG-CTF/resource-broker) | dev | [#14](https://github.com/MSG-CTF/resource-broker/pull/14) |
 | [secure-provisioner](https://github.com/MSG-CTF/secure-provisioner) | main | [#136](https://github.com/MSG-CTF/secure-provisioner/pull/136) |
