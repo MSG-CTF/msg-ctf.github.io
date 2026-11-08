@@ -5,9 +5,10 @@
 
 | 항목 | 원본 |
 | --- | --- |
-| 대회 포스터 | 운영 문서에 보관된 [2026 MSG CTF 홍보 포스터 원본](../assets/brand/msg-ctf-2026-poster.png) |
+| 대회 포스터 | 운영자가 제공한 [2026 MSG CTF 홍보 포스터 원본](../assets/brand/msg-ctf-2026-poster.png) |
 | 로고·축제 광장·파비콘 | [프론트엔드 intro 에셋](https://github.com/MSG-CTF/front-team/tree/3975fa447fc934b1e2ba253c360ec5dc186b22c6/public/assets/intro) |
 | 보드·문제·동아리 부스 화면 | [프론트엔드 화면 기록](https://github.com/MSG-CTF/front-team/tree/3975fa447fc934b1e2ba253c360ec5dc186b22c6/docs/readme), 개발 화면 포함 |
+| KOTH 지도 화면 | [프론트엔드 원본 화면](https://github.com/MSG-CTF/front-team/blob/94771a1118b70624d73714e16b55b63744f3d4fb/docs/readme/koth.jpg), 개발용 예시 데이터가 표시된 화면 |
 | 보드 등장·주사위 굴림 영상 | [BoardScreen](https://github.com/MSG-CTF/front-team/blob/94771a1118b70624d73714e16b55b63744f3d4fb/src/features/board/components/BoardScreen.jsx)과 [Dice3D](https://github.com/MSG-CTF/front-team/blob/94771a1118b70624d73714e16b55b63744f3d4fb/src/features/board/components/Dice3D.jsx)를 원본 그대로 로컬에서 재생해 녹화 |
 | 색상·타이포그래피 기준 | [기존 대회 소개 페이지 스타일](https://github.com/MSG-CTF/front-team/blob/3975fa447fc934b1e2ba253c360ec5dc186b22c6/src/features/intro/intro.css) |
 | 낙엽 효과 | [기존 대회 소개 페이지의 AutumnLeaves](https://github.com/MSG-CTF/front-team/blob/3975fa447fc934b1e2ba253c360ec5dc186b22c6/src/features/intro/components/AutumnLeaves.jsx)와 intro.css, 정적 페이지에서 동작하도록 연결 |

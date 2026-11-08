@@ -19,12 +19,14 @@
 
 <p align="center">주최 · MJSEC · SWING · Y-CERT · seKUrity · CodeCure · Aegis<br>후원 · HSPACE · 시야인사이트 · MONSTER ENERGY</p>
 
+<p align="center"><b>어떻게 0원으로 운영했나요?</b><br>무료 크레딧을 활용하고, 여러 계정의 실행 자원을 브로커로 묶었습니다<br>일반 문제는 필요할 때 띄우고, 종료·만료 뒤 자원을 정리해 다음 요청에 썼습니다<br><a href="docs/cloud-cost.md">크레딧·자원 배정·반납 구조 보기 ↗</a></p>
+
 <br>
 <h2 align="center">Archive</h2>
 
 <table align="center">
 <tr><th width="260">Challenges</th><th width="260">Platform</th><th width="260">Development</th></tr>
-<tr><td align="center"><a href="https://msg-ctf.github.io/challenges.html">문제 지문과 출제자</a><br><sub>일반 문제 30개 · KOTH 6개</sub></td><td align="center"><a href="https://msg-ctf.github.io/platform.html">플랫폼 둘러보기</a><br><sub>보드 · 주사위 · 문제 풀이</sub></td><td align="center"><a href="docs/platform.md">개발·운영 기록</a><br><sub>구성 · 장애 복구 · 성능 검증</sub></td></tr>
+<tr><td align="center"><a href="https://msg-ctf.github.io/challenges.html">문제 지문과 출제자</a><br><sub>일반 문제 30개 · KOTH 6개</sub></td><td align="center"><a href="https://msg-ctf.github.io/platform.html">플랫폼 둘러보기</a><br><sub>보드 · 주사위 · KOTH</sub></td><td align="center"><a href="docs/platform.md">개발·운영 기록</a><br><sub>구성 · 장애 복구 · 성능 검증</sub></td></tr>
 </table>
 
 <br>
@@ -33,38 +35,39 @@
 <h2 align="center">Contributors</h2>
 
 <!-- TEAM_CREDITS -->
-<table align="center"><tr><td align="center" width="240"><p align="center"><a href="https://github.com/jongcoding"><img src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="80" height="80" alt="jongcoding"></a><br><b>jongcoding</b><br><sub><a href="https://github.com/MSG-CTF"><b>PM</b></a></sub><br><sub>팀 조율<br>플랫폼 통합<br>운영·QA</sub></p></td></tr></table>
+<p align="center"><a href="https://github.com/jongcoding"><img src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="48" height="48" align="absmiddle" alt="jongcoding"></a> &nbsp; <b>jongcoding</b> · <a href="https://github.com/MSG-CTF"><b>PM</b></a><br><sub>팀 조율 · 플랫폼 통합 · 운영·QA</sub></p>
 
-<table align="center"><tr>
-<td align="center" valign="top" width="260"><h3><a href="https://github.com/MSG-CTF/front-team">Frontend</a></h3><p><sub>참가자·관리자 화면</sub></p>
-<p align="center"><a href="https://github.com/tortoiese"><img src="https://avatars.githubusercontent.com/u/268766155?v=4&amp;s=128" width="60" height="60" alt="tortoiese"></a><br><b>tortoiese</b><br><sub>참가자·관리자 UI<br>API 연결</sub></p>
-<p align="center"><a href="https://github.com/yes0r"><img src="https://avatars.githubusercontent.com/u/230512345?v=4&amp;s=128" width="60" height="60" alt="yes0r"></a><br><b>yes0r</b><br><sub>보드·3D<br>KOTH·순위·부스 화면</sub></p></td>
-<td align="center" valign="top" width="260"><h3><a href="https://github.com/MSG-CTF/msg-backend">Backend</a></h3><p><sub>대회 규칙과 서비스 API</sub></p>
-<p align="center"><a href="https://github.com/gimgyumin0207"><img src="https://avatars.githubusercontent.com/u/244885819?v=4&amp;s=128" width="60" height="60" alt="gimgyumin0207"></a><br><b>gimgyumin0207</b><br><sub>문제·인스턴스<br>배포 버전</sub></p>
-<p align="center"><a href="https://github.com/samdi70"><img src="https://avatars.githubusercontent.com/u/46455764?v=4&amp;s=128" width="60" height="60" alt="samdi70"></a><br><b>samdi70</b><br><sub>인증·팀<br>마일리지·QR</sub></p>
-<p align="center"><a href="https://github.com/jiwonnii"><img src="https://avatars.githubusercontent.com/u/224767982?v=4&amp;s=128" width="60" height="60" alt="jiwonnii"></a><br><b>jiwonnii</b><br><sub>보드·보상<br>KOTH 채점</sub></p>
-<p align="center"><a href="https://github.com/dnehdx"><img src="https://avatars.githubusercontent.com/u/178199953?v=4&amp;s=128" width="60" height="60" alt="dnehdx"></a><br><b>dnehdx</b><br><sub>점수·순위<br>조회 성능</sub></p></td>
-<td align="center" valign="top" width="260"><h3><a href="https://github.com/MSG-CTF/msgctf-devsecops">DevSecOps</a></h3><p><sub>검사부터 발행·자동 배포까지<br><a href="https://github.com/MSG-CTF/jm_devsecops/tree/main">플랫폼 CI</a></sub></p>
-<p align="center"><a href="https://github.com/wlsdnd2367"><img src="https://avatars.githubusercontent.com/u/230291092?v=4&amp;s=128" width="60" height="60" alt="wlsdnd2367"></a><br><b>wlsdnd2367</b><br><sub>문제 CI<br>이미지 검사·발행</sub></p>
-<p align="center"><a href="https://github.com/woalseee"><img src="https://avatars.githubusercontent.com/u/109592496?v=4&amp;s=128" width="60" height="60" alt="woalseee"></a><br><b>woalseee</b><br><sub>플랫폼 CI<br>VM 자동 배포</sub></p>
-<p align="center"><a href="https://github.com/Giheon-Jeon"><img src="https://avatars.githubusercontent.com/u/64824907?v=4&amp;s=128" width="60" height="60" alt="Giheon-Jeon"></a><br><b>Giheon-Jeon</b><br><sub>프론트 CI<br>프록시·보안 검사</sub></p></td>
-</tr></table>
-
-<table align="center"><tr>
-<td align="center" valign="top" width="195"><h3><a href="https://github.com/MSG-CTF/resource-broker">Resource Broker</a></h3><p><sub>클라우드 자원 배정</sub></p>
-<p align="center"><a href="https://github.com/gonas0919"><img src="https://avatars.githubusercontent.com/u/143320324?v=4&amp;s=128" width="60" height="60" alt="gonas0919"></a><br><b>gonas0919</b><br><sub>인벤토리<br>예약·반납</sub></p></td>
-<td align="center" valign="top" width="195"><h3><a href="https://github.com/MSG-CTF/instance-scheduler">Scheduler</a></h3><p><sub>문제 실행 요청과 상태 관리</sub></p>
-<p align="center"><a href="https://github.com/tember8003"><img src="https://avatars.githubusercontent.com/u/104021663?v=4&amp;s=128" width="60" height="60" alt="tember8003"></a><br><b>tember8003</b><br><sub>생성·초기화<br>만료·정리</sub></p></td>
-<td align="center" valign="top" width="195"><h3><a href="https://github.com/MSG-CTF/secure-provisioner/tree/dev">Runtime</a></h3><p><sub>문제 실행과 격리 보안</sub></p>
-<p align="center"><a href="https://github.com/goldsimchoi"><img src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="60" height="60" alt="goldsimchoi"></a><br><b>goldsimchoi</b><br><sub>K3s 격리<br>Gateway<br>Windows</sub></p></td>
-<td align="center" valign="top" width="195"><h3><a href="https://github.com/MSG-CTF/sentinel">SLA</a></h3><p><sub>서비스 상태와 장애 감시<br><a href="https://github.com/MSG-CTF/ctf-mock">Mock API</a></sub></p>
-<p align="center"><a href="https://github.com/minsoo0506"><img src="https://avatars.githubusercontent.com/u/68321360?v=4&amp;s=128" width="60" height="60" alt="minsoo0506"></a><br><b>minsoo0506</b><br><sub>SLA 초기 구조<br>상태 수집</sub></p></td>
-</tr></table>
+<table align="center">
+<tr><th align="center" colspan="12"><a href="https://github.com/MSG-CTF/front-team">Frontend</a></th></tr>
+<tr>
+<td align="center" valign="top" colspan="6" width="390"><a href="https://github.com/tortoiese"><img src="https://avatars.githubusercontent.com/u/268766155?v=4&amp;s=128" width="52" height="52" alt="tortoiese"></a><br><b>tortoiese</b><br><sub>참가자·관리자 UI<br>API 연결</sub></td>
+<td align="center" valign="top" colspan="6" width="390"><a href="https://github.com/yes0r"><img src="https://avatars.githubusercontent.com/u/230512345?v=4&amp;s=128" width="52" height="52" alt="yes0r"></a><br><b>yes0r</b><br><sub>보드·3D<br>KOTH·순위·부스 화면</sub></td>
+</tr>
+<tr><th align="center" colspan="12"><a href="https://github.com/MSG-CTF/msg-backend">Backend</a></th></tr>
+<tr>
+<td align="center" valign="top" colspan="3" width="195"><a href="https://github.com/gimgyumin0207"><img src="https://avatars.githubusercontent.com/u/244885819?v=4&amp;s=128" width="52" height="52" alt="gimgyumin0207"></a><br><b>gimgyumin0207</b><br><sub>문제·인스턴스<br>배포 버전</sub></td>
+<td align="center" valign="top" colspan="3" width="195"><a href="https://github.com/samdi70"><img src="https://avatars.githubusercontent.com/u/46455764?v=4&amp;s=128" width="52" height="52" alt="samdi70"></a><br><b>samdi70</b><br><sub>인증·팀<br>마일리지·QR</sub></td>
+<td align="center" valign="top" colspan="3" width="195"><a href="https://github.com/jiwonnii"><img src="https://avatars.githubusercontent.com/u/224767982?v=4&amp;s=128" width="52" height="52" alt="jiwonnii"></a><br><b>jiwonnii</b><br><sub>보드·보상<br>KOTH 채점</sub></td>
+<td align="center" valign="top" colspan="3" width="195"><a href="https://github.com/dnehdx"><img src="https://avatars.githubusercontent.com/u/178199953?v=4&amp;s=128" width="52" height="52" alt="dnehdx"></a><br><b>dnehdx</b><br><sub>점수·순위<br>조회 성능</sub></td>
+</tr>
+<tr><th align="center" colspan="12"><a href="https://github.com/MSG-CTF/msgctf-devsecops">DevSecOps</a> &nbsp; <sub><a href="https://github.com/MSG-CTF/jm_devsecops/tree/main">플랫폼 CI</a></sub></th></tr>
+<tr>
+<td align="center" valign="top" colspan="4" width="260"><a href="https://github.com/wlsdnd2367"><img src="https://avatars.githubusercontent.com/u/230291092?v=4&amp;s=128" width="52" height="52" alt="wlsdnd2367"></a><br><b>wlsdnd2367</b><br><sub>문제 CI<br>이미지 검사·발행</sub></td>
+<td align="center" valign="top" colspan="4" width="260"><a href="https://github.com/woalseee"><img src="https://avatars.githubusercontent.com/u/109592496?v=4&amp;s=128" width="52" height="52" alt="woalseee"></a><br><b>woalseee</b><br><sub>플랫폼 CI<br>VM 자동 배포</sub></td>
+<td align="center" valign="top" colspan="4" width="260"><a href="https://github.com/Giheon-Jeon"><img src="https://avatars.githubusercontent.com/u/64824907?v=4&amp;s=128" width="52" height="52" alt="Giheon-Jeon"></a><br><b>Giheon-Jeon</b><br><sub>프론트 CI<br>프록시·보안 검사</sub></td>
+</tr>
+<tr><th align="center" colspan="3"><a href="https://github.com/MSG-CTF/resource-broker">Resource Broker</a></th><th align="center" colspan="3"><a href="https://github.com/MSG-CTF/instance-scheduler">Scheduler</a></th><th align="center" colspan="3"><a href="https://github.com/MSG-CTF/secure-provisioner/tree/dev">Runtime</a></th><th align="center" colspan="3"><a href="https://github.com/MSG-CTF/sentinel">SLA</a> &nbsp; <sub><a href="https://github.com/MSG-CTF/ctf-mock">Mock API</a></sub></th></tr>
+<tr>
+<td align="center" valign="top" colspan="3" width="195"><a href="https://github.com/gonas0919"><img src="https://avatars.githubusercontent.com/u/143320324?v=4&amp;s=128" width="52" height="52" alt="gonas0919"></a><br><b>gonas0919</b><br><sub>인벤토리<br>예약·반납</sub></td>
+<td align="center" valign="top" colspan="3" width="195"><a href="https://github.com/tember8003"><img src="https://avatars.githubusercontent.com/u/104021663?v=4&amp;s=128" width="52" height="52" alt="tember8003"></a><br><b>tember8003</b><br><sub>생성·초기화<br>만료·정리</sub></td>
+<td align="center" valign="top" colspan="3" width="195"><a href="https://github.com/goldsimchoi"><img src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="52" height="52" alt="goldsimchoi"></a><br><b>goldsimchoi</b><br><sub>K3s 격리<br>Gateway · Windows</sub></td>
+<td align="center" valign="top" colspan="3" width="195"><a href="https://github.com/minsoo0506"><img src="https://avatars.githubusercontent.com/u/68321360?v=4&amp;s=128" width="52" height="52" alt="minsoo0506"></a><br><b>minsoo0506</b><br><sub>SLA 초기 구조<br>상태 수집</sub></td>
+</tr>
+</table>
 <!-- END_TEAM_CREDITS -->
 
 <p align="center"><a href="https://msg-ctf.github.io/authors.html">출제자 30명과 만든 문제</a> · <a href="docs/platform.md#개인별-기여-기록">개인별 기여 기록</a></p>
 
-<br>
 <h2 align="center">Tech Stack</h2>
 
 <!-- TECH_STACK -->

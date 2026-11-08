@@ -68,27 +68,35 @@ replace_block(ROOT / 'platform.html', 'ROLE_DIRECTORY',
     lead_html + '\n<div class="role-directory">\n' + '\n'.join(groups) + '\n</div>')
 
 
-def readme_person(login, size=60, label='', role_url=''):
+def readme_person(login):
     person = profiles[login]
     url = escape(person['url'], quote=True)
-    duty = '<br>'.join(escape(part) for part in person['duty'].split(' · '))
-    role = f'<br><sub><a href="{escape(role_url, quote=True)}"><b>{escape(label)}</b></a></sub>' if label else ''
-    return (f'<p align="center"><a href="{url}"><img src="{escape(person["avatar"], quote=True)}" '
-            f'width="{size}" height="{size}" alt="{escape(login, quote=True)}"></a><br>'
-            f'<b>{escape(login)}</b>{role}<br><sub>{duty}</sub></p>')
+    parts = person['duty'].split(' · ')
+    duty = escape(parts[0]) + ('<br>' + escape(' · '.join(parts[1:])) if len(parts) > 1 else '')
+    return (f'<a href="{url}"><img src="{escape(person["avatar"], quote=True)}" '
+            f'width="52" height="52" alt="{escape(login, quote=True)}"></a><br>'
+            f'<b>{escape(login)}</b><br><sub>{duty}</sub>')
+
+
+def readme_role(role, colspan=1):
+    primary, *extra = role['repositories']
+    heading = f'<a href="{escape(primary["url"], quote=True)}">{escape(role["label"])}</a>'
+    extra_links = ' &nbsp; <sub>' + ' · '.join(f'<a href="{escape(repo["url"], quote=True)}">{escape(repo["label"])}</a>' for repo in extra) + '</sub>' if extra else ''
+    return f'<th align="center" colspan="{colspan}">{heading}{extra_links}</th>'
 
 
 roles = {role['id']: role for role in data['roles']}
-credits = [f'<table align="center"><tr><td align="center" width="240">{readme_person(lead["login"], 80, lead["label"], lead["url"])}</td></tr></table>']
-for row in [['frontend', 'backend', 'devsecops'], ['broker', 'scheduler', 'runtime', 'sla']]:
-    cells = []
-    for key in row:
-        role = roles[key]
-        people = '\n'.join(readme_person(login) for login in role['members'])
-        primary, *extra = role['repositories']
-        heading = f'<a href="{escape(primary["url"], quote=True)}">{escape(role["label"])}</a>'
-        extra_links = '<br>' + ' · '.join(f'<a href="{escape(repo["url"], quote=True)}">{escape(repo["label"])}</a>' for repo in extra) if extra else ''
-        cells.append(f'<td align="center" valign="top" width="{780 // len(row)}"><h3>{heading}</h3><p><sub>{escape(role["scope"])}{extra_links}</sub></p>\n{people}</td>')
-    credits.append('<table align="center"><tr>\n' + '\n'.join(cells) + '\n</tr></table>')
+credits = [f'''<p align="center"><a href="{escape(leader['url'], quote=True)}"><img src="{escape(leader['avatar'], quote=True)}" width="48" height="48" align="absmiddle" alt="{escape(leader['login'], quote=True)}"></a> &nbsp; <b>{escape(leader['login'])}</b> · <a href="{escape(lead['url'], quote=True)}"><b>{escape(lead['label'])}</b></a><br><sub>{escape(leader['duty'])}</sub></p>''']
+rows = []
+for key in ['frontend', 'backend', 'devsecops']:
+    role = roles[key]
+    cells = [f'<td align="center" valign="top" colspan="{12 // len(role["members"])}" width="{780 // len(role["members"])}">{readme_person(login)}</td>' for login in role['members']]
+    rows.append('<tr>' + readme_role(role, 12) + '</tr>\n<tr>\n' + '\n'.join(cells) + '\n</tr>')
+remaining = [roles[key] for key in ['broker', 'scheduler', 'runtime', 'sla']]
+headers = ''.join(readme_role(role, 3) for role in remaining)
+cells = [f'<td align="center" valign="top" colspan="3" width="195">{readme_person(role["members"][0])}</td>' for role in remaining]
+assert all(len(role['members']) == 1 for role in remaining)
+rows.append('<tr>' + headers + '</tr>\n<tr>\n' + '\n'.join(cells) + '\n</tr>')
+credits.append('<table align="center">\n' + '\n'.join(rows) + '\n</table>')
 replace_block(ROOT / 'README.md', 'TEAM_CREDITS', '\n\n'.join(credits))
 print(f'Rendered lead + {len(groups)} teams, {len(assigned)} GitHub profiles in website and README')

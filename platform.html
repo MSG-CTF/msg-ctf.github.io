@@ -14,7 +14,7 @@
   <link rel="canonical" href="https://msg-ctf.github.io/platform.html">
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
   <link rel="preload" href="assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site.css?v=115a10806254">
+  <link rel="stylesheet" href="assets/site.css?v=0cb40ec1ecf0">
   <script src="assets/site.js?v=33fc91dee5b3" defer></script>
   <script src="assets/platform-motion.js?v=5daeaed42d9b" defer></script>
 </head>
@@ -38,7 +38,7 @@
   <main id="main">
     <section class="subpage-header container" aria-labelledby="page-title">
       <h1 id="page-title">플랫폼</h1>
-      <nav class="page-jumps" aria-label="플랫폼 페이지 목차"><a href="#platform">화면</a><a href="#architecture">구성</a><a href="#contributors">Contributors</a></nav>
+      <nav class="page-jumps" aria-label="플랫폼 페이지 목차"><a href="#platform">화면</a><a href="#cloud-cost">비용 0원</a><a href="#architecture">구성</a><a href="#contributors">Contributors</a></nav>
     </section>
     <section class="platform-section section container" id="platform" aria-labelledby="platform-title">
       <h2 class="sr-only" id="platform-title">참가자 화면</h2>
@@ -46,6 +46,7 @@
         <button type="button" id="tab-intro" role="tab" aria-selected="true" aria-controls="panel-intro" tabindex="0">보드 등장</button>
         <button type="button" id="tab-board" role="tab" aria-selected="false" aria-controls="panel-board" tabindex="-1">주사위 굴리기</button>
         <button type="button" id="tab-challenge" role="tab" aria-selected="false" aria-controls="panel-challenge" tabindex="-1"><span>02</span> 문제 풀이</button>
+        <button type="button" id="tab-koth" role="tab" aria-selected="false" aria-controls="panel-koth" tabindex="-1">KOTH</button>
         <button type="button" id="tab-festival" role="tab" aria-selected="false" aria-controls="panel-festival" tabindex="-1"><span>03</span> 동아리 부스</button>
       </div>
       <div class="screen-stage">
@@ -69,12 +70,31 @@
           <img src="assets/screens/challenge.jpg" width="1229" height="556" alt="문제 지문, 첨부 파일, 인스턴스 제어와 플래그 제출을 모은 화면" loading="lazy">
           <div class="screen-caption"><p>문제 파일 다운로드, 인스턴스 실행, 플래그 제출을 한 화면에서 처리합니다</p></div>
         </div>
+        <div class="screen-panel" role="tabpanel" id="panel-koth" aria-labelledby="tab-koth" tabindex="0">
+          <img src="assets/screens/koth.jpg" width="1229" height="556" alt="산길 지도 위에 여섯 문제와 세 라운드를 배치한 King of the Hill 화면" loading="lazy">
+          <div class="screen-caption"><p>여섯 KOTH 문제를 라운드별로 열고, 게임 서버의 점수를 모아 순위에 반영했습니다</p><a class="text-link" href="challenges.html?category=koth">KOTH 6개 보기 ↗</a></div>
+        </div>
         <div class="screen-panel" role="tabpanel" id="panel-festival" aria-labelledby="tab-festival" tabindex="0">
           <img src="assets/screens/festival.jpg" width="1229" height="556" alt="여섯 동아리의 부스가 가을 축제 거리처럼 놓인 화면" loading="lazy">
           <div class="screen-caption"><p>동아리별 시그니처 문제와 마일리지·QR 결제를 연결했습니다</p></div>
         </div>
       </div>
       <p class="source-note">프론트 원본 화면을 로컬에서 재생한 영상 · 개발 화면 포함</p>
+    </section>
+
+    <section class="cost-section section container" id="cloud-cost" aria-labelledby="cost-title">
+      <div class="cost-heading">
+        <p class="cost-eyebrow">75팀 · 150명 · 12시간</p>
+        <h2 id="cost-title">클라우드 추가 결제<strong>0<span>원</span></strong></h2>
+        <p>무료 크레딧을 활용하고,<br>한정된 실행 자원을 나눠 썼습니다</p>
+        <a class="text-link" href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/cloud-cost.md">운영 방식과 구현 보기 ↗</a>
+      </div>
+      <ol class="cost-methods">
+        <li><span class="cost-step" aria-hidden="true">01</span><div><h3>크레딧을 쓸 수 있는 자원을 모았습니다</h3><p>여러 클라우드 계정의 VM을 브로커에 연결해 CPU·메모리와 예약 현황을 한곳에서 관리했습니다</p></div></li>
+        <li><span class="cost-step" aria-hidden="true">02</span><div><h3>실행이 필요한 문제만 띄웠습니다</h3><p>일반 문제는 요청할 때 K3s 컨테이너로 실행하고, 정적 문제는 파일만 제공했습니다</p></div></li>
+        <li><span class="cost-step" aria-hidden="true">03</span><div><h3>끝난 문제의 자원은 다시 썼습니다</h3><p>종료·만료 뒤 자원을 정리해 다시 쓰고, 기동 때 높인 CPU도 준비가 끝나면 원래 값으로 돌렸습니다</p></div></li>
+      </ol>
+      <p class="cost-scope">2026년 11월 8일 대회 운영 사용료에 크레딧을 적용한 뒤의 실제 추가 결제액입니다</p>
     </section>
 
     <section class="system-section section" id="architecture" aria-labelledby="system-title">
