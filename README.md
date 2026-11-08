@@ -1,6 +1,6 @@
 # MSG CTF 2026
 
-[대회 결과](https://msg-ctf.github.io/) · [분야별 출제자](https://msg-ctf.github.io/authors.html) · [플랫폼 개발 기록](https://msg-ctf.github.io/platform.html)
+[대회 결과](https://msg-ctf.github.io/) · [출제자](https://msg-ctf.github.io/authors.html) · [문제 아카이브](https://msg-ctf.github.io/challenges.html) · [플랫폼 개발 기록](https://msg-ctf.github.io/platform.html)
 
 **75팀·150명이 참가한 보드게임형 해킹 대회**
 
@@ -33,7 +33,8 @@
 
 후원: HSPACE · 시야인사이트 · MONSTER ENERGY
 
-분야별 출제자와 만든 문제는 [출제자 페이지](https://msg-ctf.github.io/authors.html)에 모았습니다
+출제자 30명과 만든 문제는 [출제자 페이지](https://msg-ctf.github.io/authors.html)에 모았습니다
+일반 문제 30개와 KOTH 6개의 지문은 [문제 아카이브](https://msg-ctf.github.io/challenges.html)에서 볼 수 있습니다
 
 ## 대회 운영 클라우드 추가 결제액 0원
 

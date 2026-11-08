@@ -84,21 +84,73 @@
     });
   }
 
-  const authorFilters = document.querySelector(".author-filters");
-  if (authorFilters) {
-    const categories = Array.from(document.querySelectorAll(".author-category"));
-    const authorStatus = document.getElementById("author-status");
-    authorFilters.hidden = false;
-    authorFilters.addEventListener("click", (event) => {
-      const button = event.target.closest("button[data-author-filter]");
+  const catalog = document.querySelector("[data-catalog]");
+  if (catalog) {
+    const isAuthors = catalog.dataset.catalog === "authors";
+    const controls = catalog.querySelector(".catalog-controls");
+    const buttons = Array.from(catalog.querySelectorAll("[data-category-filter]"));
+    const input = catalog.querySelector('input[type="search"]');
+    const items = Array.from(catalog.querySelectorAll(isAuthors ? ".author-card" : ".challenge-card"));
+    const catalogStatus = catalog.querySelector("#catalog-status");
+    const normalize = (value) => value.normalize("NFKC").toLocaleLowerCase().trim();
+    let category = "all";
+
+    const update = (writeURL = true) => {
+      const terms = normalize(input.value).split(/\s+/).filter(Boolean);
+      const matches = (item) => (category === "all" || item.dataset.category === category)
+        && terms.every((term) => normalize(item.dataset.search).includes(term));
+      const slugs = new Set();
+      let shown = 0;
+      for (const item of items) {
+        let visible;
+        if (isAuthors) {
+          let problems = 0;
+          for (const row of item.querySelectorAll("li[data-slug]")) {
+            row.hidden = !matches(row);
+            if (!row.hidden) { problems += 1; slugs.add(row.dataset.slug); }
+          }
+          item.querySelector(".author-problem-count").textContent = `${problems}문제`;
+          visible = problems > 0;
+        } else {
+          visible = matches(item);
+        }
+        item.hidden = !visible;
+        if (visible) shown += 1;
+      }
+      for (const button of buttons) button.setAttribute("aria-pressed", String(button.dataset.categoryFilter === category));
+      catalogStatus.textContent = isAuthors ? `출제자 ${shown}명 · ${slugs.size}문제` : `${category === "all" ? "전체" : category.toUpperCase()} ${shown}문제`;
+      catalog.querySelector(".catalog-empty").hidden = shown > 0;
+      if (writeURL) {
+        const url = new URL(location.href);
+        if (category === "all") url.searchParams.delete("category");
+        else url.searchParams.set("category", category);
+        if (input.value.trim()) url.searchParams.set("q", input.value.trim());
+        else url.searchParams.delete("q");
+        history.replaceState(null, "", url);
+      }
+    };
+    const restore = () => {
+      const params = new URLSearchParams(location.search);
+      category = buttons.some((b) => b.dataset.categoryFilter === params.get("category")) ? params.get("category") : "all";
+      input.value = (params.get("q") || "").slice(0, 200);
+      update(false);
+    };
+    controls.hidden = false;
+    controls.addEventListener("click", (event) => {
+      const button = event.target.closest("button[data-category-filter]");
       if (!button) return;
-      for (const option of authorFilters.querySelectorAll("button")) {
-        option.setAttribute("aria-pressed", String(option === button));
-      }
-      for (const section of categories) {
-        section.hidden = button.dataset.authorFilter !== "all" && section.dataset.category !== button.dataset.authorFilter;
-      }
-      authorStatus.textContent = `${button.textContent.trim()} 분야 출제자를 표시합니다`;
+      category = button.dataset.categoryFilter;
+      update();
     });
+    input.addEventListener("input", () => update());
+    catalog.querySelector("[data-catalog-reset]").addEventListener("click", () => {
+      category = "all";
+      input.value = "";
+      update();
+      input.focus();
+    });
+    window.addEventListener("popstate", restore);
+    window.addEventListener("pageshow", restore);
+    restore();
   }
 })();

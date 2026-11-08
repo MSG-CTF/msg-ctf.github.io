@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181715">
+  <meta name="description" content="(주)넥서스반도체 보안팀은 사내 워크스테이션에서 이동식 저장장치를 통한 기밀문서 유출 정황을 포착했습니다.">
+  <meta property="og:title" content="유출된 기밀문서 · MSG CTF 2026">
+  <meta property="og:description" content="(주)넥서스반도체 보안팀은 사내 워크스테이션에서 이동식 저장장치를 통한 기밀문서 유출 정황을 포착했습니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://msg-ctf.github.io/challenges/forensic-evidence.html">
+  <meta property="og:image" content="https://msg-ctf.github.io/assets/screens/board.jpg">
+  <title>유출된 기밀문서 · MSG CTF 2026</title>
+  <link rel="canonical" href="https://msg-ctf.github.io/challenges/forensic-evidence.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg">
+  <link rel="preload" href="../assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/site.css?v=cd67512d5960">
+  <script src="../assets/site.js?v=b1be28f3a785" defer></script>
+</head>
+<body class="page-challenge" id="page-top">
+  <a class="skip-link" href="#main">본문으로 이동</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="MSG CTF 처음으로">
+        <span class="brand-mark"><img src="../assets/brand/event-logo.webp" alt="MSG CTF" width="1254" height="1254"></span>
+        <span class="brand-divider" aria-hidden="true"></span><span class="brand-label">2026</span>
+      </a>
+      <nav aria-label="주요 메뉴"><a href="../index.html#results">결과</a><a href="../authors.html" aria-current="page">출제자</a><a href="../platform.html">플랫폼</a></nav>
+      <a class="header-github" href="https://github.com/MSG-CTF">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main id="main">
+    <article class="challenge-detail container">
+      <a class="back-link" href="../challenges.html?category=forensic">← FORENSIC 문제 목록</a>
+      <header class="detail-heading">
+        <div class="detail-eyebrow"><a class="genre-tag" href="../challenges.html?category=forensic">FORENSIC</a><span>MSG CTF 2026</span></div>
+        <h1>유출된 기밀문서</h1>
+        <div class="detail-authors"><span>출제</span><a class="detail-author" href="https://github.com/zkfla"><img class="avatar" src="https://avatars.githubusercontent.com/u/210644931?v=4&amp;s=128" alt="" width="40" height="40" loading="lazy"><span>zkfla</span></a></div>
+      </header>
+      <div class="detail-body">
+        <section class="challenge-statement" aria-labelledby="statement-title">
+          <h2 id="statement-title">대회 지문</h2>
+          <div class="statement-prose"><p>(주)넥서스반도체 보안팀은 사내 워크스테이션에서 이동식 저장장치를 통한<br>기밀문서 유출 정황을 포착했습니다.</p>
+<p>조사관에게는 해당 PC의 디스크 이미지(E01)만 남아있습니다.<br>유출에 사용된 것으로 의심되는 이동식 저장장치의 흔적과,<br>그 장치가 연결된 이후 어떤 파일이 열람되었는지를 찾아<br>사건을 재구성하십시오.</p>
+<p>해당 파일은 열람 직후 삭제되었습니다. 파일이 마지막으로<br>열람된 시각을 확인하십시오.</p>
+<p>플래그 형식: msgctf2026{USB_시리얼_YYYYMMDDHHMMSS}<br>- USB_시리얼: 이동식 저장장치의 Device ID (레지스트리에 기록된 값 그대로, 대문자)<br>- YYYYMMDDHHMMSS: 해당 파일이 마지막으로 열람(액세스)된 시각, 초 단위까지 붙여쓰기</p>
+<p>증거 파일 다운로드: <a href="https://drive.google.com/file/d/1ngEtxlyjmC5irFDAjTVfZz7aBzoM9xyC/view?usp=sharing" rel="noopener noreferrer">https://drive.google.com/file/d/1ngEtxlyjmC5irFDAjTVfZz7aBzoM9xyC/view?usp=sharing</a><br>압축 비밀번호: msg-ctf<br>SHA-256: 64a7642d385a08a150f32cfbe093087afdf414a9973cb12a846d56a4ef4c2254</p></div>
+        </section>
+        <aside class="related-challenges" aria-labelledby="related-title"><h2 id="related-title">함께 출제된 FORENSIC 문제</h2><a href="forensic-is-this-job-legit.html">Is This Job Legit? <span aria-hidden="true">↗</span></a><a href="forensic-leftovers.html">Leftovers <span aria-hidden="true">↗</span></a><a href="forensic-the-last-record.html">The_Last_Record <span aria-hidden="true">↗</span></a><a class="all-challenges-link" href="../challenges.html">전체 36문제 보기 →</a></aside>
+      </div>
+      <p class="statement-source">2026년 11월 8일 대회 기록 <span aria-hidden="true">·</span> <a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/challenge-archive.md">아카이브 출처 ↗</a></p>
+    </article></main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><span class="footer-title">MSG CTF 2026</span><p>2026년 11월 8일의 대회와 개발 기록</p></div>
+      <div class="footer-links"><a href="../challenges.html">문제 아카이브</a><a href="https://github.com/MSG-CTF">GitHub ↗</a><a href="#page-top">맨 위로 ↑</a></div>
+    </div>
+  </footer>
+</body>
+</html>
