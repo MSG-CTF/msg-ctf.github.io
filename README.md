@@ -35,7 +35,7 @@
 </picture>
 </a>
 </p>
-<p align="center">각 CSP의 크레딧으로 확보한 자원을 함께 쓰고, 종료 후 정리·반납해 다시 활용했습니다<br><a href="docs/cloud-cost.md">운영 방식과 구현 보기 ↗</a></p>
+<p align="center">여러 클라우드의 자원을 모아 쓰고, 종료 후 다시 활용했습니다<br><a href="docs/cloud-cost.md">운영 구조 보기 ↗</a></p>
 
 <br>
 <h2 align="center">Archive</h2>
