@@ -19,7 +19,23 @@
 
 <p align="center">주최 · MJSEC · SWING · Y-CERT · seKUrity · CodeCure · Aegis<br>후원 · HSPACE · 시야인사이트 · MONSTER ENERGY</p>
 
-<p align="center"><b>어떻게 0원으로 운영했나요?</b><br>무료 크레딧을 활용하고, 여러 계정의 실행 자원을 브로커로 묶었습니다<br>일반 문제는 필요할 때 띄우고, 종료·만료 뒤 자원을 정리해 다음 요청에 썼습니다<br><a href="docs/cloud-cost.md">크레딧·자원 배정·반납 구조 보기 ↗</a></p>
+<h3 align="center">Final Scoreboard</h3>
+
+<table align="center">
+<tr><th width="420">External · 50팀 / 100명</th><th width="420">Internal · 25팀 / 50명</th></tr>
+<tr><td align="center"><a href="assets/results/external-scoreboard.png"><img src="assets/results/external-scoreboard.png" width="420" alt="외부 트랙 최종 스코어보드"></a></td><td align="center"><a href="assets/results/internal-scoreboard.png"><img src="assets/results/internal-scoreboard.png" width="420" alt="내부 트랙 최종 스코어보드"></a></td></tr>
+</table>
+
+<br>
+<p align="center">
+<a href="docs/cloud-cost.md">
+<picture>
+<source media="(max-width: 600px)" srcset="assets/cloud-credits-mobile.svg">
+<img src="assets/cloud-credits.svg" width="900" alt="AWS·GCP·Azure 무료 크레딧으로 확보한 실행 자원을 브로커에 모아 문제 실행에 배정하고, 종료 후 정리·반납해 다시 사용한 구조">
+</picture>
+</a>
+</p>
+<p align="center">각 CSP의 크레딧으로 확보한 자원을 함께 쓰고, 종료 후 정리·반납해 다시 활용했습니다<br><a href="docs/cloud-cost.md">운영 방식과 구현 보기 ↗</a></p>
 
 <br>
 <h2 align="center">Archive</h2>
@@ -79,14 +95,5 @@
 <tr><th align="left" width="135">Monitoring</th><td align="center" width="640"><p><img src="assets/tech/dotnetcore.svg" width="44" height="44" alt="ASP.NET Core" title="ASP.NET Core"> &nbsp; <img src="assets/tech/prometheus.svg" width="44" height="44" alt="Prometheus" title="Prometheus"> &nbsp; <img src="assets/tech/grafana.svg" width="44" height="44" alt="Grafana" title="Grafana"><br><sub>ASP.NET Core · Prometheus · Grafana</sub></p></td></tr>
 </table>
 <!-- END_TECH_STACK -->
-
-<details>
-<summary>최종 스코어보드</summary>
-
-| External · 50팀 / 100명 | Internal · 25팀 / 50명 |
-| --- | --- |
-| [![외부 트랙 최종 스코어보드](assets/results/external-scoreboard.png)](assets/results/external-scoreboard.png) | [![내부 트랙 최종 스코어보드](assets/results/internal-scoreboard.png)](assets/results/internal-scoreboard.png) |
-
-</details>
 
 <p align="center"><sub><a href="docs/readme-updates.md">저장소별 기여</a> · <a href="docs/asset-sources.md">화면·에셋 출처</a></sub></p>

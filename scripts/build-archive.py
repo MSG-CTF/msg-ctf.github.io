@@ -7,6 +7,7 @@ from collections import Counter
 from html import escape
 from pathlib import Path
 from urllib.parse import urlsplit
+from share_meta import social_meta
 import hashlib
 import json
 import re
@@ -55,11 +56,7 @@ def page(title, description, body, filename, css_class, depth=0):
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#181715">
   <meta name="description" content="{e(description, quote=True)}">
-  <meta property="og:title" content="{e(title, quote=True)} · MSG CTF 2026">
-  <meta property="og:description" content="{e(description, quote=True)}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://msg-ctf.github.io/{filename}">
-  <meta property="og:image" content="https://msg-ctf.github.io/assets/screens/board.jpg">
+{social_meta(title + ' · MSG CTF 2026', description, 'https://msg-ctf.github.io/' + filename)}
   <title>{e(title)} · MSG CTF 2026</title>
   <link rel="canonical" href="https://msg-ctf.github.io/{filename}">
   <link rel="icon" type="image/svg+xml" href="{prefix}assets/brand/favicon.svg">
@@ -141,7 +138,7 @@ def author_directory():
       {empty_state()}
       <p class="author-basis">출제자 표기는 문제 README와 최초 등록 기록을 기준으로 정리했습니다 <a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/challenge-authors.md">출제 기록 ↗</a></p>
     </div>'''
-    (ROOT / 'authors.html').write_text(page('출제자', 'MSG CTF 출제자 30명과 출제 문제를 한곳에서 확인하세요', body, 'authors.html', 'page-authors'), encoding='utf-8')
+    (ROOT / 'authors.html').write_text(page('출제자', 'MSG CTF 출제자 30명과 함께 만든 문제들', body, 'authors.html', 'page-authors'), encoding='utf-8')
 
 
 def excerpt(c):

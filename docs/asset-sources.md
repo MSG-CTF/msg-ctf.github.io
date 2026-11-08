@@ -17,6 +17,8 @@
 | 참여자 사진 | 각 참여자의 GitHub 공개 프로필 사진, 프로필 링크와 함께 표시 |
 | 기술 아이콘 | Devicon·Simple Icons의 로고를 공통 타일에 배치, [출처와 라이선스](tech-icons.md) |
 | AWS·Google Cloud·Azure 로고 | Devicon 원본 SVG, [파일별 출처와 해시](../data/cloud-icons.json) · [MIT 라이선스](../assets/tech/DEVICON-LICENSE.txt) |
+| README 클라우드 운영 그림 | 위 CSP 로고와 자원 배정·반납 흐름을 SVG로 구성, [생성 스크립트](../scripts/build-cloud-credits.py) · [운영 기록](cloud-cost.md) |
+| 링크 공유 미리보기 | 기존 축제 광장·로고·Pretendard로 구성한 1200×630 이미지, [레이아웃](../scripts/social-card.html) · [생성 스크립트](../scripts/build-social-image.py) |
 | 주최 동아리 6곳 | [기존 대회 페이지의 주최 목록](https://github.com/MSG-CTF/front-team/blob/94771a1118b70624d73714e16b55b63744f3d4fb/src/features/intro/components/OrganizerLogos.jsx)과 원본 SVG |
 | 후원사 3곳 | [기존 대회 페이지의 후원 목록](https://github.com/MSG-CTF/front-team/blob/94771a1118b70624d73714e16b55b63744f3d4fb/src/features/intro/components/SponsorLogos.jsx)과 원본 로고 |
 | Pretendard | [라이선스](../assets/fonts/Pretendard-LICENSE.txt) |

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>MSG CTF 공유 이미지 원본</title>
+  <style>
+    @font-face { font-family: MSG; src: url('../assets/fonts/Pretendard-common.woff2') format('woff2'); font-weight: 100 900; }
+    * { box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
+    body { position: relative; color: #fff4df; background: #21170f; font-family: MSG, sans-serif; text-align: center; }
+    .background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 43%; }
+    .shade { position: absolute; inset: 0; background: linear-gradient(180deg, #20140869, #21170e91 46%, #17120de6); }
+    main { position: relative; padding-top: 48px; }
+    .date { margin: 0; color: #f0d6ae; font-size: 24px; font-weight: 500; letter-spacing: .18em; }
+    .logo { position: relative; width: 570px; height: 270px; margin: 0 auto; overflow: hidden; }
+    .logo img { position: absolute; width: 100%; top: -53%; left: 0; filter: brightness(0) invert(96%) sepia(9%) saturate(331%); }
+    h1 { font-size: 32px; line-height: 1.4; font-weight: 500; letter-spacing: -.02em; margin: 2px 0 27px; }
+    .result { display: flex; align-items: center; justify-content: center; gap: 30px; font-size: 31px; line-height: 1.4; font-weight: 600; }
+    .result .divider { height: 26px; width: 1px; background: #d9b48080; }
+    .cost { color: #f4ce92; }
+    .cost b { font-size: 38px; }
+    .scope { margin: 13px 0 0; color: #dbc5a9; font-size: 20px; font-weight: 400; }
+    footer { position: absolute; bottom: 33px; width: 100%; color: #e6d4bb; font-size: 19px; letter-spacing: .04em; }
+  </style>
+</head>
+<body>
+  <img class="background" src="../assets/brand/hero-plaza.webp" alt="">
+  <div class="shade"></div>
+  <main>
+    <p class="date">2026. 11. 08</p>
+    <div class="logo"><img src="../assets/brand/event-logo.webp" alt="MSG CTF"></div>
+    <h1>보드게임형 해킹 대회</h1>
+    <div class="result"><span>75팀 · 150명</span><span class="divider"></span><span class="cost">클라우드 추가 결제 <b>0원</b></span></div>
+    <p class="scope">무료 크레딧 적용 후 실제 추가 결제액 기준</p>
+  </main>
+  <footer>msg-ctf.github.io</footer>
+</body>
+</html>
