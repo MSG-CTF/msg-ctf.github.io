@@ -70,7 +70,7 @@ KOTH는 별도 게임 서버와 제출·채점 경로를 사용합니다
 | [ctf-mock](https://github.com/MSG-CTF/ctf-mock) | SLA 초기 개발용 API와 장애 시나리오 시험 |
 | [2026_MSG_CTF](https://github.com/MSG-CTF/2026_MSG_CTF) | 출제 문제·제공 파일·실행 설정·발행 워크플로, 접근 권한 필요 |
 
-각 저장소 README에 참여자별 기여 내용과 관련 PR을 적었습니다
+저장소별 참여자와 관련 PR은 [README 변경 목록](docs/readme-updates.md)에서 확인할 수 있습니다
 
 ## 실제로 부딪혀서 고친 것들
 
