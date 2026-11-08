@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181715">
+  <meta name="description" content="보드 위의 CTF, 그 뒤의 클라우드 — 2026 MSG CTF 플랫폼 개발·운영 기록과 함께 만든 사람들">
+  <meta property="og:title" content="MSG CTF · 보드 위의 CTF, 그 뒤의 클라우드">
+  <meta property="og:description" content="직접 만들고 운영한 해킹 대회 플랫폼 · 크레딧 적용 후 클라우드 추가 결제 0원">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://msg-ctf.github.io/">
+  <meta property="og:image" content="https://msg-ctf.github.io/assets/screens/board.jpg">
+  <title>MSG CTF · Cloud Platform</title>
+  <link rel="canonical" href="https://msg-ctf.github.io/">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+  <link rel="preload" href="assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 이동</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="MSG CTF Platform 처음으로">
+        <span class="brand-mark"><img src="assets/brand/event-logo.webp" alt="MSG CTF" width="1254" height="1254"></span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-label">CLOUD PLATFORM</span>
+      </a>
+      <nav aria-label="주요 메뉴">
+        <a href="#platform">플랫폼</a>
+        <a href="#architecture">구성</a>
+        <a href="#contributors">기여</a>
+      </nav>
+      <a class="header-github" href="https://github.com/MSG-CTF">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="small-line" aria-hidden="true"></span>2026 MSG CTF · PROJECT ARCHIVE</p>
+        <h1 id="hero-title">보드 위의 CTF,<br>그 뒤의 <em>클라우드</em></h1>
+        <p class="hero-description">주사위를 굴려 문제를 푸는 해킹 대회<br>참가자 화면부터 문제 실행과 운영 감시까지<br class="desktop-break"> 함께 만들었습니다</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#platform">플랫폼 둘러보기 <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="https://github.com/MSG-CTF/msg-ctf.github.io#readme">개발 기록 <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="hero-date">2026. 11. 08 <span aria-hidden="true">/</span> MSG CTF 개발·운영 기록</p>
+      </div>
+      <div class="hero-visual">
+        <picture>
+          <source media="(max-width: 600px)" srcset="assets/brand/hero-plaza-mobile.webp">
+          <img class="hero-art" src="assets/brand/hero-plaza.webp" width="1536" height="1024" alt="단풍과 등불이 둘러싼 MSG CTF 축제 광장" fetchpriority="high">
+        </picture>
+        <div class="art-caption"><span>MSG CTF 2026</span><span>THE AUTUMN FESTIVAL</span></div>
+        <div class="cost-seal">
+          <span class="cost-label">대회 운영 클라우드</span>
+          <span class="cost-value"><b>0</b><span>원</span></span>
+          <span class="cost-note">크레딧 적용 후 추가 결제액</span>
+        </div>
+      </div>
+      <dl class="hero-facts">
+        <div><dt>일반 문제</dt><dd><span>30</span> CHALLENGES</dd></div>
+        <div><dt>킹 오브 더 힐</dt><dd><span>6</span> KOTH GAMES</dd></div>
+        <div><dt>분리된 참가 환경</dt><dd><span>2</span> TRACKS</dd></div>
+        <div class="facts-note"><dt>직접 만든 플랫폼으로</dt><dd>대회 한 번을 끝까지</dd></div>
+      </dl>
+    </section>
+
+    <section class="platform-section section container" id="platform" aria-labelledby="platform-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / THE EXPERIENCE</p><h2 id="platform-title">해킹 대회를<br class="mobile-break"> 하나의 보드게임으로</h2></div>
+        <p class="section-description">문제 풀이부터 동아리 부스까지<br>한 흐름으로 이어지는 대회 화면</p>
+      </div>
+      <div class="screen-tabs" role="tablist" aria-label="플랫폼 화면 선택" hidden>
+        <button type="button" id="tab-board" role="tab" aria-selected="true" aria-controls="panel-board" tabindex="0"><span>01</span> 보드와 주사위</button>
+        <button type="button" id="tab-challenge" role="tab" aria-selected="false" aria-controls="panel-challenge" tabindex="-1"><span>02</span> 문제 풀이</button>
+        <button type="button" id="tab-festival" role="tab" aria-selected="false" aria-controls="panel-festival" tabindex="-1"><span>03</span> 동아리 부스</button>
+      </div>
+      <div class="screen-stage">
+        <div class="screen-panel" role="tabpanel" id="panel-board" aria-labelledby="tab-board" tabindex="0">
+          <img src="assets/screens/board.jpg" width="1229" height="556" alt="가을 축제 광장 위 원형 보드, 주사위와 찬스카드가 있는 참가자 화면" loading="lazy">
+          <div class="screen-caption"><h3>한 칸씩 이동하며, 다음 문제를 만납니다</h3><p>주사위 · 찬스카드 · 문제 선택</p></div>
+        </div>
+        <div class="screen-panel" role="tabpanel" id="panel-challenge" aria-labelledby="tab-challenge" tabindex="0">
+          <img src="assets/screens/challenge.jpg" width="1229" height="556" alt="문제 지문, 첨부 파일, 인스턴스 제어와 플래그 제출을 모은 화면" loading="lazy">
+          <div class="screen-caption"><h3>읽고, 실행하고, 정답을 제출합니다</h3><p>지문·파일 · 인스턴스 실행 · 플래그 제출</p></div>
+        </div>
+        <div class="screen-panel" role="tabpanel" id="panel-festival" aria-labelledby="tab-festival" tabindex="0">
+          <img src="assets/screens/festival.jpg" width="1229" height="556" alt="여섯 동아리의 부스가 가을 축제 거리처럼 놓인 화면" loading="lazy">
+          <div class="screen-caption"><h3>풀이로 모은 마일리지는 축제 속으로</h3><p>동아리 부스 · 시그니처 문제 · 마일리지·QR 결제</p></div>
+        </div>
+      </div>
+      <p class="source-note">프론트엔드 저장소의 화면 기록 · 개발 화면 포함</p>
+    </section>
+
+    <section class="system-section section" id="architecture" aria-labelledby="system-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">02 / UNDER THE BOARD</p><h2 id="system-title">실행부터 반납까지,<br>보드 뒤에서 돌아가는 일</h2></div>
+          <p class="section-description">문제는 버전별로 가져오고<br>실행 자원은 격리한 뒤 회수합니다</p>
+        </div>
+        <ol class="lifecycle">
+          <li><span class="step-no">01</span><h3>발행</h3><p>GitHub Actions · GHCR</p><span class="step-detail">문제 검사와 이미지·파일 발행</span></li>
+          <li><span class="step-no">02</span><h3>수집</h3><p>Backend</p><span class="step-detail">버전·환경변수·제공 파일 관리</span></li>
+          <li><span class="step-no">03</span><h3>실행</h3><p>Scheduler · Broker · Runtime</p><span class="step-detail">자원 예약·격리·비밀값 주입</span></li>
+          <li><span class="step-no">04</span><h3>정리</h3><p>Runtime · Scheduler · Broker</p><span class="step-detail">실제 자원 삭제 후 예약 반납</span></li>
+        </ol>
+        <details class="architecture-details">
+          <summary><span><span class="detail-overline">ARCHITECTURE</span>전체 구성도</span><span class="detail-action"><span class="expand-label">펼쳐보기</span><span class="collapse-label">접기</span><span class="plus" aria-hidden="true"></span></span></summary>
+          <div class="architecture-body">
+            <a class="architecture-image" href="assets/architecture.svg" target="_blank" rel="noopener" aria-label="플랫폼 전체 구성도 새 탭에서 크게 보기"><img src="assets/architecture.svg" width="1460" height="965" alt="내부·외부 트랙, 스케줄러·브로커·런타임, K3s·전용 VM, 문제 발행과 SLA 관측 구성" loading="lazy"></a>
+            <div class="architecture-notes"><p>두 트랙의 데이터 저장소를 분리하고, 공통 제어 서비스와 연결했습니다<br>공통 Edge와 Active/Standby 자동 승격은 설계·추가 검증 범위입니다</p><a class="text-link" href="assets/architecture.svg" target="_blank" rel="noopener">크게 보기 ↗</a></div>
+          </div>
+        </details>
+        <details class="verification-details">
+          <summary><span><span class="detail-overline">VERIFICATION</span>운영 전, 이렇게 다듬었습니다</span><span class="detail-action"><span class="expand-label">검수 기록</span><span class="collapse-label">접기</span><span class="plus" aria-hidden="true"></span></span></summary>
+          <div class="verification-body">
+            <div class="performance-result"><span>Open House 생성 중앙값</span><strong><s>52.7</s><span aria-hidden="true">→</span>23.1<small>초</small></strong><p>기동 CPU 부스트 전후 · 총 12개 중 해당 문제 4개</p><a href="https://github.com/MSG-CTF/instance-scheduler/pull/92">시험 기록 ↗</a></div>
+            <div class="performance-result"><span>Cashout 삭제 중앙값</span><strong><s>34.98</s><span aria-hidden="true">→</span>12.39<small>초</small></strong><p>전용 K3s 노드 · 12개 동시 종료 비교</p><a href="https://github.com/MSG-CTF/secure-provisioner/pull/117">시험 기록 ↗</a></div>
+            <p class="verification-note">각 시험 환경에서 관측한 값입니다 CPU 원복과 실제 자원 정리·예약 반납까지 함께 확인했습니다</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="team-section section container" id="contributors" aria-labelledby="team-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">03 / BUILT TOGETHER</p><h2 id="team-title">함께 만든 사람들</h2></div>
+        <p class="section-description">화면, 실행, 자원 관리와 운영까지<br>각 저장소에서 맡은 일을 모았습니다</p>
+      </div>
+      <div class="repo-filters" role="group" aria-label="저장소 분야 선택" hidden>
+        <button type="button" data-filter="all" aria-pressed="true">전체 <span>10</span></button>
+        <button type="button" data-filter="app" aria-pressed="false">화면·API</button>
+        <button type="button" data-filter="execution" aria-pressed="false">제어·실행</button>
+        <button type="button" data-filter="operations" aria-pressed="false">CI·관측</button>
+        <button type="button" data-filter="challenges" aria-pressed="false">문제</button>
+      </div>
+      <p class="sr-only" id="repo-status" role="status" aria-live="polite"></p>
+      <div class="repository-list" id="repository-list">
+        <!-- REPOSITORY_CREDITS -->
+<details class="repository" data-category="app" data-repo="front-team">
+          <summary><span class="repo-number">01</span><span class="repo-name">Frontend</span><span class="repo-description">참가자·관리자 화면</span><span class="repo-language">React · Vite</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/tortoiese">tortoiese</a><p>문제·보드·관리자 UI, API 연결, 타이머와 화면 디자인</p></li>
+<li><a href="https://github.com/yes0r">yes0r</a><p>보드·KOTH·순위·마이페이지, 동아리 부스와 3D 화면 구성</p></li>
+<li><a href="https://github.com/Giheon-Jeon">Giheon-Jeon</a><p>프론트 CI, Nginx API 프록시와 의존성 보안 검사</p></li>
+<li><a href="https://github.com/woalseee">woalseee</a><p>프론트 실행 환경과 개발 VM 자동 배포</p></li>
+<li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>TCP·TLS·SNI 접속 안내와 관리자 이미지 준비 화면</p></li>
+<li><a href="https://github.com/dnehdx">dnehdx</a><p>팀 정보·분야별 순위 표시와 CSP 적용</p></li>
+<li><a href="https://github.com/jiwonnii">jiwonnii</a><p>주사위 연속 사용과 충전 규칙 안내</p></li>
+<li><a href="https://github.com/jongcoding">jongcoding</a><p>운영 QA와 연동 보완, 재시도 복구·다운로드·관리자 상품 결제</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/front-team">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+        </details>
+<details class="repository" data-category="app" data-repo="msg-backend">
+          <summary><span class="repo-number">02</span><span class="repo-name">Backend</span><span class="repo-description">인증·보드·문제·점수·마일리지</span><span class="repo-language">Django · PostgreSQL</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/gimgyumin0207">gimgyumin0207</a><p>문제·인스턴스 API, 참가자 파일, 릴리스 관리와 관리자 배포 기능</p></li>
+<li><a href="https://github.com/samdi70">samdi70</a><p>인증·팀 관리, 마이페이지, 마일리지·QR 결제와 릴리스 감사 기록</p></li>
+<li><a href="https://github.com/jiwonnii">jiwonnii</a><p>보드 규칙·보상, KOTH API·순위·문제별 팀 토큰</p></li>
+<li><a href="https://github.com/dnehdx">dnehdx</a><p>점수·리더보드 조회, 라인 독점, 조회 성능과 계정별 로그인 제한</p></li>
+<li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>Gateway 접속 정보, 이미지 준비 후 전환, Windows 실행 연동</p></li>
+<li><a href="https://github.com/woalseee">woalseee</a><p>공통 CI 연결과 백엔드 VM 자동 배포</p></li>
+<li><a href="https://github.com/jongcoding">jongcoding</a><p>서비스 간 연동·운영 QA, 주사위 멱등성, 응답 유실·재시작 복구</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/msg-backend">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+        </details>
+<details class="repository" data-category="execution" data-repo="instance-scheduler">
+          <summary><span class="repo-number">03</span><span class="repo-name">Instance Scheduler</span><span class="repo-description">생성·초기화·만료·정리</span><span class="repo-language">Kotlin · Spring Boot</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/tember8003">tember8003</a><p>스케줄러 기본 흐름, 상태 전환·정리 재시도·전체 조회·Windows 배정 API</p></li>
+<li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>이미지 준비 상태 우선 배치와 예약 복구 연결</p></li>
+<li><a href="https://github.com/jongcoding">jongcoding</a><p>실제 서비스 연동, 예약 반납 복구·기동 CPU·요청 ID 멱등성</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/instance-scheduler">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+        </details>
+<details class="repository" data-category="execution" data-repo="resource-broker">
+          <summary><span class="repo-number">04</span><span class="repo-name">Resource Broker</span><span class="repo-description">클라우드 인벤토리·자원 예약</span><span class="repo-language">Python · FastAPI</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/gonas0919">gonas0919</a><p>멀티 클라우드 인벤토리, 후보·예약 API, 관리 콘솔과 노드 준비</p></li>
+<li><a href="https://github.com/jongcoding">jongcoding</a><p>전용 VM·할당량 연동, 인벤토리 오류 수정과 기동 CPU 예약 축소</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/resource-broker">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+        </details>
+<details class="repository" data-category="execution" data-repo="secure-provisioner">
+          <summary><span class="repo-number">05</span><span class="repo-name">Runtime</span><span class="repo-description">K3s 배포·격리·비밀값 주입</span><span class="repo-language">Go · Kubernetes</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>Runtime API·작업 워커·K3s 배포·격리, Gateway와 Windows 실행 경로</p></li>
+<li><a href="https://github.com/jongcoding">jongcoding</a><p>운영 연동·장애 QA, 기동·삭제 대기 개선과 KOTH 저장·복구 도구</p></li>
+<li><a href="https://github.com/gonas0919">gonas0919</a><p>Windows 실행기 mTLS 설정 연동</p></li>
+<li><a href="https://github.com/dnehdx">dnehdx</a><p>RE:QR 문제 이미지 실행 정책 수정</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/secure-provisioner/tree/dev">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+        </details>
+<details class="repository" data-category="operations" data-repo="msgctf-devsecops">
+          <summary><span class="repo-number">06</span><span class="repo-name">Challenge CI</span><span class="repo-description">문제 검사·이미지·파일 발행</span><span class="repo-language">GitHub Actions · GHCR</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/wlsdnd2367">wlsdnd2367</a><p>공통 문제 CI, 명세·보안 검사·SBOM·발행 bundle과 노드 이미지 준비 연결</p></li>
+<li><a href="https://github.com/jongcoding">jongcoding</a><p>실행 환경변수·비밀값 참조와 Crypto·Rev TCP 프로필 연동</p></li>
+<li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>GCP 런타임 HTTPS 배포 시험 경로</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/msgctf-devsecops">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+        </details>
+<details class="repository" data-category="operations" data-repo="jm_devsecops">
+          <summary><span class="repo-number">07</span><span class="repo-name">Platform CI/CD</span><span class="repo-description">플랫폼 빌드·자동 배포·롤백</span><span class="repo-language">GitHub Actions · Docker</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/woalseee">woalseee</a><p>공통 플랫폼 CI와 개발 VM 배포, 배포 파일·스토리지 관리</p></li>
+<li><a href="https://github.com/Giheon-Jeon">Giheon-Jeon</a><p>프론트 검사에 맞춘 Semgrep 규칙 수정</p></li>
+<li><a href="https://github.com/jongcoding">jongcoding</a><p>배포 전환·롤백, 프론트 제한 SSH 배포와 보안 키·백업 연동</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/jm_devsecops/tree/main">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+        </details>
+<details class="repository" data-category="operations" data-repo="sentinel">
+          <summary><span class="repo-number">08</span><span class="repo-name">SLA / Sentinel</span><span class="repo-description">서비스·노드·인스턴스 감시</span><span class="repo-language">C# · .NET</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/minsoo0506">minsoo0506</a><p>SLA 계약·.NET 기본 구조, health check worker와 Prometheus metrics</p></li>
+<li><a href="https://github.com/jongcoding">jongcoding</a><p>실제 서버·전체 인스턴스 감시, 운영 대시보드·AWS 배포·노드 수집 연결</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/sentinel">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+        </details>
+<details class="repository" data-category="operations" data-repo="ctf-mock">
+          <summary><span class="repo-number">09</span><span class="repo-name">Mock API</span><span class="repo-description">운영 감시 개발·장애 모사</span><span class="repo-language">Python · Django</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/minsoo0506">minsoo0506</a><p>Django 기본 구조, Sentinel용 모사 API와 장애 시나리오·검사 설정</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/ctf-mock">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+        </details>
+<details class="repository" data-category="challenges" data-repo="2026_MSG_CTF">
+          <summary><span class="repo-number">10</span><span class="repo-name">Challenges</span><span class="repo-description">문제 출제·제공 파일·실행 설정</span><span class="repo-language">30 Challenges · 6 KOTH</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><p class="private-note">문제 저장소는 접근 권한이 필요합니다</p><ul class="repo-people"><li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>Grand Tour Duel·OSINT 문제 제작과 게임 실행·채점 보완</p></li>
+<li><a href="https://github.com/jongcoding">jongcoding</a><p>플랫폼 배포·환경변수·파일 연결, 원본 풀이 QA와 KOTH 운영 연동</p></li>
+<li><a href="https://github.com/wlsdnd2367">wlsdnd2367</a><p>문제 저장소 CI 호출, 발행·참가자 파일·노드 사전 준비 계약</p></li>
+<li><a href="https://github.com/gonas0919">gonas0919</a><p>Afterimage / MIDNIGHT EXAM 문제 제작과 수정</p></li>
+<li><a href="https://github.com/cksk00">cksk00</a><p>TR-88·Jenga 문제 제작과 실행·채점 보완</p></li>
+<li><a href="https://github.com/Ranunculus2165">Ranunculus2165</a><p>Reused Seal·Phantom Lattice·The Quiet Second 제작·수정</p></li>
+<li><a href="https://github.com/YeonHo0718">YeonHo0718</a><p>로그아웃 시켜줘!!·Pixel Smuggler 제작과 수정</p></li>
+<li><a href="https://github.com/s3tzun4">s3tzun4</a><p>Hidden Order 제작과 난이도·배포 구성 수정</p></li>
+<li><a href="https://github.com/yebbis">yebbis</a><p>Snack Thief·Is This Job Legit? 제작</p></li>
+<li><a href="https://github.com/banda59">banda59</a><p>TinyVM·msgdriver 제작과 Windows 실행 준비</p></li>
+<li><a href="https://github.com/Z3r0c0k3">Z3r0c0k3</a><p>The Past Has an Address·RE:QR 제작과 수정</p></li>
+<li><a href="https://github.com/random6-xyz">random6-xyz</a><p>Random6·ezpz 제작과 비의도 풀이 보완</p></li>
+<li><a href="https://github.com/meeeeing">meeeeing</a><p>Nerves SEAL 제작과 암호·서버 구성 수정</p></li>
+<li><a href="https://github.com/veomeow">veomeow</a><p>CASHOUT·Infinite Pack 제작과 수정</p></li>
+<li><a href="https://github.com/seolwon05">seolwon05</a><p>Ghost File 제작</p></li>
+<li><a href="https://github.com/sea-2025">sea-2025</a><p>Price Tag 제작, 바이너리·제공 파일·풀이 보완</p></li>
+<li><a href="https://github.com/guswjddl4313">guswjddl4313</a><p>Split-Brain Oracle 제작과 수정</p></li>
+<li><a href="https://github.com/Hayk6c1">Hayk6c1</a><p>Card Battle Arena 제작과 경기 규칙·검수 보완</p></li>
+<li><a href="https://github.com/yes0r">yes0r</a><p>The Last Record 제작과 난이도 수정</p></li>
+<li><a href="https://github.com/yeon365">yeon365</a><p>Notebook 제작과 문제 구조·검수 보완</p></li>
+<li><a href="https://github.com/xo0102">xo0102</a><p>Dependency Hell 제작, 빌드·동시 요청·채점 복구 보완</p></li>
+<li><a href="https://github.com/chaeun-11">chaeun-11</a><p>Open House 제작과 풀이·문제 수정</p></li>
+<li><a href="https://github.com/zkfla">zkfla</a><p>Evidence 포렌식 문제 제작</p></li>
+<li><a href="https://github.com/nomadY24">nomadY24</a><p>Daily Point 난이도·이미지 보안 보완</p></li>
+<li><a href="https://github.com/stw0218">stw0218</a><p>Rework 제작과 수정</p></li>
+<li><a href="https://github.com/lucylucy1006-netizen">lucylucy1006-netizen</a><p>Leftovers 포렌식 문제 제작</p></li>
+<li><a href="https://github.com/tls456">tls456</a><p>Grade Tampering 플래그 발급 조건 수정</p></li>
+<li><a href="https://github.com/cooku222">cooku222</a><p>The Past Has an Address 난이도 보완</p></li>
+<li><a href="https://github.com/hhi3xn">hhi3xn</a><p>Trace OSINT 문제 제작</p></li>
+<li><a href="https://github.com/Hyeo0n">Hyeo0n</a><p>Swanopoly 제작과 검수 보완</p></li>
+<li><a href="https://github.com/hhieon">hhieon</a><p>문제 저장소 커밋 참여</p></li>
+<li><a href="https://github.com/Whaql123">Whaql123</a><p>TR-88 문제 초기 소스 등록</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/2026_MSG_CTF">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+        </details>
+<!-- END_REPOSITORY_CREDITS -->
+      </div>
+      <details class="all-credits">
+        <summary><span>플랫폼 참여자 전체 보기 <span class="count">14</span></span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="people-grid"><!-- PLATFORM_CREDITS -->
+<div class="person"><a href="https://github.com/jongcoding">jongcoding</a><p>플랫폼 연동·운영·QA, 장애 재현과 복구, 성능 개선, SLA·배포 연결</p></div>
+<div class="person"><a href="https://github.com/gimgyumin0207">gimgyumin0207</a><p>문제·인스턴스 API, 발행본·제공 파일·배포 버전 관리</p></div>
+<div class="person"><a href="https://github.com/samdi70">samdi70</a><p>인증·팀·관리자 API, 마일리지·QR 결제</p></div>
+<div class="person"><a href="https://github.com/jiwonnii">jiwonnii</a><p>보드 규칙·보상과 KOTH API·채점·문제별 토큰</p></div>
+<div class="person"><a href="https://github.com/dnehdx">dnehdx</a><p>점수·조회 성능, 로그인 제한과 프론트 보안 정책</p></div>
+<div class="person"><a href="https://github.com/tortoiese">tortoiese</a><p>참가자·관리자 화면, 문제·보드 UI와 API 연결</p></div>
+<div class="person"><a href="https://github.com/yes0r">yes0r</a><p>보드·KOTH·순위·부스 화면과 3D 구성</p></div>
+<div class="person"><a href="https://github.com/tember8003">tember8003</a><p>스케줄러 생성·초기화·만료·정리와 상태 이력</p></div>
+<div class="person"><a href="https://github.com/gonas0919">gonas0919</a><p>리소스 브로커, 클라우드 인벤토리·예약·관리 콘솔</p></div>
+<div class="person"><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>Go 런타임·K3s 격리·Gateway·Windows 실행 연결</p></div>
+<div class="person"><a href="https://github.com/wlsdnd2367">wlsdnd2367</a><p>문제 CI·이미지 검사·SBOM·발행과 노드 사전 준비</p></div>
+<div class="person"><a href="https://github.com/woalseee">woalseee</a><p>플랫폼 공통 CI와 프론트·백엔드 VM 자동 배포</p></div>
+<div class="person"><a href="https://github.com/Giheon-Jeon">Giheon-Jeon</a><p>프론트 CI·Nginx 프록시·Semgrep 검사 연결</p></div>
+<div class="person"><a href="https://github.com/minsoo0506">minsoo0506</a><p>SLA 초기 구조·health worker·Prometheus와 장애 모사 API</p></div>
+<!-- END_PLATFORM_CREDITS --></div>
+        <p class="credit-basis">2026. 11. 09까지의 병합 PR·커밋 기준 · 저장소별 상세 기여와 근거는 개발 기록에 남겼습니다</p>
+      </details>
+      <div class="archive-link"><p>장애 재현과 복구, 성능 개선, 저장소별 기여 기록</p><a class="text-link" href="https://github.com/MSG-CTF/msg-ctf.github.io#readme">전체 README 읽기 <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><span class="footer-title">MSG CTF</span><p>우리가 만들고 운영한, 2026년의 기록</p></div>
+      <div class="footer-links"><a href="https://github.com/MSG-CTF">GitHub ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/asset-sources.md">화면·에셋 출처 ↗</a><a href="#top">맨 위로 ↑</a></div>
+    </div>
+  </footer>
+</body>
+</html>

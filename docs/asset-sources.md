@@ -1,0 +1,17 @@
+# 화면과 에셋 출처
+
+소개 페이지는 MSG CTF의 기존 로고·일러스트·화면과 색상을 사용합니다
+플랫폼 개발 기록은 [전체 README](../README.md)에 정리했습니다
+
+| 항목 | 원본 |
+| --- | --- |
+| 로고·축제 광장·파비콘 | [프론트엔드 intro 에셋](https://github.com/MSG-CTF/front-team/tree/3975fa447fc934b1e2ba253c360ec5dc186b22c6/public/assets/intro) |
+| 보드·문제·동아리 부스 화면 | [프론트엔드 화면 기록](https://github.com/MSG-CTF/front-team/tree/3975fa447fc934b1e2ba253c360ec5dc186b22c6/docs/readme), 개발 화면 포함 |
+| 색상·타이포그래피 기준 | [기존 대회 소개 페이지 스타일](https://github.com/MSG-CTF/front-team/blob/3975fa447fc934b1e2ba253c360ec5dc186b22c6/src/features/intro/intro.css) |
+| Pretendard | [라이선스](../assets/fonts/Pretendard-LICENSE.txt) |
+| 송명체 | [라이선스](../assets/fonts/SongMyung-OFL.txt) |
+| IM FELL English | [라이선스](../assets/fonts/IMFellEnglish-OFL.txt) |
+
+이미지와 글꼴은 원본 파일을 그대로 옮겼으며 배치는 이 소개 페이지에 맞게 구성했습니다
+참가자 화면의 예시 문제명과 일정은 화면 기록에 포함된 값입니다
+클라우드 비용 0원은 2026년 11월 8일 대회 운영 사용료에 크레딧을 적용한 뒤의 추가 결제액을 뜻합니다
