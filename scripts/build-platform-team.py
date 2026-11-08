@@ -56,38 +56,16 @@ replace_block(ROOT / 'platform.html', 'ROLE_DIRECTORY',
     lead_html + '\n<div class="role-directory">\n' + '\n'.join(groups) + '\n</div>')
 
 
-def readme_person(login):
+def readme_person(login, role_label=''):
     person = profiles[login]
     url = escape(person['url'], quote=True)
-    return (f'<tr><td width="78"><a href="{url}"><img src="{escape(person["avatar"], quote=True)}" '
-            f'width="48" height="48" alt="{escape(login, quote=True)}"></a></td>'
-            f'<td><a href="{url}"><strong>{escape(login)}</strong></a><br>{escape(person["duty"])}</td></tr>')
+    profile = (f'<a href="{url}"><img src="{escape(person["avatar"], quote=True)}" '
+               f'width="28" height="28" align="absmiddle" alt="{escape(login, quote=True)}"> {escape(login)}</a>')
+    return f'| {escape(role_label)} | {profile} | {escape(person["duty"])} |'
 
 
-roles = {role['id']: role for role in data['roles']}
-
-
-def readme_teams(ids):
-    cells = []
-    for role_id in ids:
-        role = roles[role_id]
-        people = '\n'.join(readme_person(login) for login in role['members'])
-        cells.append(f'''<td valign="top" width="{100 // len(ids)}%">
-<h3>{escape(role['label'])}</h3>
-<p>{escape(role['scope'])}</p>
-<table>{people}</table>
-</td>''')
-    return '<table align="center"><tr>\n' + '\n'.join(cells) + '\n</tr></table>'
-
-
-credits = f'''<div align="center">
-<h3>{escape(lead['label'])}</h3>
-<a href="{escape(leader['url'], quote=True)}"><img src="{escape(leader['avatar'], quote=True)}" width="80" height="80" alt="{escape(leader['login'], quote=True)}"></a>
-<p><a href="{escape(leader['url'], quote=True)}"><strong>{escape(leader['login'])}</strong></a><br>{escape(leader['duty'])}</p>
-</div>
-
-'''
-credits += '\n\n'.join(readme_teams(ids) for ids in [
-    ['frontend', 'backend'], ['broker', 'scheduler', 'runtime'], ['devsecops', 'sla']])
-replace_block(ROOT / 'README.md', 'TEAM_CREDITS', credits)
+credits = ['| 팀 | 참여자 | 맡은 일 |', '| --- | --- | --- |', readme_person(lead['login'], lead['label'])]
+for role in data['roles']:
+    credits.extend(readme_person(login, role['label'] if i == 0 else '') for i, login in enumerate(role['members']))
+replace_block(ROOT / 'README.md', 'TEAM_CREDITS', '\n' + '\n'.join(credits) + '\n')
 print(f'Rendered lead + {len(groups)} teams, {len(assigned)} GitHub profiles in website and README')
