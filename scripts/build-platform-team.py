@@ -20,7 +20,6 @@ for role in data['roles']:
     assert all(repo['url'].startswith('https://github.com/MSG-CTF/') for repo in role['repositories'])
 
 GITHUB_ICON = '<span class="github-icon" aria-hidden="true"></span>'
-README_GITHUB_ICON = '<img src="assets/icons/github-badge.svg" width="18" height="18" alt="" title="GitHub">'
 
 
 def repository_link(label, url, css='role-repository'):
@@ -73,7 +72,7 @@ def readme_person(login, size=60, label='', role_url=''):
     person = profiles[login]
     url = escape(person['url'], quote=True)
     duty = '<br>'.join(escape(part) for part in person['duty'].split(' · '))
-    role = f'<br><sub><a href="{escape(role_url, quote=True)}"><b>{escape(label)}</b> {README_GITHUB_ICON}</a></sub>' if label else ''
+    role = f'<br><sub><a href="{escape(role_url, quote=True)}"><b>{escape(label)}</b></a></sub>' if label else ''
     return (f'<p align="center"><a href="{url}"><img src="{escape(person["avatar"], quote=True)}" '
             f'width="{size}" height="{size}" alt="{escape(login, quote=True)}"></a><br>'
             f'<b>{escape(login)}</b>{role}<br><sub>{duty}</sub></p>')
@@ -87,8 +86,8 @@ for row in [['frontend', 'backend', 'devsecops'], ['broker', 'scheduler', 'runti
         role = roles[key]
         people = '\n'.join(readme_person(login) for login in role['members'])
         primary, *extra = role['repositories']
-        heading = f'<a href="{escape(primary["url"], quote=True)}">{escape(role["label"])} {README_GITHUB_ICON}</a>'
-        extra_links = '<br>' + ' · '.join(f'<a href="{escape(repo["url"], quote=True)}">{escape(repo["label"])} {README_GITHUB_ICON}</a>' for repo in extra) if extra else ''
+        heading = f'<a href="{escape(primary["url"], quote=True)}">{escape(role["label"])}</a>'
+        extra_links = '<br>' + ' · '.join(f'<a href="{escape(repo["url"], quote=True)}">{escape(repo["label"])}</a>' for repo in extra) if extra else ''
         cells.append(f'<td align="center" valign="top" width="{780 // len(row)}"><h3>{heading}</h3><p><sub>{escape(role["scope"])}{extra_links}</sub></p>\n{people}</td>')
     credits.append('<table align="center"><tr>\n' + '\n'.join(cells) + '\n</tr></table>')
 replace_block(ROOT / 'README.md', 'TEAM_CREDITS', '\n\n'.join(credits))
