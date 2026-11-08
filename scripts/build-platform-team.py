@@ -59,7 +59,7 @@ replace_block(ROOT / 'platform.html', 'ROLE_DIRECTORY',
 def readme_person(login):
     person = profiles[login]
     url = escape(person['url'], quote=True)
-    return (f'<tr><td width="56"><a href="{url}"><img src="{escape(person["avatar"], quote=True)}" '
+    return (f'<tr><td width="78"><a href="{url}"><img src="{escape(person["avatar"], quote=True)}" '
             f'width="48" height="48" alt="{escape(login, quote=True)}"></a></td>'
             f'<td><a href="{url}"><strong>{escape(login)}</strong></a><br>{escape(person["duty"])}</td></tr>')
 
@@ -77,7 +77,7 @@ def readme_teams(ids):
 <p>{escape(role['scope'])}</p>
 <table>{people}</table>
 </td>''')
-    return '<table width="100%"><tr>\n' + '\n'.join(cells) + '\n</tr></table>'
+    return '<table align="center"><tr>\n' + '\n'.join(cells) + '\n</tr></table>'
 
 
 credits = f'''<div align="center">
