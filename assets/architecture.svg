@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="965" viewBox="0 0 1460 965" role="img" aria-labelledby="title desc">
+<title id="title">MSG CTF 플랫폼 전체 구성</title>
+<desc id="desc">내부·외부 Frontend와 Backend, PostgreSQL과 Redis를 분리합니다 스케줄러는 브로커의 자원 예약을 거쳐 런타임에 생성을 요청합니다 KOTH 경기와 트랙별 백엔드 채점, Windows 실행 경로, 문제 CI·GHCR·발행본과 백엔드 릴리스 저장, SLA 감시를 함께 보여줍니다 현재 정상 상태나 노드 수를 표시하는 그림은 아닙니다</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#91a8c6"/></marker>
+<marker id="observe" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8bb5a2"/></marker>
+<style>text{font-family:system-ui,-apple-system,"Malgun Gothic",sans-serif;fill:#e4edf8;text-anchor:middle}.group{fill:#142130;stroke:#33475c;stroke-width:1.3;rx:12}.node{fill:#1c2c3d;stroke:#5d7691;stroke-width:1.4;rx:9}.heading{font-size:20px;font-weight:700;text-anchor:start}.title{font-size:18px;font-weight:650}.small{font-size:13px;fill:#b3c4d8}.note{font-size:14px;fill:#c0cddc}.lane{font-size:14px;font-weight:600;fill:#d1ddeb;text-anchor:start}.request{fill:none;stroke:#91a8c6;stroke-width:1.8;marker-end:url(#arrow)}.observe{fill:none;stroke:#8bb5a2;stroke-width:1.8;stroke-dasharray:4 5;marker-end:url(#observe)}.planned{stroke-dasharray:5 5;stroke:#788797;fill:#18222d}</style></defs>
+<rect width="1460" height="965" rx="14" fill="#0e1825"/>
+<text x="30" y="32" class="heading">MSG CTF · 서비스 경계와 연결</text>
+<text x="1120" y="32" class="small">실선: 요청·발행　점선: 관측　점선 테두리: 설계</text>
+<rect x="20" y="60" width="160" height="420" class="group"/><text x="36" y="90" class="heading">대회 접속</text>
+<rect x="200" y="60" width="470" height="420" class="group"/><text x="216" y="90" class="heading">참가자 플랫폼</text>
+<rect x="695" y="60" width="320" height="420" class="group"/><text x="711" y="90" class="heading">공통 제어</text>
+<rect x="1040" y="60" width="400" height="420" class="group"/><text x="1056" y="90" class="heading">문제 실행·격리</text>
+<rect x="35" y="148" width="130" height="75" class="node"/>
+<text x="100" y="182.5" class="title">참가자</text>
+<text x="100" y="206.5" class="small">HTTPS · 트랙별 주소</text>
+<rect x="35" y="330" width="130" height="75" class="node planned"/>
+<text x="100" y="364.5" class="title">공통 Edge</text>
+<text x="100" y="388.5" class="small">설계 요소</text>
+<text x="220" y="126" class="note" style="text-anchor:start">내부 트랙</text>
+<text x="220" y="311" class="note" style="text-anchor:start">외부 트랙</text>
+<path d="M216 285H654" fill="none" stroke="#33475c"/>
+<rect x="220" y="148" width="135" height="75" class="node"/>
+<text x="287.5" y="182.5" class="title">Frontend</text>
+<text x="287.5" y="206.5" class="small">Nginx · React</text>
+<rect x="380" y="148" width="135" height="75" class="node"/>
+<text x="447.5" y="182.5" class="title">Backend API</text>
+<text x="447.5" y="206.5" class="small">트랙별 팀·점수·권한</text>
+<rect x="550" y="138" width="100" height="52" class="node"/>
+<text x="600" y="170" class="title">PostgreSQL</text>
+<rect x="550" y="208" width="100" height="52" class="node"/>
+<text x="600" y="240" class="title">Redis</text>
+<path d="M355 185H375" class="request"/>
+<path d="M515 185H530V164H545" class="request"/>
+<path d="M515 185H530V234H545" class="request"/>
+<text x="368" y="136" class="note" style="text-anchor:middle">API</text>
+<rect x="220" y="333" width="135" height="75" class="node"/>
+<text x="287.5" y="367.5" class="title">Frontend</text>
+<text x="287.5" y="391.5" class="small">Nginx · React</text>
+<rect x="380" y="333" width="135" height="75" class="node"/>
+<text x="447.5" y="367.5" class="title">Backend API</text>
+<text x="447.5" y="391.5" class="small">트랙별 팀·점수·권한</text>
+<rect x="550" y="323" width="100" height="52" class="node"/>
+<text x="600" y="355" class="title">PostgreSQL</text>
+<rect x="550" y="393" width="100" height="52" class="node"/>
+<text x="600" y="425" class="title">Redis</text>
+<path d="M355 370H375" class="request"/>
+<path d="M515 370H530V349H545" class="request"/>
+<path d="M515 370H530V419H545" class="request"/>
+<text x="368" y="321" class="note" style="text-anchor:middle">API</text>
+<path d="M165 185H215" class="request"/>
+<path d="M165 185H190V370H215" class="request"/>
+<rect x="715" y="148" width="130" height="75" class="node"/>
+<text x="780" y="182.5" class="title">Scheduler</text>
+<text x="780" y="206.5" class="small">생성·상태·만료</text>
+<rect x="865" y="148" width="130" height="75" class="node"/>
+<text x="930" y="182.5" class="title">Broker</text>
+<text x="930" y="206.5" class="small">후보·예약·반납</text>
+<rect x="715" y="285" width="130" height="64" class="node"/>
+<text x="780" y="314" class="title">Scheduler DB</text>
+<text x="780" y="338" class="small">상태·작업 기록</text>
+<rect x="865" y="285" width="130" height="64" class="node"/>
+<text x="930" y="314" class="title">Broker DB</text>
+<text x="930" y="338" class="small">인벤토리·예약 원장</text>
+<rect x="865" y="389" width="130" height="60" class="node"/>
+<text x="930" y="416" class="title">Cloud API</text>
+<text x="930" y="440" class="small">계정·VM 조회·준비</text>
+<path d="M447 148V115H685V185H710" class="request"/>
+<path d="M447 333V305H685V185H710" class="request"/>
+<text x="591" y="108" class="note" style="text-anchor:middle">인스턴스 요청</text>
+<path d="M845 185H860" class="request"/>
+<text x="860" y="137" class="note" style="text-anchor:middle">후보·예약</text>
+<path d="M780 223V280" class="request"/>
+<path d="M930 223V280" class="request"/>
+<path d="M995 185H1004V419H1000" class="request"/>
+<rect x="1060" y="148" width="160" height="75" class="node"/>
+<text x="1140" y="182.5" class="title">Runtime API</text>
+<text x="1140" y="206.5" class="small">작업·준비 확인·정리</text>
+<rect x="1240" y="148" width="180" height="75" class="node"/>
+<text x="1330" y="182.5" class="title">Linux / K3s</text>
+<text x="1330" y="206.5" class="small">문제별 Pod·서비스</text>
+<rect x="1060" y="285" width="160" height="64" class="node"/>
+<text x="1140" y="314" class="title">Runtime Store</text>
+<text x="1140" y="338" class="small">Operation·Lease</text>
+<rect x="1240" y="285" width="180" height="64" class="node"/>
+<text x="1330" y="314" class="title">Gateway</text>
+<text x="1330" y="338" class="small">HTTP·TCP 접속 경로</text>
+<path d="M780 148V120H1028V185H1055" class="request"/>
+<text x="965" y="111" class="note" style="text-anchor:middle">생성·상태·삭제</text>
+<path d="M1220 185H1235" class="request"/>
+<text x="1316" y="135" class="note" style="text-anchor:middle">workload · 격리</text>
+<path d="M1140 223V280" class="request"/>
+<path d="M1330 223V280" class="request"/>
+<text x="1240" y="391" class="note" style="text-anchor:middle">실행 자원·접속 경로 정리 확인</text>
+<text x="1240" y="418" class="note" style="text-anchor:middle">→ 스케줄러에서 예약 반납</text>
+<rect x="20" y="510" width="650" height="230" class="group"/><text x="36" y="540" class="heading">문제 발행·버전 관리</text>
+<rect x="40" y="552" width="130" height="72" class="node"/>
+<text x="105" y="585" class="title">info.yaml</text>
+<text x="105" y="609" class="small">문제·실행 설정</text>
+<rect x="210" y="552" width="130" height="72" class="node"/>
+<text x="275" y="585" class="title">DevSecOps CI</text>
+<text x="275" y="609" class="small">명세·빌드·보안 검사</text>
+<rect x="380" y="535" width="120" height="60" class="node"/>
+<text x="440" y="562" class="title">GHCR</text>
+<text x="440" y="586" class="small">고정 digest 이미지</text>
+<rect x="380" y="648" width="120" height="60" class="node"/>
+<text x="440" y="675" class="title">Actions</text>
+<text x="440" y="699" class="small">발행·파일 bundle</text>
+<rect x="530" y="626" width="120" height="82" class="node"/>
+<text x="590" y="664" class="title">릴리스·파일</text>
+<text x="590" y="688" class="small">트랙별 Backend 소유</text>
+<path d="M170 588H205" class="request"/>
+<path d="M340 588H355V565H375" class="request"/>
+<path d="M340 588H355V678H375" class="request"/>
+<path d="M500 678H525" class="request"/>
+<text x="575" y="612" class="note" style="text-anchor:middle">poller가 수집</text>
+<path d="M440 535V500H1450V185H1425" class="request"/>
+<text x="1300" y="494" class="note" style="text-anchor:middle">image digest pull</text>
+<rect x="695" y="510" width="745" height="230" class="group"/><text x="711" y="540" class="heading">KOTH·Windows 별도 실행 경로</text>
+<rect x="715" y="552" width="185" height="80" class="node"/>
+<text x="807.5" y="589" class="title">KOTH 게임 VM</text>
+<text x="807.5" y="613" class="small">게임별 제출·경기·결과</text>
+<rect x="925" y="552" width="200" height="80" class="node"/>
+<text x="1025" y="589" class="title">KOTH 점수 수집</text>
+<text x="1025" y="613" class="small">트랙별 Backend 작업</text>
+<rect x="1150" y="552" width="270" height="80" class="node"/>
+<text x="1285" y="589" class="title">Windows VM / 실행기</text>
+<text x="1285" y="613" class="small">Backend → Runtime → Pool</text>
+<path d="M925 592H905" class="request"/>
+<text x="920" y="541" class="note" style="text-anchor:middle">점수 API</text>
+<path d="M447 408V489H1025V547" class="request"/>
+<text x="940" y="482" class="note" style="text-anchor:middle">트랙별 채점·팀 토큰 검증</text>
+<text x="1070" y="680" class="note" style="text-anchor:middle">일반 문제와 다른 제출·채점·VM 관리 경로</text>
+<rect x="20" y="775" width="1420" height="162" class="group"/><text x="36" y="805" class="heading">SLA 관측·운영 지원</text>
+<rect x="40" y="833" width="230" height="78" class="node"/>
+<text x="155" y="869" class="title">Discord 티켓 봇</text>
+<text x="155" y="893" class="small">문의 처리·대화 백업</text>
+<rect x="315" y="833" width="320" height="78" class="node"/>
+<text x="475" y="869" class="title">노드·서비스 수집기</text>
+<text x="475" y="893" class="small">Backend·제어·실행 환경 관측</text>
+<rect x="680" y="833" width="320" height="78" class="node"/>
+<text x="840" y="869" class="title">SLA / Sentinel</text>
+<text x="840" y="893" class="small">상태·수집 시각·장애·복구 이력</text>
+<rect x="1045" y="833" width="375" height="78" class="node"/>
+<text x="1232.5" y="869" class="title">Prometheus / Grafana</text>
+<text x="1232.5" y="893" class="small">메트릭·운영 대시보드·알림</text>
+<path d="M1415 480V763H475V828" class="observe"/>
+<text x="1230" y="755" class="note" style="text-anchor:middle">조회·상태 수집</text>
+<path d="M155 833V820H840V828" class="observe"/>
+<path d="M635 872H675" class="observe"/>
+<path d="M1000 872H1040" class="request"/>
+</svg>
