@@ -1,0 +1,168 @@
+{
+  "groups": [
+    {
+      "id": "frontend",
+      "label": "Frontend",
+      "items": [
+        {
+          "id": "react",
+          "name": "React",
+          "icon": "assets/tech/react.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/react/react-original.svg",
+          "source_sha256": "5825b649c8c04dec13ecf01d0182401bd0ec71789d2fa06224866d882cd1515f"
+        },
+        {
+          "id": "vitejs",
+          "name": "Vite",
+          "icon": "assets/tech/vitejs.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/vitejs/vitejs-original.svg",
+          "source_sha256": "f84e50febcb3a2a81399c9a1ae76d96dc235428202f91610b6f36bfb5b62051a"
+        },
+        {
+          "id": "tailwindcss",
+          "name": "Tailwind CSS",
+          "icon": "assets/tech/tailwindcss.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/tailwindcss/tailwindcss-original.svg",
+          "source_sha256": "f8cec54589553807eb603bcaf4e056aa090196211698b056542e3cc62a2f3448"
+        },
+        {
+          "id": "threejs",
+          "name": "Three.js",
+          "icon": "assets/tech/threejs.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/threejs/threejs-original.svg",
+          "source_sha256": "e4ee5630ae19950b31603bd894d1a6e99fe8f5c2cf7aa4ce6e8ca6214f63c077"
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "label": "Backend",
+      "items": [
+        {
+          "id": "djangorest",
+          "name": "Django REST",
+          "icon": "assets/tech/djangorest.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/djangorest/djangorest-original.svg",
+          "source_sha256": "0d27c70594ad23d2a6e811dba0530d8fd9cd5edac0ad3b0592cbd0c2a5f8dd2e"
+        },
+        {
+          "id": "postgresql",
+          "name": "PostgreSQL",
+          "icon": "assets/tech/postgresql.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/postgresql/postgresql-original.svg",
+          "source_sha256": "f220a436258ed014c512ba4f9c0de6b9e5c2c4b55331a0a29f8c7a1a12c36443"
+        },
+        {
+          "id": "redis",
+          "name": "Redis",
+          "icon": "assets/tech/redis.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/redis/redis-original.svg",
+          "source_sha256": "4707378b190878f36f7e6e1c01fa3ee7e7884c76101809d191dddd943a2e6bdb"
+        }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "label": "Infrastructure",
+      "items": [
+        {
+          "id": "fastapi",
+          "name": "FastAPI",
+          "icon": "assets/tech/fastapi.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/fastapi/fastapi-original.svg",
+          "source_sha256": "7ef41f6a363b00ff595e6d0b933c025c92cbfae29dc1df24b2f6eb8b476ee486"
+        },
+        {
+          "id": "kotlin",
+          "name": "Kotlin",
+          "icon": "assets/tech/kotlin.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/kotlin/kotlin-original.svg",
+          "source_sha256": "5053c2e1288582d1ac2cfc1e807eabb7f6059b1aa2f7d04e5cf00063682a2cbe"
+        },
+        {
+          "id": "spring",
+          "name": "Spring Boot",
+          "icon": "assets/tech/spring.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/spring/spring-original.svg",
+          "source_sha256": "4bae92720d27acb7d8cde3bed758a26aed07cd81c353f59ab379b8dd651ff973"
+        },
+        {
+          "id": "go",
+          "name": "Go",
+          "icon": "assets/tech/go.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/go/go-original.svg",
+          "source_sha256": "2d4558b96d3ec71d0d922a62668cb2ea5a5d83ed7d4caf6b0479b3266f795a2f"
+        },
+        {
+          "id": "docker",
+          "name": "Docker",
+          "icon": "assets/tech/docker.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/docker/docker-original.svg",
+          "source_sha256": "3fd830ea69431ed7a0b8d068cd5b34ad3f00a1a78195d50f13ff56713f2462e1"
+        },
+        {
+          "id": "k3s",
+          "name": "K3s",
+          "icon": "assets/tech/k3s.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/k3s/k3s-original.svg",
+          "source_sha256": "36afb38d3ff8cc7ea5f703fc910b65f2816ae11a353863d3a93de0c2e3fe074f"
+        },
+        {
+          "id": "nginx",
+          "name": "Nginx",
+          "icon": "assets/tech/nginx.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/nginx/nginx-original.svg",
+          "source_sha256": "a28c7002fda6748bb018fa5f89ba3d38c622db720d65aa88668208a3cc839900"
+        }
+      ]
+    },
+    {
+      "id": "devsecops",
+      "label": "DevSecOps",
+      "items": [
+        {
+          "id": "githubactions",
+          "name": "GitHub Actions",
+          "icon": "assets/tech/githubactions.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/githubactions/githubactions-original.svg",
+          "source_sha256": "3a2524052ccf301d1a239f20cfef98d655e060c51cc29c5e94c867913899a47e"
+        },
+        {
+          "id": "trivy",
+          "name": "Trivy",
+          "icon": "assets/tech/trivy.svg",
+          "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/1bb2f6e6ea50f920de8d2f3d273ae48564a5eaee/icons/trivy.svg",
+          "source_sha256": "bef45d7760bb16e6d3379921220cd31753e8e3fbb6523066b166fcc9c8c8456d"
+        }
+      ],
+      "note": "GHCR · Gitleaks · SBOM"
+    },
+    {
+      "id": "monitoring",
+      "label": "Monitoring",
+      "items": [
+        {
+          "id": "dotnetcore",
+          "name": "ASP.NET Core",
+          "icon": "assets/tech/dotnetcore.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/dotnetcore/dotnetcore-original.svg",
+          "source_sha256": "b1b71d747aaf277a00efeab3f5f5844578fc4a42bb605f60c3b0510256009ca4"
+        },
+        {
+          "id": "prometheus",
+          "name": "Prometheus",
+          "icon": "assets/tech/prometheus.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/prometheus/prometheus-original.svg",
+          "source_sha256": "cae70cfcf9a8b88de32ab1035819d0c7c9a2b278048112f8c9f99dae42b5b657"
+        },
+        {
+          "id": "grafana",
+          "name": "Grafana",
+          "icon": "assets/tech/grafana.svg",
+          "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/grafana/grafana-original.svg",
+          "source_sha256": "2dec200d4e56521bec8dd463173c623b33b8c97e6159cac9b3ed00b6bff0f6ad"
+        }
+      ]
+    }
+  ]
+}

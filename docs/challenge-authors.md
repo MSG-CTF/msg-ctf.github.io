@@ -1,10 +1,5 @@
 # 출제자 기록
 
-문제 README의 출제자 표기를 우선하고, 최초 등록 PR·커밋으로 GitHub 계정을 대조했습니다
-코드 업로드·검수·배포 참여만으로 출제자를 지정하지 않았습니다
-조혜린(CASHOUT)·김찬(ezpz)은 공동 출제 기록이 있으나 GitHub 계정 연결은 확인되지 않아 이름으로 표시합니다
-Notebook은 README에 example로 표시된 예시 문제여서 대회 문제 36개 목록에서 제외했습니다
-
 | 분야 | 문제 | 출제자 | 출제자 표기 |
 | --- | --- | --- | --- |
 | CRYPTO | NERVEs | [meeeeing](https://github.com/meeeeing) | [원본](https://github.com/MSG-CTF/2026_MSG_CTF/blob/b048f3684063b7f9aa1faf8a6f1e2d1c767cb5b0/crypto-nerves/README.md) |

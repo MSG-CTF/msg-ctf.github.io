@@ -4,7 +4,7 @@
   "roles": [
     {
       "id": "frontend",
-      "label": "프론트팀",
+      "label": "Frontend",
       "members": [
         "tortoiese",
         "yes0r"
@@ -16,7 +16,7 @@
     },
     {
       "id": "backend",
-      "label": "백엔드팀",
+      "label": "Backend",
       "members": [
         "gimgyumin0207",
         "samdi70",
@@ -30,7 +30,7 @@
     },
     {
       "id": "broker",
-      "label": "리소스 브로커팀",
+      "label": "Resource Broker",
       "members": [
         "gonas0919"
       ],
@@ -41,7 +41,7 @@
     },
     {
       "id": "scheduler",
-      "label": "스케줄러팀",
+      "label": "Scheduler",
       "members": [
         "tember8003"
       ],
@@ -52,7 +52,7 @@
     },
     {
       "id": "runtime",
-      "label": "런타임팀",
+      "label": "Runtime",
       "members": [
         "goldsimchoi"
       ],
@@ -63,7 +63,7 @@
     },
     {
       "id": "devsecops",
-      "label": "DevSecOps팀",
+      "label": "DevSecOps",
       "members": [
         "wlsdnd2367",
         "woalseee",
@@ -76,7 +76,7 @@
     },
     {
       "id": "sla",
-      "label": "SLA·모니터링팀",
+      "label": "SLA",
       "members": [
         "minsoo0506"
       ],
@@ -173,7 +173,7 @@
     }
   ],
   "lead": {
-    "label": "총괄",
+    "label": "Lead",
     "login": "jongcoding"
   }
 }

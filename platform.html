@@ -14,7 +14,7 @@
   <link rel="canonical" href="https://msg-ctf.github.io/platform.html">
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
   <link rel="preload" href="assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site.css?v=afaf41e05cca">
+  <link rel="stylesheet" href="assets/site.css?v=ca9be9d19d2c">
   <script src="assets/site.js?v=9f52743bae67" defer></script>
   <script src="assets/platform-motion.js?v=5daeaed42d9b" defer></script>
 </head>
@@ -37,15 +37,11 @@
   </header>
   <main id="main">
     <section class="subpage-header container" aria-labelledby="page-title">
-      <a class="back-link" href="index.html">← 대회 기록</a>
       <h1 id="page-title">플랫폼</h1>
-      <p>참가자 화면부터 문제 배포·채점·운영 감시까지 직접 만들었습니다</p>
       <nav class="page-jumps" aria-label="플랫폼 페이지 목차"><a href="#platform">화면</a><a href="#architecture">구성</a><a href="#contributors">참여자와 저장소</a></nav>
     </section>
     <section class="platform-section section container" id="platform" aria-labelledby="platform-title">
-      <div class="section-heading">
-        <h2 id="platform-title">참가자 화면</h2>
-      </div>
+      <h2 class="sr-only" id="platform-title">참가자 화면</h2>
       <div class="screen-tabs" role="tablist" aria-label="플랫폼 화면 선택" hidden>
         <button type="button" id="tab-intro" role="tab" aria-selected="true" aria-controls="panel-intro" tabindex="0">보드 등장</button>
         <button type="button" id="tab-board" role="tab" aria-selected="false" aria-controls="panel-board" tabindex="-1">주사위 굴리기</button>
@@ -107,55 +103,67 @@
             <p class="verification-note">각 시험 환경에서 관측한 값입니다 CPU 원복과 실제 자원 정리·예약 반납까지 함께 확인했습니다</p>
           </div>
         </details>
+        <div class="tech-stack" aria-labelledby="tech-stack-title">
+          <h3 id="tech-stack-title">Tech Stack</h3>
+          <!-- TECH_STACK -->
+<div class="tech-grid">
+<section class="tech-group" data-tech-group="frontend" aria-labelledby="tech-frontend"><h4 id="tech-frontend">Frontend</h4><ul class="tech-items"><li><img src="assets/tech/react.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>React</span></li><li><img src="assets/tech/vitejs.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Vite</span></li><li><img src="assets/tech/tailwindcss.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Tailwind CSS</span></li><li><img src="assets/tech/threejs.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Three.js</span></li></ul></section>
+<section class="tech-group" data-tech-group="backend" aria-labelledby="tech-backend"><h4 id="tech-backend">Backend</h4><ul class="tech-items"><li><img src="assets/tech/djangorest.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Django REST</span></li><li><img src="assets/tech/postgresql.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>PostgreSQL</span></li><li><img src="assets/tech/redis.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Redis</span></li></ul></section>
+<section class="tech-group" data-tech-group="infrastructure" aria-labelledby="tech-infrastructure"><h4 id="tech-infrastructure">Infrastructure</h4><ul class="tech-items"><li><img src="assets/tech/fastapi.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>FastAPI</span></li><li><img src="assets/tech/kotlin.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Kotlin</span></li><li><img src="assets/tech/spring.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Spring Boot</span></li><li><img src="assets/tech/go.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Go</span></li><li><img src="assets/tech/docker.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Docker</span></li><li><img src="assets/tech/k3s.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>K3s</span></li><li><img src="assets/tech/nginx.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Nginx</span></li></ul></section>
+<section class="tech-group" data-tech-group="devsecops" aria-labelledby="tech-devsecops"><h4 id="tech-devsecops">DevSecOps</h4><ul class="tech-items"><li><img src="assets/tech/githubactions.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>GitHub Actions</span></li><li><img src="assets/tech/trivy.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Trivy</span></li></ul><p class="tech-note">GHCR · Gitleaks · SBOM</p></section>
+<section class="tech-group" data-tech-group="monitoring" aria-labelledby="tech-monitoring"><h4 id="tech-monitoring">Monitoring</h4><ul class="tech-items"><li><img src="assets/tech/dotnetcore.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>ASP.NET Core</span></li><li><img src="assets/tech/prometheus.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Prometheus</span></li><li><img src="assets/tech/grafana.svg" width="52" height="52" loading="lazy" decoding="async" alt=""><span>Grafana</span></li></ul></section>
+</div>
+<!-- END_TECH_STACK -->
+        </div>
       </div>
     </section>
 
     <section class="team-section section container" id="contributors" aria-labelledby="team-title">
       <div class="section-heading">
         <h2 id="team-title">함께 만든 사람들</h2>
-        <p class="section-description">총괄과 플랫폼 팀별로 맡은 일</p>
+        <p class="section-description">참여자와 맡은 일</p>
       </div>
-      <div class="team-directory" aria-label="총괄과 플랫폼 팀"><!-- ROLE_DIRECTORY -->
+      <div class="team-directory" aria-label="플랫폼 참여자"><!-- ROLE_DIRECTORY -->
 <section class="team-lead" aria-labelledby="role-lead">
           <img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="80" height="80" loading="lazy" decoding="async" alt="">
-          <div><h3 id="role-lead">총괄</h3>
+          <div><h3 id="role-lead">Lead</h3>
             <a class="role-person" href="https://github.com/jongcoding"><span class="role-name">@jongcoding</span></a>
             <p>팀 조율 · 플랫폼 통합 · 운영·QA</p>
           </div>
         </section>
 <div class="role-directory">
 <section class="role-group" aria-labelledby="role-frontend" data-role="frontend">
-          <h3 id="role-frontend">프론트팀</h3>
+          <h3 id="role-frontend">Frontend</h3>
           <p class="role-scope">참가자·관리자 화면</p>
           <ul class="role-people"><li><a class="role-person" href="https://github.com/tortoiese"><img class="avatar" src="https://avatars.githubusercontent.com/u/268766155?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@tortoiese</span><span class="role-duty">참가자·관리자 UI · API 연결</span></span></a></li><li><a class="role-person" href="https://github.com/yes0r"><img class="avatar" src="https://avatars.githubusercontent.com/u/230512345?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@yes0r</span><span class="role-duty">보드·3D · KOTH·순위·부스 화면</span></span></a></li></ul>
         </section>
 <section class="role-group" aria-labelledby="role-backend" data-role="backend">
-          <h3 id="role-backend">백엔드팀</h3>
+          <h3 id="role-backend">Backend</h3>
           <p class="role-scope">대회 규칙과 서비스 API</p>
           <ul class="role-people"><li><a class="role-person" href="https://github.com/gimgyumin0207"><img class="avatar" src="https://avatars.githubusercontent.com/u/244885819?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@gimgyumin0207</span><span class="role-duty">문제·인스턴스 · 배포 버전</span></span></a></li><li><a class="role-person" href="https://github.com/samdi70"><img class="avatar" src="https://avatars.githubusercontent.com/u/46455764?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@samdi70</span><span class="role-duty">인증·팀 · 마일리지·QR</span></span></a></li><li><a class="role-person" href="https://github.com/jiwonnii"><img class="avatar" src="https://avatars.githubusercontent.com/u/224767982?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@jiwonnii</span><span class="role-duty">보드·보상 · KOTH 채점</span></span></a></li><li><a class="role-person" href="https://github.com/dnehdx"><img class="avatar" src="https://avatars.githubusercontent.com/u/178199953?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@dnehdx</span><span class="role-duty">점수·순위 · 조회 성능</span></span></a></li></ul>
         </section>
 <section class="role-group" aria-labelledby="role-broker" data-role="broker">
-          <h3 id="role-broker">리소스 브로커팀</h3>
+          <h3 id="role-broker">Resource Broker</h3>
           <p class="role-scope">클라우드 자원 배정</p>
           <ul class="role-people"><li><a class="role-person" href="https://github.com/gonas0919"><img class="avatar" src="https://avatars.githubusercontent.com/u/143320324?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@gonas0919</span><span class="role-duty">인벤토리 · 예약·반납</span></span></a></li></ul>
         </section>
 <section class="role-group" aria-labelledby="role-scheduler" data-role="scheduler">
-          <h3 id="role-scheduler">스케줄러팀</h3>
+          <h3 id="role-scheduler">Scheduler</h3>
           <p class="role-scope">문제 실행 요청과 상태 관리</p>
           <ul class="role-people"><li><a class="role-person" href="https://github.com/tember8003"><img class="avatar" src="https://avatars.githubusercontent.com/u/104021663?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@tember8003</span><span class="role-duty">생성·초기화 · 만료·정리</span></span></a></li></ul>
         </section>
 <section class="role-group" aria-labelledby="role-runtime" data-role="runtime">
-          <h3 id="role-runtime">런타임팀</h3>
+          <h3 id="role-runtime">Runtime</h3>
           <p class="role-scope">문제 실행과 격리 보안</p>
           <ul class="role-people"><li><a class="role-person" href="https://github.com/goldsimchoi"><img class="avatar" src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@goldsimchoi</span><span class="role-duty">K3s 격리 · Gateway · Windows</span></span></a></li></ul>
         </section>
 <section class="role-group" aria-labelledby="role-devsecops" data-role="devsecops">
-          <h3 id="role-devsecops">DevSecOps팀</h3>
+          <h3 id="role-devsecops">DevSecOps</h3>
           <p class="role-scope">검사부터 발행·자동 배포까지</p>
           <ul class="role-people"><li><a class="role-person" href="https://github.com/wlsdnd2367"><img class="avatar" src="https://avatars.githubusercontent.com/u/230291092?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@wlsdnd2367</span><span class="role-duty">문제 CI · 이미지 검사·발행</span></span></a></li><li><a class="role-person" href="https://github.com/woalseee"><img class="avatar" src="https://avatars.githubusercontent.com/u/109592496?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@woalseee</span><span class="role-duty">플랫폼 CI · VM 자동 배포</span></span></a></li><li><a class="role-person" href="https://github.com/Giheon-Jeon"><img class="avatar" src="https://avatars.githubusercontent.com/u/64824907?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@Giheon-Jeon</span><span class="role-duty">프론트 CI · 프록시·보안 검사</span></span></a></li></ul>
         </section>
 <section class="role-group" aria-labelledby="role-sla" data-role="sla">
-          <h3 id="role-sla">SLA·모니터링팀</h3>
+          <h3 id="role-sla">SLA</h3>
           <p class="role-scope">서비스 상태와 장애 감시</p>
           <ul class="role-people"><li><a class="role-person" href="https://github.com/minsoo0506"><img class="avatar" src="https://avatars.githubusercontent.com/u/68321360?v=4&amp;s=128" width="52" height="52" loading="lazy" decoding="async" alt=""><span class="role-copy"><span class="role-name">@minsoo0506</span><span class="role-duty">SLA 초기 구조 · 상태 수집</span></span></a></li></ul>
         </section>

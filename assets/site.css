@@ -214,7 +214,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 .subpage-header > p { margin-top: 14px; color: var(--muted); font-size: 15px; }
 .page-jumps { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 28px; color: var(--accent); font-size: 13px; }
 .page-jumps a:hover { text-decoration: underline; text-underline-offset: 5px; }
-.page-platform .platform-section { padding-top: 52px; }
+.page-platform .subpage-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 18px; }
+.page-platform .subpage-header h1 { font-size: 32px; }
+.page-platform .page-jumps { margin: 0; font-size: 14px; }
+.page-platform .platform-section { padding-top: 20px; }
+.page-platform .screen-tabs { margin-bottom: 16px; }
+.page-platform .screen-stage { width: min(100%, calc((100svh - 340px) * 1.7778 + 16px)); min-width: min(100%, 480px); margin-inline: auto; }
 /* Reading pages use the same sans-serif throughout; event artwork stays intact. */
 :is(.page-authors, .page-archive, .page-challenge, .page-platform) { --title: var(--font); }
 :is(.page-authors, .page-archive, .page-challenge, .page-platform) h1,
@@ -371,6 +376,17 @@ details[open] > summary .plus::after { transform: rotate(0); }
 .performance-result a { display: inline-block; font-size: 12px; margin-top: 12px; text-decoration: underline; text-underline-offset: 4px; }
 .verification-note { grid-column: 1/-1; color: var(--muted); font-size: 11px; padding-top: 10px; }
 
+.tech-stack { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 32px; }
+.tech-stack > h3 { font: 600 26px/1.4 var(--font); }
+.tech-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 40px; margin-top: 28px; }
+.tech-group[data-tech-group="infrastructure"] { grid-column: 1/-1; }
+.tech-group h4 { margin: 0 0 16px; color: var(--accent); font: 500 16px/1.5 var(--font); }
+.tech-items { display: flex; flex-wrap: wrap; gap: 18px 20px; list-style: none; padding: 0; margin: 0; }
+.tech-items li { width: 88px; text-align: center; }
+.tech-items img { margin: 0 auto 9px; width: 52px; height: 52px; }
+.tech-items span { font-size: 13px; color: var(--muted); }
+.tech-note { margin-top: 12px; color: var(--muted); font-size: 12px; }
+
 .team-section > .section-heading h2 { font: 600 36px/1.4 var(--font); letter-spacing: -.03em; }
 .team-section > .section-heading .section-description { font-size: 15px; }
 .team-directory { margin: 32px 0 60px; }
@@ -510,7 +526,11 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .subpage-header h1 { font-size: 36px; }
   .subpage-header > p { font-size: 13px; line-height: 1.8; }
   .page-jumps { font-size: 12px; margin-top: 20px; gap: 20px; }
-  .page-platform .platform-section { padding-top: 38px; }
+  .page-platform .subpage-header { align-items: flex-start; gap: 15px; padding-block: 16px; }
+  .page-platform .subpage-header h1 { font-size: 27px; }
+  .page-platform .page-jumps { justify-content: flex-end; gap: 10px 15px; font-size: 12px; padding-top: 8px; }
+  .page-platform .platform-section { padding-top: 18px; }
+  .page-platform .screen-stage { width: 100%; min-width: 0; }
   .catalog-heading { padding-top: 25px; }
   .catalog-title { display: block; }
   .catalog-title h1 { font-size: 30px; }
@@ -578,6 +598,9 @@ details[open] > summary .plus::after { transform: rotate(0); }
   .team-lead .role-person { font-size: 23px; }
   .team-lead p { font-size: 14px; }
   .role-directory { grid-template-columns: 1fr; }
+  .tech-grid { grid-template-columns: 1fr; gap: 28px; }
+  .tech-items { gap: 16px 12px; }
+  .tech-items li { width: 78px; }
   .role-group { padding-block: 24px 30px; }
   .role-group h3 { font-size: 20px; }
   .role-people { gap: 18px; margin-top: 20px; }
