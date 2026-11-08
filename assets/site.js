@@ -1,6 +1,33 @@
 (() => {
   "use strict";
 
+  const leaves = document.querySelector(".autumn-leaves");
+  const motionToggle = document.querySelector(".motion-toggle");
+  if (leaves && motionToggle) {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let paused = false;
+    let inView = false;
+    const updateMotion = () => {
+      leaves.dataset.playing = String(!paused && inView && !document.hidden && !reducedMotion.matches);
+      motionToggle.hidden = reducedMotion.matches;
+      motionToggle.setAttribute("aria-pressed", String(paused));
+      motionToggle.setAttribute("aria-label", paused ? "낙엽 모션 재생" : "낙엽 모션 일시정지");
+      motionToggle.querySelector("span").textContent = paused ? "모션 켜기" : "모션 끄기";
+      motionToggle.querySelector(".pause-icon").toggleAttribute("hidden", paused);
+      motionToggle.querySelector(".play-icon").toggleAttribute("hidden", !paused);
+    };
+    motionToggle.addEventListener("click", () => { paused = !paused; updateMotion(); });
+    reducedMotion.addEventListener("change", updateMotion);
+    document.addEventListener("visibilitychange", updateMotion);
+    window.addEventListener("pageshow", updateMotion);
+    window.addEventListener("pagehide", () => { leaves.dataset.playing = "false"; });
+    new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      updateMotion();
+    }).observe(leaves);
+    updateMotion();
+  }
+
   const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
   const activate = (selected) => {
     for (const tab of tabs) {
@@ -46,7 +73,7 @@
       for (const repository of repositories) {
         const visible = category === "all" || repository.dataset.category === category;
         repository.hidden = !visible;
-        if (visible) shown += 1;
+        if (visible) shown += Number(repository.dataset.repoCount || 1);
       }
       status.textContent = `${button.textContent.trim()} · 저장소 ${shown}개`;
     });

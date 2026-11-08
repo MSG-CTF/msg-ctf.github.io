@@ -4,31 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#181715">
-  <meta name="description" content="2026 MSG CTF에서 사용한 플랫폼의 개발·운영 기록과 저장소별 참여자">
-  <meta property="og:title" content="MSG CTF · 플랫폼 개발·운영">
-  <meta property="og:description" content="2026 MSG CTF 개발·운영 기록 · 크레딧 적용 후 클라우드 추가 결제 0원">
+  <meta name="description" content="75팀·150명이 참가한 2026 MSG CTF의 대회 결과, 플랫폼 개발 기록과 참여자">
+  <meta property="og:title" content="2026 MSG CTF · 대회 기록">
+  <meta property="og:description" content="외부 50팀·내부 25팀의 최종 스코어보드와 함께 만든 플랫폼 · 크레딧 적용 후 클라우드 추가 결제 0원">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://msg-ctf.github.io/">
   <meta property="og:image" content="https://msg-ctf.github.io/assets/screens/board.jpg">
-  <title>MSG CTF · 플랫폼 개발·운영</title>
+  <title>2026 MSG CTF · 대회 기록</title>
   <link rel="canonical" href="https://msg-ctf.github.io/">
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
   <link rel="preload" href="assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site.css?v=5995d95">
-  <script src="assets/site.js" defer></script>
+  <link rel="stylesheet" href="assets/site.css?v=800830d56fd5">
+  <script src="assets/site.js?v=421384023ad8" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 이동</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="MSG CTF Platform 처음으로">
+      <a class="brand" href="#top" aria-label="MSG CTF 처음으로">
         <span class="brand-mark"><img src="assets/brand/event-logo.webp" alt="MSG CTF" width="1254" height="1254"></span>
         <span class="brand-divider" aria-hidden="true"></span>
-        <span class="brand-label">플랫폼</span>
+        <span class="brand-label">2026</span>
       </a>
       <nav aria-label="주요 메뉴">
-        <a href="#platform">화면</a>
-        <a href="#architecture">구성</a>
+        <a href="#results">결과</a>
+        <a href="#platform">플랫폼</a>
         <a href="#contributors">참여자</a>
       </nav>
       <a class="header-github" href="https://github.com/MSG-CTF">GitHub <span aria-hidden="true">↗</span></a>
@@ -41,22 +41,53 @@
         <source media="(max-width: 600px)" srcset="assets/brand/hero-plaza-mobile.webp">
         <img class="hero-art" src="assets/brand/hero-plaza.webp" width="1536" height="1024" alt="" fetchpriority="high">
       </picture>
+      <div class="autumn-leaves" data-playing="false" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <button class="motion-toggle" type="button" aria-label="낙엽 모션 일시정지" aria-pressed="false" hidden>
+        <svg class="pause-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+        <svg class="play-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" hidden><path d="m7 4 13 8-13 8z"/></svg>
+        <span>모션 끄기</span>
+      </button>
       <div class="hero-content">
         <p class="hero-date">2026. 11. 08</p>
         <div class="hero-logo"><img src="assets/brand/event-logo.webp" alt="MSG CTF" width="1254" height="1254"></div>
-        <h1 id="hero-title">플랫폼 개발·운영</h1>
-        <p class="hero-description">2026 MSG CTF에서 사용한 플랫폼입니다</p>
+        <h1 id="hero-title">2026 대회 기록</h1>
+        <p class="hero-description">75팀·150명이 참가한 보드게임형 해킹 대회</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#platform">화면 보기 <span aria-hidden="true">↓</span></a>
+          <a class="button button-primary" href="#results">스코어보드 <span aria-hidden="true">↓</span></a>
           <a class="button button-secondary" href="https://github.com/MSG-CTF/msg-ctf.github.io#readme">개발 기록 <span aria-hidden="true">↗</span></a>
         </div>
       </div>
       <dl class="hero-facts container">
+        <div><dt>전체 참가</dt><dd><strong>75</strong> 팀</dd><dd class="fact-note">150명</dd></div>
+        <div><dt>외부 트랙</dt><dd><strong>50</strong> 팀</dd><dd class="fact-note">100명</dd></div>
+        <div><dt>내부 트랙</dt><dd><strong>25</strong> 팀</dd><dd class="fact-note">50명</dd></div>
         <div class="cost-proof"><dt>클라우드 추가 결제</dt><dd><strong>0</strong> 원</dd><dd class="cost-note">크레딧 적용 후</dd></div>
-        <div><dt>일반 문제</dt><dd><strong>30</strong> 개</dd></div>
-        <div><dt>KOTH</dt><dd><strong>6</strong> 개</dd></div>
-        <div><dt>참가 환경</dt><dd class="track-names">내부 · 외부</dd><dd class="cost-note">계정·팀·점수 분리</dd></div>
       </dl>
+    </section>
+
+    <section class="results-section section container" id="results" aria-labelledby="results-title">
+      <div class="section-heading">
+        <h2 id="results-title">대회 결과</h2>
+        <p class="section-description">2026. 11. 08 · 10:00 ~ 22:00 KST</p>
+      </div>
+      <p class="event-story">두 명이 한 팀을 이뤄 주사위를 굴리고, 도착한 칸의 문제를 풀었습니다<br>일반 문제 30개와 KOTH 6개, 동아리 부스와 마일리지까지 함께 즐긴 하루였습니다</p>
+      <div class="scoreboards">
+        <figure class="scoreboard" data-track="external">
+          <figcaption><h3>외부 트랙</h3><span>50팀 · 100명</span></figcaption>
+          <a href="assets/results/external-scoreboard.png" target="_blank" rel="noopener" aria-label="외부 트랙 최종 스코어보드 원본 크게 보기">
+            <img src="assets/results/external-scoreboard.png" width="2876" height="1456" alt="외부 트랙 최종 스코어보드의 점수 그래프와 상위 팀 순위" loading="lazy" decoding="async">
+            <span class="scoreboard-action">최종 스코어보드 <span aria-hidden="true">↗</span></span>
+          </a>
+        </figure>
+        <figure class="scoreboard" data-track="internal">
+          <figcaption><h3>내부 트랙</h3><span>25팀 · 50명</span></figcaption>
+          <a href="assets/results/internal-scoreboard.png" target="_blank" rel="noopener" aria-label="내부 트랙 최종 스코어보드 원본 크게 보기">
+            <img src="assets/results/internal-scoreboard.png" width="2878" height="1446" alt="내부 트랙 최종 스코어보드의 점수 그래프와 상위 팀 순위" loading="lazy" decoding="async">
+            <span class="scoreboard-action">최종 스코어보드 <span aria-hidden="true">↗</span></span>
+          </a>
+        </figure>
+      </div>
+      <p class="results-thanks">참가해주신 모든 분께 감사드립니다</p>
     </section>
 
     <section class="platform-section section container" id="platform" aria-labelledby="platform-title">
@@ -116,133 +147,146 @@
 
     <section class="team-section section container" id="contributors" aria-labelledby="team-title">
       <div class="section-heading">
-        <h2 id="team-title">참여자와 저장소</h2>
-        <p class="section-description">저장소를 누르면 참여자와 맡은 일을 볼 수 있습니다</p>
+        <h2 id="team-title">함께 만든 사람들</h2>
+        <p class="section-description">플랫폼 개발·운영</p>
       </div>
+      <div class="contributor-roster" aria-label="플랫폼 참여자 GitHub 프로필"><!-- AVATAR_ROSTER -->
+<a class="roster-person" href="https://github.com/jongcoding"><img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>jongcoding</span></a>
+<a class="roster-person" href="https://github.com/gimgyumin0207"><img class="avatar" src="https://avatars.githubusercontent.com/u/244885819?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>gimgyumin0207</span></a>
+<a class="roster-person" href="https://github.com/samdi70"><img class="avatar" src="https://avatars.githubusercontent.com/u/46455764?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>samdi70</span></a>
+<a class="roster-person" href="https://github.com/jiwonnii"><img class="avatar" src="https://avatars.githubusercontent.com/u/224767982?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>jiwonnii</span></a>
+<a class="roster-person" href="https://github.com/dnehdx"><img class="avatar" src="https://avatars.githubusercontent.com/u/178199953?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>dnehdx</span></a>
+<a class="roster-person" href="https://github.com/tortoiese"><img class="avatar" src="https://avatars.githubusercontent.com/u/268766155?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>tortoiese</span></a>
+<a class="roster-person" href="https://github.com/yes0r"><img class="avatar" src="https://avatars.githubusercontent.com/u/230512345?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>yes0r</span></a>
+<a class="roster-person" href="https://github.com/tember8003"><img class="avatar" src="https://avatars.githubusercontent.com/u/104021663?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>tember8003</span></a>
+<a class="roster-person" href="https://github.com/gonas0919"><img class="avatar" src="https://avatars.githubusercontent.com/u/143320324?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>gonas0919</span></a>
+<a class="roster-person" href="https://github.com/goldsimchoi"><img class="avatar" src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>goldsimchoi</span></a>
+<a class="roster-person" href="https://github.com/wlsdnd2367"><img class="avatar" src="https://avatars.githubusercontent.com/u/230291092?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>wlsdnd2367</span></a>
+<a class="roster-person" href="https://github.com/woalseee"><img class="avatar" src="https://avatars.githubusercontent.com/u/109592496?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>woalseee</span></a>
+<a class="roster-person" href="https://github.com/Giheon-Jeon"><img class="avatar" src="https://avatars.githubusercontent.com/u/64824907?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>Giheon-Jeon</span></a>
+<a class="roster-person" href="https://github.com/minsoo0506"><img class="avatar" src="https://avatars.githubusercontent.com/u/68321360?v=4&amp;s=128" width="64" height="64" loading="lazy" decoding="async" alt=""><span>minsoo0506</span></a>
+<!-- END_AVATAR_ROSTER --></div>
+      <div class="repository-heading"><h3>저장소별 기여</h3><p>펼치면 참여자와 맡은 일을 볼 수 있습니다</p></div>
       <div class="repo-filters" role="group" aria-label="저장소 분야 선택" hidden>
-        <button type="button" data-filter="all" aria-pressed="true">전체 <span>10</span></button>
+        <button type="button" data-filter="all" aria-pressed="true">전체</button>
         <button type="button" data-filter="app" aria-pressed="false">화면·API</button>
         <button type="button" data-filter="execution" aria-pressed="false">제어·실행</button>
-        <button type="button" data-filter="operations" aria-pressed="false">CI·관측</button>
+        <button type="button" data-filter="operations" aria-pressed="false">DevSecOps·관측</button>
         <button type="button" data-filter="challenges" aria-pressed="false">문제</button>
       </div>
       <p class="sr-only" id="repo-status" role="status" aria-live="polite"></p>
       <div class="repository-list" id="repository-list">
         <!-- REPOSITORY_CREDITS -->
-<details class="repository" data-category="app" data-repo="front-team">
+<details class="repository" data-category="app" data-repo="front-team" data-repo-count="1">
           <summary><span class="repo-number">01</span><span class="repo-name">Frontend</span><span class="repo-description">참가자·관리자 화면</span><span class="repo-language">React · Vite</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/tortoiese">tortoiese</a><p>문제·보드·관리자 UI, API 연결, 타이머와 화면 디자인</p></li>
-<li><a href="https://github.com/yes0r">yes0r</a><p>보드·KOTH·순위·마이페이지, 동아리 부스와 3D 화면 구성</p></li>
-<li><a href="https://github.com/Giheon-Jeon">Giheon-Jeon</a><p>프론트 CI, Nginx API 프록시와 의존성 보안 검사</p></li>
-<li><a href="https://github.com/woalseee">woalseee</a><p>프론트 실행 환경과 개발 VM 자동 배포</p></li>
-<li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>TCP·TLS·SNI 접속 안내와 관리자 이미지 준비 화면</p></li>
-<li><a href="https://github.com/dnehdx">dnehdx</a><p>팀 정보·분야별 순위 표시와 CSP 적용</p></li>
-<li><a href="https://github.com/jiwonnii">jiwonnii</a><p>주사위 연속 사용과 충전 규칙 안내</p></li>
-<li><a href="https://github.com/jongcoding">jongcoding</a><p>운영 QA와 연동 보완, 재시도 복구·다운로드·관리자 상품 결제</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/front-team">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+          <div class="repo-body"><div class="repo-project"><ul class="repo-people"><li><a class="profile-link" href="https://github.com/tortoiese"><img class="avatar" src="https://avatars.githubusercontent.com/u/268766155?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>tortoiese</span></a><p>문제·보드·관리자 UI, API 연결, 타이머와 화면 디자인</p></li>
+<li><a class="profile-link" href="https://github.com/yes0r"><img class="avatar" src="https://avatars.githubusercontent.com/u/230512345?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>yes0r</span></a><p>보드·KOTH·순위·마이페이지, 동아리 부스와 3D 화면 구성</p></li>
+<li><a class="profile-link" href="https://github.com/Giheon-Jeon"><img class="avatar" src="https://avatars.githubusercontent.com/u/64824907?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>Giheon-Jeon</span></a><p>프론트 CI, Nginx API 프록시와 의존성 보안 검사</p></li>
+<li><a class="profile-link" href="https://github.com/woalseee"><img class="avatar" src="https://avatars.githubusercontent.com/u/109592496?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>woalseee</span></a><p>프론트 실행 환경과 개발 VM 자동 배포</p></li>
+<li><a class="profile-link" href="https://github.com/goldsimchoi"><img class="avatar" src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>goldsimchoi</span></a><p>TCP·TLS·SNI 접속 안내와 관리자 이미지 준비 화면</p></li>
+<li><a class="profile-link" href="https://github.com/dnehdx"><img class="avatar" src="https://avatars.githubusercontent.com/u/178199953?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>dnehdx</span></a><p>팀 정보·분야별 순위 표시와 CSP 적용</p></li>
+<li><a class="profile-link" href="https://github.com/jiwonnii"><img class="avatar" src="https://avatars.githubusercontent.com/u/224767982?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jiwonnii</span></a><p>주사위 연속 사용과 충전 규칙 안내</p></li>
+<li><a class="profile-link" href="https://github.com/jongcoding"><img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jongcoding</span></a><p>운영 QA와 연동 보완, 재시도 복구·다운로드·관리자 상품 결제</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/front-team">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div></div>
         </details>
-<details class="repository" data-category="app" data-repo="msg-backend">
+<details class="repository" data-category="app" data-repo="msg-backend" data-repo-count="1">
           <summary><span class="repo-number">02</span><span class="repo-name">Backend</span><span class="repo-description">인증·보드·문제·점수·마일리지</span><span class="repo-language">Django · PostgreSQL</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/gimgyumin0207">gimgyumin0207</a><p>문제·인스턴스 API, 참가자 파일, 릴리스 관리와 관리자 배포 기능</p></li>
-<li><a href="https://github.com/samdi70">samdi70</a><p>인증·팀 관리, 마이페이지, 마일리지·QR 결제와 릴리스 감사 기록</p></li>
-<li><a href="https://github.com/jiwonnii">jiwonnii</a><p>보드 규칙·보상, KOTH API·순위·문제별 팀 토큰</p></li>
-<li><a href="https://github.com/dnehdx">dnehdx</a><p>점수·리더보드 조회, 라인 독점, 조회 성능과 계정별 로그인 제한</p></li>
-<li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>Gateway 접속 정보, 이미지 준비 후 전환, Windows 실행 연동</p></li>
-<li><a href="https://github.com/woalseee">woalseee</a><p>공통 CI 연결과 백엔드 VM 자동 배포</p></li>
-<li><a href="https://github.com/jongcoding">jongcoding</a><p>서비스 간 연동·운영 QA, 주사위 멱등성, 응답 유실·재시작 복구</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/msg-backend">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+          <div class="repo-body"><div class="repo-project"><ul class="repo-people"><li><a class="profile-link" href="https://github.com/gimgyumin0207"><img class="avatar" src="https://avatars.githubusercontent.com/u/244885819?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>gimgyumin0207</span></a><p>문제·인스턴스 API, 참가자 파일, 릴리스 관리와 관리자 배포 기능</p></li>
+<li><a class="profile-link" href="https://github.com/samdi70"><img class="avatar" src="https://avatars.githubusercontent.com/u/46455764?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>samdi70</span></a><p>인증·팀 관리, 마이페이지, 마일리지·QR 결제와 릴리스 감사 기록</p></li>
+<li><a class="profile-link" href="https://github.com/jiwonnii"><img class="avatar" src="https://avatars.githubusercontent.com/u/224767982?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jiwonnii</span></a><p>보드 규칙·보상, KOTH API·순위·문제별 팀 토큰</p></li>
+<li><a class="profile-link" href="https://github.com/dnehdx"><img class="avatar" src="https://avatars.githubusercontent.com/u/178199953?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>dnehdx</span></a><p>점수·리더보드 조회, 라인 독점, 조회 성능과 계정별 로그인 제한</p></li>
+<li><a class="profile-link" href="https://github.com/goldsimchoi"><img class="avatar" src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>goldsimchoi</span></a><p>Gateway 접속 정보, 이미지 준비 후 전환, Windows 실행 연동</p></li>
+<li><a class="profile-link" href="https://github.com/woalseee"><img class="avatar" src="https://avatars.githubusercontent.com/u/109592496?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>woalseee</span></a><p>공통 CI 연결과 백엔드 VM 자동 배포</p></li>
+<li><a class="profile-link" href="https://github.com/jongcoding"><img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jongcoding</span></a><p>서비스 간 연동·운영 QA, 주사위 멱등성, 응답 유실·재시작 복구</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/msg-backend">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div></div>
         </details>
-<details class="repository" data-category="execution" data-repo="instance-scheduler">
+<details class="repository" data-category="execution" data-repo="instance-scheduler" data-repo-count="1">
           <summary><span class="repo-number">03</span><span class="repo-name">Instance Scheduler</span><span class="repo-description">생성·초기화·만료·정리</span><span class="repo-language">Kotlin · Spring Boot</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/tember8003">tember8003</a><p>스케줄러 기본 흐름, 상태 전환·정리 재시도·전체 조회·Windows 배정 API</p></li>
-<li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>이미지 준비 상태 우선 배치와 예약 복구 연결</p></li>
-<li><a href="https://github.com/jongcoding">jongcoding</a><p>실제 서비스 연동, 예약 반납 복구·기동 CPU·요청 ID 멱등성</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/instance-scheduler">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+          <div class="repo-body"><div class="repo-project"><ul class="repo-people"><li><a class="profile-link" href="https://github.com/tember8003"><img class="avatar" src="https://avatars.githubusercontent.com/u/104021663?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>tember8003</span></a><p>스케줄러 기본 흐름, 상태 전환·정리 재시도·전체 조회·Windows 배정 API</p></li>
+<li><a class="profile-link" href="https://github.com/goldsimchoi"><img class="avatar" src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>goldsimchoi</span></a><p>이미지 준비 상태 우선 배치와 예약 복구 연결</p></li>
+<li><a class="profile-link" href="https://github.com/jongcoding"><img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jongcoding</span></a><p>실제 서비스 연동, 예약 반납 복구·기동 CPU·요청 ID 멱등성</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/instance-scheduler">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div></div>
         </details>
-<details class="repository" data-category="execution" data-repo="resource-broker">
+<details class="repository" data-category="execution" data-repo="resource-broker" data-repo-count="1">
           <summary><span class="repo-number">04</span><span class="repo-name">Resource Broker</span><span class="repo-description">클라우드 인벤토리·자원 예약</span><span class="repo-language">Python · FastAPI</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/gonas0919">gonas0919</a><p>멀티 클라우드 인벤토리, 후보·예약 API, 관리 콘솔과 노드 준비</p></li>
-<li><a href="https://github.com/jongcoding">jongcoding</a><p>전용 VM·할당량 연동, 인벤토리 오류 수정과 기동 CPU 예약 축소</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/resource-broker">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+          <div class="repo-body"><div class="repo-project"><ul class="repo-people"><li><a class="profile-link" href="https://github.com/gonas0919"><img class="avatar" src="https://avatars.githubusercontent.com/u/143320324?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>gonas0919</span></a><p>멀티 클라우드 인벤토리, 후보·예약 API, 관리 콘솔과 노드 준비</p></li>
+<li><a class="profile-link" href="https://github.com/jongcoding"><img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jongcoding</span></a><p>전용 VM·할당량 연동, 인벤토리 오류 수정과 기동 CPU 예약 축소</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/resource-broker">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div></div>
         </details>
-<details class="repository" data-category="execution" data-repo="secure-provisioner">
+<details class="repository" data-category="execution" data-repo="secure-provisioner" data-repo-count="1">
           <summary><span class="repo-number">05</span><span class="repo-name">Runtime</span><span class="repo-description">K3s 배포·격리·비밀값 주입</span><span class="repo-language">Go · Kubernetes</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>Runtime API·작업 워커·K3s 배포·격리, Gateway와 Windows 실행 경로</p></li>
-<li><a href="https://github.com/jongcoding">jongcoding</a><p>운영 연동·장애 QA, 기동·삭제 대기 개선과 KOTH 저장·복구 도구</p></li>
-<li><a href="https://github.com/gonas0919">gonas0919</a><p>Windows 실행기 mTLS 설정 연동</p></li>
-<li><a href="https://github.com/dnehdx">dnehdx</a><p>RE:QR 문제 이미지 실행 정책 수정</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/secure-provisioner/tree/dev">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+          <div class="repo-body"><div class="repo-project"><ul class="repo-people"><li><a class="profile-link" href="https://github.com/goldsimchoi"><img class="avatar" src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>goldsimchoi</span></a><p>Runtime API·작업 워커·K3s 배포·격리, Gateway와 Windows 실행 경로</p></li>
+<li><a class="profile-link" href="https://github.com/jongcoding"><img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jongcoding</span></a><p>운영 연동·장애 QA, 기동·삭제 대기 개선과 KOTH 저장·복구 도구</p></li>
+<li><a class="profile-link" href="https://github.com/gonas0919"><img class="avatar" src="https://avatars.githubusercontent.com/u/143320324?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>gonas0919</span></a><p>Windows 실행기 mTLS 설정 연동</p></li>
+<li><a class="profile-link" href="https://github.com/dnehdx"><img class="avatar" src="https://avatars.githubusercontent.com/u/178199953?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>dnehdx</span></a><p>RE:QR 문제 이미지 실행 정책 수정</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/secure-provisioner/tree/dev">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div></div>
         </details>
-<details class="repository" data-category="operations" data-repo="msgctf-devsecops">
-          <summary><span class="repo-number">06</span><span class="repo-name">Challenge CI</span><span class="repo-description">문제 검사·이미지·파일 발행</span><span class="repo-language">GitHub Actions · GHCR</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/wlsdnd2367">wlsdnd2367</a><p>공통 문제 CI, 명세·보안 검사·SBOM·발행 bundle과 노드 이미지 준비 연결</p></li>
-<li><a href="https://github.com/jongcoding">jongcoding</a><p>실행 환경변수·비밀값 참조와 Crypto·Rev TCP 프로필 연동</p></li>
-<li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>GCP 런타임 HTTPS 배포 시험 경로</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/msgctf-devsecops">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+<details class="repository" data-category="operations" data-repo="devsecops" data-repo-count="2">
+          <summary><span class="repo-number">06</span><span class="repo-name">DevSecOps</span><span class="repo-description">문제 검사·발행과 플랫폼 자동 배포</span><span class="repo-language">GitHub Actions · GHCR</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><div class="repo-project"><h4>문제 검사·이미지 발행</h4><ul class="repo-people"><li><a class="profile-link" href="https://github.com/wlsdnd2367"><img class="avatar" src="https://avatars.githubusercontent.com/u/230291092?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>wlsdnd2367</span></a><p>공통 문제 CI, 명세·보안 검사·SBOM·발행 bundle과 노드 이미지 준비 연결</p></li>
+<li><a class="profile-link" href="https://github.com/jongcoding"><img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jongcoding</span></a><p>실행 환경변수·비밀값 참조와 Crypto·Rev TCP 프로필 연동</p></li>
+<li><a class="profile-link" href="https://github.com/goldsimchoi"><img class="avatar" src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>goldsimchoi</span></a><p>GCP 런타임 HTTPS 배포 시험 경로</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/msgctf-devsecops">msgctf-devsecops ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div><div class="repo-project"><h4>플랫폼 자동 배포</h4><ul class="repo-people"><li><a class="profile-link" href="https://github.com/woalseee"><img class="avatar" src="https://avatars.githubusercontent.com/u/109592496?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>woalseee</span></a><p>공통 플랫폼 CI와 개발 VM 배포, 배포 파일·스토리지 관리</p></li>
+<li><a class="profile-link" href="https://github.com/Giheon-Jeon"><img class="avatar" src="https://avatars.githubusercontent.com/u/64824907?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>Giheon-Jeon</span></a><p>프론트 검사에 맞춘 Semgrep 규칙 수정</p></li>
+<li><a class="profile-link" href="https://github.com/jongcoding"><img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jongcoding</span></a><p>배포 전환·롤백, 프론트 제한 SSH 배포와 보안 키·백업 연동</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/jm_devsecops/tree/main">jm_devsecops ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div></div>
         </details>
-<details class="repository" data-category="operations" data-repo="jm_devsecops">
-          <summary><span class="repo-number">07</span><span class="repo-name">Platform CI/CD</span><span class="repo-description">플랫폼 빌드·자동 배포·롤백</span><span class="repo-language">GitHub Actions · Docker</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/woalseee">woalseee</a><p>공통 플랫폼 CI와 개발 VM 배포, 배포 파일·스토리지 관리</p></li>
-<li><a href="https://github.com/Giheon-Jeon">Giheon-Jeon</a><p>프론트 검사에 맞춘 Semgrep 규칙 수정</p></li>
-<li><a href="https://github.com/jongcoding">jongcoding</a><p>배포 전환·롤백, 프론트 제한 SSH 배포와 보안 키·백업 연동</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/jm_devsecops/tree/main">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+<details class="repository" data-category="operations" data-repo="sentinel" data-repo-count="1">
+          <summary><span class="repo-number">07</span><span class="repo-name">SLA / Sentinel</span><span class="repo-description">서비스·노드·인스턴스 감시</span><span class="repo-language">C# · .NET</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><div class="repo-project"><ul class="repo-people"><li><a class="profile-link" href="https://github.com/minsoo0506"><img class="avatar" src="https://avatars.githubusercontent.com/u/68321360?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>minsoo0506</span></a><p>SLA 계약·.NET 기본 구조, health check worker와 Prometheus metrics</p></li>
+<li><a class="profile-link" href="https://github.com/jongcoding"><img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jongcoding</span></a><p>실제 서버·전체 인스턴스 감시, 운영 대시보드·AWS 배포·노드 수집 연결</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/sentinel">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div></div>
         </details>
-<details class="repository" data-category="operations" data-repo="sentinel">
-          <summary><span class="repo-number">08</span><span class="repo-name">SLA / Sentinel</span><span class="repo-description">서비스·노드·인스턴스 감시</span><span class="repo-language">C# · .NET</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/minsoo0506">minsoo0506</a><p>SLA 계약·.NET 기본 구조, health check worker와 Prometheus metrics</p></li>
-<li><a href="https://github.com/jongcoding">jongcoding</a><p>실제 서버·전체 인스턴스 감시, 운영 대시보드·AWS 배포·노드 수집 연결</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/sentinel">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+<details class="repository" data-category="operations" data-repo="ctf-mock" data-repo-count="1">
+          <summary><span class="repo-number">08</span><span class="repo-name">Mock API</span><span class="repo-description">운영 감시 개발·장애 모사</span><span class="repo-language">Python · Django</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><div class="repo-project"><ul class="repo-people"><li><a class="profile-link" href="https://github.com/minsoo0506"><img class="avatar" src="https://avatars.githubusercontent.com/u/68321360?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>minsoo0506</span></a><p>Django 기본 구조, Sentinel용 모사 API와 장애 시나리오·검사 설정</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/ctf-mock">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div></div>
         </details>
-<details class="repository" data-category="operations" data-repo="ctf-mock">
-          <summary><span class="repo-number">09</span><span class="repo-name">Mock API</span><span class="repo-description">운영 감시 개발·장애 모사</span><span class="repo-language">Python · Django</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="repo-body"><ul class="repo-people"><li><a href="https://github.com/minsoo0506">minsoo0506</a><p>Django 기본 구조, Sentinel용 모사 API와 장애 시나리오·검사 설정</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/ctf-mock">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
-        </details>
-<details class="repository" data-category="challenges" data-repo="2026_MSG_CTF">
-          <summary><span class="repo-number">10</span><span class="repo-name">Challenges</span><span class="repo-description">문제 출제·제공 파일·실행 설정</span><span class="repo-language">30 Challenges · 6 KOTH</span><span class="plus" aria-hidden="true"></span></summary>
-          <div class="repo-body"><p class="private-note">문제 저장소는 접근 권한이 필요합니다</p><ul class="repo-people"><li><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>Grand Tour Duel·OSINT 문제 제작과 게임 실행·채점 보완</p></li>
-<li><a href="https://github.com/jongcoding">jongcoding</a><p>플랫폼 배포·환경변수·파일 연결, 원본 풀이 QA와 KOTH 운영 연동</p></li>
-<li><a href="https://github.com/wlsdnd2367">wlsdnd2367</a><p>문제 저장소 CI 호출, 발행·참가자 파일·노드 사전 준비 계약</p></li>
-<li><a href="https://github.com/gonas0919">gonas0919</a><p>Afterimage / MIDNIGHT EXAM 문제 제작과 수정</p></li>
-<li><a href="https://github.com/cksk00">cksk00</a><p>TR-88·Jenga 문제 제작과 실행·채점 보완</p></li>
-<li><a href="https://github.com/Ranunculus2165">Ranunculus2165</a><p>Reused Seal·Phantom Lattice·The Quiet Second 제작·수정</p></li>
-<li><a href="https://github.com/YeonHo0718">YeonHo0718</a><p>로그아웃 시켜줘!!·Pixel Smuggler 제작과 수정</p></li>
-<li><a href="https://github.com/s3tzun4">s3tzun4</a><p>Hidden Order 제작과 난이도·배포 구성 수정</p></li>
-<li><a href="https://github.com/yebbis">yebbis</a><p>Snack Thief·Is This Job Legit? 제작</p></li>
-<li><a href="https://github.com/banda59">banda59</a><p>TinyVM·msgdriver 제작과 Windows 실행 준비</p></li>
-<li><a href="https://github.com/Z3r0c0k3">Z3r0c0k3</a><p>The Past Has an Address·RE:QR 제작과 수정</p></li>
-<li><a href="https://github.com/random6-xyz">random6-xyz</a><p>Random6·ezpz 제작과 비의도 풀이 보완</p></li>
-<li><a href="https://github.com/meeeeing">meeeeing</a><p>Nerves SEAL 제작과 암호·서버 구성 수정</p></li>
-<li><a href="https://github.com/veomeow">veomeow</a><p>CASHOUT·Infinite Pack 제작과 수정</p></li>
-<li><a href="https://github.com/seolwon05">seolwon05</a><p>Ghost File 제작</p></li>
-<li><a href="https://github.com/sea-2025">sea-2025</a><p>Price Tag 제작, 바이너리·제공 파일·풀이 보완</p></li>
-<li><a href="https://github.com/guswjddl4313">guswjddl4313</a><p>Split-Brain Oracle 제작과 수정</p></li>
-<li><a href="https://github.com/Hayk6c1">Hayk6c1</a><p>Card Battle Arena 제작과 경기 규칙·검수 보완</p></li>
-<li><a href="https://github.com/yes0r">yes0r</a><p>The Last Record 제작과 난이도 수정</p></li>
-<li><a href="https://github.com/yeon365">yeon365</a><p>Notebook 제작과 문제 구조·검수 보완</p></li>
-<li><a href="https://github.com/xo0102">xo0102</a><p>Dependency Hell 제작, 빌드·동시 요청·채점 복구 보완</p></li>
-<li><a href="https://github.com/chaeun-11">chaeun-11</a><p>Open House 제작과 풀이·문제 수정</p></li>
-<li><a href="https://github.com/zkfla">zkfla</a><p>Evidence 포렌식 문제 제작</p></li>
-<li><a href="https://github.com/nomadY24">nomadY24</a><p>Daily Point 난이도·이미지 보안 보완</p></li>
-<li><a href="https://github.com/stw0218">stw0218</a><p>Rework 제작과 수정</p></li>
-<li><a href="https://github.com/lucylucy1006-netizen">lucylucy1006-netizen</a><p>Leftovers 포렌식 문제 제작</p></li>
-<li><a href="https://github.com/tls456">tls456</a><p>Grade Tampering 플래그 발급 조건 수정</p></li>
-<li><a href="https://github.com/cooku222">cooku222</a><p>The Past Has an Address 난이도 보완</p></li>
-<li><a href="https://github.com/hhi3xn">hhi3xn</a><p>Trace OSINT 문제 제작</p></li>
-<li><a href="https://github.com/Hyeo0n">Hyeo0n</a><p>Swanopoly 제작과 검수 보완</p></li>
-<li><a href="https://github.com/hhieon">hhieon</a><p>문제 저장소 커밋 참여</p></li>
-<li><a href="https://github.com/Whaql123">Whaql123</a><p>TR-88 문제 초기 소스 등록</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/2026_MSG_CTF">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div>
+<details class="repository" data-category="challenges" data-repo="2026_MSG_CTF" data-repo-count="1">
+          <summary><span class="repo-number">09</span><span class="repo-name">Challenges</span><span class="repo-description">문제 출제·제공 파일·실행 설정</span><span class="repo-language">30 Challenges · 6 KOTH</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="repo-body"><div class="repo-project"><p class="private-note">문제 저장소는 접근 권한이 필요합니다</p><ul class="repo-people"><li><a class="profile-link" href="https://github.com/goldsimchoi"><img class="avatar" src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>goldsimchoi</span></a><p>Grand Tour Duel·OSINT 문제 제작과 게임 실행·채점 보완</p></li>
+<li><a class="profile-link" href="https://github.com/jongcoding"><img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jongcoding</span></a><p>플랫폼 배포·환경변수·파일 연결, 원본 풀이 QA와 KOTH 운영 연동</p></li>
+<li><a class="profile-link" href="https://github.com/wlsdnd2367"><img class="avatar" src="https://avatars.githubusercontent.com/u/230291092?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>wlsdnd2367</span></a><p>문제 저장소 CI 호출, 발행·참가자 파일·노드 사전 준비 계약</p></li>
+<li><a class="profile-link" href="https://github.com/gonas0919"><img class="avatar" src="https://avatars.githubusercontent.com/u/143320324?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>gonas0919</span></a><p>Afterimage / MIDNIGHT EXAM 문제 제작과 수정</p></li>
+<li><a class="profile-link" href="https://github.com/cksk00"><img class="avatar" src="https://avatars.githubusercontent.com/u/209724471?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>cksk00</span></a><p>TR-88·Jenga 문제 제작과 실행·채점 보완</p></li>
+<li><a class="profile-link" href="https://github.com/Ranunculus2165"><img class="avatar" src="https://avatars.githubusercontent.com/u/72401646?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>Ranunculus2165</span></a><p>Reused Seal·Phantom Lattice·The Quiet Second 제작·수정</p></li>
+<li><a class="profile-link" href="https://github.com/YeonHo0718"><img class="avatar" src="https://avatars.githubusercontent.com/u/53458434?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>YeonHo0718</span></a><p>로그아웃 시켜줘!!·Pixel Smuggler 제작과 수정</p></li>
+<li><a class="profile-link" href="https://github.com/s3tzun4"><img class="avatar" src="https://avatars.githubusercontent.com/u/121555643?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>s3tzun4</span></a><p>Hidden Order 제작과 난이도·배포 구성 수정</p></li>
+<li><a class="profile-link" href="https://github.com/yebbis"><img class="avatar" src="https://avatars.githubusercontent.com/u/245714031?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>yebbis</span></a><p>Snack Thief·Is This Job Legit? 제작</p></li>
+<li><a class="profile-link" href="https://github.com/banda59"><img class="avatar" src="https://avatars.githubusercontent.com/u/165415245?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>banda59</span></a><p>TinyVM·msgdriver 제작과 Windows 실행 준비</p></li>
+<li><a class="profile-link" href="https://github.com/Z3r0c0k3"><img class="avatar" src="https://avatars.githubusercontent.com/u/76674646?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>Z3r0c0k3</span></a><p>The Past Has an Address·RE:QR 제작과 수정</p></li>
+<li><a class="profile-link" href="https://github.com/random6-xyz"><img class="avatar" src="https://avatars.githubusercontent.com/u/108564424?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>random6-xyz</span></a><p>Random6·ezpz 제작과 비의도 풀이 보완</p></li>
+<li><a class="profile-link" href="https://github.com/meeeeing"><img class="avatar" src="https://avatars.githubusercontent.com/u/107387239?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>meeeeing</span></a><p>Nerves SEAL 제작과 암호·서버 구성 수정</p></li>
+<li><a class="profile-link" href="https://github.com/veomeow"><img class="avatar" src="https://avatars.githubusercontent.com/u/224245021?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>veomeow</span></a><p>CASHOUT·Infinite Pack 제작과 수정</p></li>
+<li><a class="profile-link" href="https://github.com/seolwon05"><img class="avatar" src="https://avatars.githubusercontent.com/u/220564005?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>seolwon05</span></a><p>Ghost File 제작</p></li>
+<li><a class="profile-link" href="https://github.com/sea-2025"><img class="avatar" src="https://avatars.githubusercontent.com/u/202382885?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>sea-2025</span></a><p>Price Tag 제작, 바이너리·제공 파일·풀이 보완</p></li>
+<li><a class="profile-link" href="https://github.com/guswjddl4313"><img class="avatar" src="https://avatars.githubusercontent.com/u/54942529?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>guswjddl4313</span></a><p>Split-Brain Oracle 제작과 수정</p></li>
+<li><a class="profile-link" href="https://github.com/Hayk6c1"><img class="avatar" src="https://avatars.githubusercontent.com/u/182420958?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>Hayk6c1</span></a><p>Card Battle Arena 제작과 경기 규칙·검수 보완</p></li>
+<li><a class="profile-link" href="https://github.com/yes0r"><img class="avatar" src="https://avatars.githubusercontent.com/u/230512345?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>yes0r</span></a><p>The Last Record 제작과 난이도 수정</p></li>
+<li><a class="profile-link" href="https://github.com/yeon365"><img class="avatar" src="https://avatars.githubusercontent.com/u/211145526?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>yeon365</span></a><p>Notebook 제작과 문제 구조·검수 보완</p></li>
+<li><a class="profile-link" href="https://github.com/xo0102"><img class="avatar" src="https://avatars.githubusercontent.com/u/63778661?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>xo0102</span></a><p>Dependency Hell 제작, 빌드·동시 요청·채점 복구 보완</p></li>
+<li><a class="profile-link" href="https://github.com/chaeun-11"><img class="avatar" src="https://avatars.githubusercontent.com/u/202496152?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>chaeun-11</span></a><p>Open House 제작과 풀이·문제 수정</p></li>
+<li><a class="profile-link" href="https://github.com/zkfla"><img class="avatar" src="https://avatars.githubusercontent.com/u/210644931?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>zkfla</span></a><p>Evidence 포렌식 문제 제작</p></li>
+<li><a class="profile-link" href="https://github.com/nomadY24"><img class="avatar" src="https://avatars.githubusercontent.com/u/210641307?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>nomadY24</span></a><p>Daily Point 난이도·이미지 보안 보완</p></li>
+<li><a class="profile-link" href="https://github.com/stw0218"><img class="avatar" src="https://avatars.githubusercontent.com/u/39959351?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>stw0218</span></a><p>Rework 제작과 수정</p></li>
+<li><a class="profile-link" href="https://github.com/lucylucy1006-netizen"><img class="avatar" src="https://avatars.githubusercontent.com/u/227095422?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>lucylucy1006-netizen</span></a><p>Leftovers 포렌식 문제 제작</p></li>
+<li><a class="profile-link" href="https://github.com/tls456"><img class="avatar" src="https://avatars.githubusercontent.com/u/215467384?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>tls456</span></a><p>Grade Tampering 플래그 발급 조건 수정</p></li>
+<li><a class="profile-link" href="https://github.com/cooku222"><img class="avatar" src="https://avatars.githubusercontent.com/u/68459662?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>cooku222</span></a><p>The Past Has an Address 난이도 보완</p></li>
+<li><a class="profile-link" href="https://github.com/hhi3xn"><img class="avatar" src="https://avatars.githubusercontent.com/u/290181243?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>hhi3xn</span></a><p>Trace OSINT 문제 제작</p></li>
+<li><a class="profile-link" href="https://github.com/Hyeo0n"><img class="avatar" src="https://avatars.githubusercontent.com/u/163324653?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>Hyeo0n</span></a><p>Swanopoly 제작과 검수 보완</p></li>
+<li><a class="profile-link" href="https://github.com/hhieon"><img class="avatar" src="https://avatars.githubusercontent.com/u/142193681?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>hhieon</span></a><p>문제 저장소 커밋 참여</p></li>
+<li><a class="profile-link" href="https://github.com/Whaql123"><img class="avatar" src="https://avatars.githubusercontent.com/u/287711320?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>Whaql123</span></a><p>TR-88 문제 초기 소스 등록</p></li></ul><div class="repo-links"><a href="https://github.com/MSG-CTF/2026_MSG_CTF">저장소 ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/readme-updates.md">기여 정리 PR ↗</a></div></div></div>
         </details>
 <!-- END_REPOSITORY_CREDITS -->
       </div>
       <details class="all-credits">
-        <summary><span>플랫폼 참여자 전체 보기 <span class="count">14</span></span><span class="plus" aria-hidden="true"></span></summary>
+        <summary><span>참여자별 맡은 일 <span class="count">14</span></span><span class="plus" aria-hidden="true"></span></summary>
         <div class="people-grid"><!-- PLATFORM_CREDITS -->
-<div class="person"><a href="https://github.com/jongcoding">jongcoding</a><p>플랫폼 연동·운영·QA, 장애 재현과 복구, 성능 개선, SLA·배포 연결</p></div>
-<div class="person"><a href="https://github.com/gimgyumin0207">gimgyumin0207</a><p>문제·인스턴스 API, 발행본·제공 파일·배포 버전 관리</p></div>
-<div class="person"><a href="https://github.com/samdi70">samdi70</a><p>인증·팀·관리자 API, 마일리지·QR 결제</p></div>
-<div class="person"><a href="https://github.com/jiwonnii">jiwonnii</a><p>보드 규칙·보상과 KOTH API·채점·문제별 토큰</p></div>
-<div class="person"><a href="https://github.com/dnehdx">dnehdx</a><p>점수·조회 성능, 로그인 제한과 프론트 보안 정책</p></div>
-<div class="person"><a href="https://github.com/tortoiese">tortoiese</a><p>참가자·관리자 화면, 문제·보드 UI와 API 연결</p></div>
-<div class="person"><a href="https://github.com/yes0r">yes0r</a><p>보드·KOTH·순위·부스 화면과 3D 구성</p></div>
-<div class="person"><a href="https://github.com/tember8003">tember8003</a><p>스케줄러 생성·초기화·만료·정리와 상태 이력</p></div>
-<div class="person"><a href="https://github.com/gonas0919">gonas0919</a><p>리소스 브로커, 클라우드 인벤토리·예약·관리 콘솔</p></div>
-<div class="person"><a href="https://github.com/goldsimchoi">goldsimchoi</a><p>Go 런타임·K3s 격리·Gateway·Windows 실행 연결</p></div>
-<div class="person"><a href="https://github.com/wlsdnd2367">wlsdnd2367</a><p>문제 CI·이미지 검사·SBOM·발행과 노드 사전 준비</p></div>
-<div class="person"><a href="https://github.com/woalseee">woalseee</a><p>플랫폼 공통 CI와 프론트·백엔드 VM 자동 배포</p></div>
-<div class="person"><a href="https://github.com/Giheon-Jeon">Giheon-Jeon</a><p>프론트 CI·Nginx 프록시·Semgrep 검사 연결</p></div>
-<div class="person"><a href="https://github.com/minsoo0506">minsoo0506</a><p>SLA 초기 구조·health worker·Prometheus와 장애 모사 API</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/jongcoding"><img class="avatar" src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jongcoding</span></a><p>플랫폼 연동·운영·QA, 장애 재현과 복구, 성능 개선, SLA·배포 연결</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/gimgyumin0207"><img class="avatar" src="https://avatars.githubusercontent.com/u/244885819?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>gimgyumin0207</span></a><p>문제·인스턴스 API, 발행본·제공 파일·배포 버전 관리</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/samdi70"><img class="avatar" src="https://avatars.githubusercontent.com/u/46455764?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>samdi70</span></a><p>인증·팀·관리자 API, 마일리지·QR 결제</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/jiwonnii"><img class="avatar" src="https://avatars.githubusercontent.com/u/224767982?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>jiwonnii</span></a><p>보드 규칙·보상과 KOTH API·채점·문제별 토큰</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/dnehdx"><img class="avatar" src="https://avatars.githubusercontent.com/u/178199953?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>dnehdx</span></a><p>점수·조회 성능, 로그인 제한과 프론트 보안 정책</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/tortoiese"><img class="avatar" src="https://avatars.githubusercontent.com/u/268766155?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>tortoiese</span></a><p>참가자·관리자 화면, 문제·보드 UI와 API 연결</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/yes0r"><img class="avatar" src="https://avatars.githubusercontent.com/u/230512345?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>yes0r</span></a><p>보드·KOTH·순위·부스 화면과 3D 구성</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/tember8003"><img class="avatar" src="https://avatars.githubusercontent.com/u/104021663?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>tember8003</span></a><p>스케줄러 생성·초기화·만료·정리와 상태 이력</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/gonas0919"><img class="avatar" src="https://avatars.githubusercontent.com/u/143320324?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>gonas0919</span></a><p>리소스 브로커, 클라우드 인벤토리·예약·관리 콘솔</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/goldsimchoi"><img class="avatar" src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>goldsimchoi</span></a><p>Go 런타임·K3s 격리·Gateway·Windows 실행 연결</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/wlsdnd2367"><img class="avatar" src="https://avatars.githubusercontent.com/u/230291092?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>wlsdnd2367</span></a><p>문제 CI·이미지 검사·SBOM·발행과 노드 사전 준비</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/woalseee"><img class="avatar" src="https://avatars.githubusercontent.com/u/109592496?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>woalseee</span></a><p>플랫폼 공통 CI와 프론트·백엔드 VM 자동 배포</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/Giheon-Jeon"><img class="avatar" src="https://avatars.githubusercontent.com/u/64824907?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>Giheon-Jeon</span></a><p>프론트 CI·Nginx 프록시·Semgrep 검사 연결</p></div>
+<div class="person"><a class="profile-link" href="https://github.com/minsoo0506"><img class="avatar" src="https://avatars.githubusercontent.com/u/68321360?v=4&amp;s=128" width="40" height="40" loading="lazy" decoding="async" alt=""><span>minsoo0506</span></a><p>SLA 초기 구조·health worker·Prometheus와 장애 모사 API</p></div>
 <!-- END_PLATFORM_CREDITS --></div>
         <p class="credit-basis">2026. 11. 09까지의 병합 PR·커밋 기준</p>
       </details>
@@ -252,7 +296,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div><span class="footer-title">MSG CTF 2026</span><p>플랫폼 개발·운영</p></div>
+      <div><span class="footer-title">MSG CTF 2026</span><p>2026년 11월 8일의 대회와 개발 기록</p></div>
       <div class="footer-links"><a href="https://github.com/MSG-CTF">GitHub ↗</a><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/asset-sources.md">화면·에셋 출처 ↗</a><a href="#top">맨 위로 ↑</a></div>
     </div>
   </footer>

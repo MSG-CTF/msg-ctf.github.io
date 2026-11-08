@@ -1,14 +1,24 @@
-# MSG CTF Platform
+# MSG CTF 2026
 
-[플랫폼 소개 보기](https://msg-ctf.github.io/)
+[대회 기록 보기](https://msg-ctf.github.io/)
 
-**2026 MSG CTF를 위해 직접 만들고 운영한 보드게임형 해킹 대회 플랫폼**
+**75팀·150명이 참가한 보드게임형 해킹 대회**
 
-참가자는 주사위를 굴려 보드를 이동하고, 도착한 칸에서 문제를 골라 풉니다
-풀이 점수로 순위를 겨루고, 모은 마일리지로 동아리 부스를 이용할 수 있습니다
-KOTH에서는 문제별로 봇·코드·파일을 제출해 경기를 치릅니다
+2026년 11월 8일 오전 10시부터 오후 10시까지 진행했습니다
+두 명씩 한 팀을 이뤄 주사위를 굴려 이동하고, 도착한 칸에서 문제를 골라 풀었습니다
+일반 문제와 KOTH로 점수를 겨루고, 모은 마일리지로 동아리 부스도 이용했습니다
 
-이 저장소는 참가자 화면부터 문제 배포, 자원 관리, 채점, 운영 감시까지 함께 만든 내용을 정리합니다
+이 저장소에는 대회 결과와 함께, 참가자 화면부터 문제 배포·채점·운영 감시까지 직접 만든 플랫폼을 정리했습니다
+
+## 대회 결과
+
+| 외부 트랙 | 내부 트랙 |
+| --- | --- |
+| **50팀 · 100명** | **25팀 · 50명** |
+| [![외부 트랙 최종 스코어보드](assets/results/external-scoreboard.png)](assets/results/external-scoreboard.png) | [![내부 트랙 최종 스코어보드](assets/results/internal-scoreboard.png)](assets/results/internal-scoreboard.png) |
+
+이미지를 누르면 원본 크기로 볼 수 있습니다
+참가해주신 모든 분께 감사드립니다
 
 ## 대회 운영 클라우드 추가 결제액 0원
 
@@ -66,8 +76,7 @@ KOTH는 별도 게임 서버와 제출·채점 경로를 사용합니다
 | [instance-scheduler](https://github.com/MSG-CTF/instance-scheduler) | 생성·초기화·만료·정리, 실행 상태 추적과 예약 반납 |
 | [resource-broker](https://github.com/MSG-CTF/resource-broker) | 클라우드 인벤토리·후보 조회·자원 예약·확정·반납 |
 | [secure-provisioner](https://github.com/MSG-CTF/secure-provisioner/tree/dev) | K3s 배포·격리·비밀값 주입·Gateway·실행 자원 정리 |
-| [msgctf-devsecops](https://github.com/MSG-CTF/msgctf-devsecops) | 문제 이미지 검사·GHCR 발행·SBOM·참가자 파일 묶음 |
-| [jm_devsecops](https://github.com/MSG-CTF/jm_devsecops/tree/main) | 플랫폼 애플리케이션 CI와 VM 배포·전환·롤백 |
+| DevSecOps · [msgctf-devsecops](https://github.com/MSG-CTF/msgctf-devsecops) · [jm_devsecops](https://github.com/MSG-CTF/jm_devsecops/tree/main) | 문제 이미지 검사·GHCR 발행·SBOM·참가자 파일 묶음, 플랫폼 자동 배포·전환·롤백 |
 | [sentinel](https://github.com/MSG-CTF/sentinel) | 실제 서비스·노드·인스턴스 감시, 대시보드·이벤트·알림 |
 | [ctf-mock](https://github.com/MSG-CTF/ctf-mock) | SLA 초기 개발용 API와 장애 시나리오 시험 |
 | [2026_MSG_CTF](https://github.com/MSG-CTF/2026_MSG_CTF) | 출제 문제·제공 파일·실행 설정·발행 워크플로, 접근 권한 필요 |
@@ -108,20 +117,20 @@ KOTH는 별도 게임 서버와 제출·채점 경로를 사용합니다
 
 | 참여자 | 플랫폼에서 맡은 일 |
 | --- | --- |
-| [jongcoding](https://github.com/jongcoding) | 플랫폼 연동·운영·QA, 장애 재현과 복구, 성능 개선, SLA·배포 연결 |
-| [gimgyumin0207](https://github.com/gimgyumin0207) | 문제·인스턴스 API, 발행본·제공 파일·배포 버전 관리 |
-| [samdi70](https://github.com/samdi70) | 인증·팀·관리자 API, 마일리지·QR 결제 |
-| [jiwonnii](https://github.com/jiwonnii) | 보드 규칙·보상과 KOTH API·채점·문제별 토큰 |
-| [dnehdx](https://github.com/dnehdx) | 점수·조회 성능, 로그인 제한과 프론트 보안 정책 |
-| [tortoiese](https://github.com/tortoiese) | 참가자·관리자 화면, 문제·보드 UI와 API 연결 |
-| [yes0r](https://github.com/yes0r) | 보드·KOTH·순위·부스 화면과 3D 구성 |
-| [tember8003](https://github.com/tember8003) | 스케줄러 생성·초기화·만료·정리와 상태 이력 |
-| [gonas0919](https://github.com/gonas0919) | 리소스 브로커, 클라우드 인벤토리·예약·관리 콘솔 |
-| [goldsimchoi](https://github.com/goldsimchoi) | Go 런타임·K3s 격리·Gateway·Windows 실행 연결 |
-| [wlsdnd2367](https://github.com/wlsdnd2367) | 문제 CI·이미지 검사·SBOM·발행과 노드 사전 준비 |
-| [woalseee](https://github.com/woalseee) | 플랫폼 공통 CI와 프론트·백엔드 VM 자동 배포 |
-| [Giheon-Jeon](https://github.com/Giheon-Jeon) | 프론트 CI·Nginx 프록시·Semgrep 검사 연결 |
-| [minsoo0506](https://github.com/minsoo0506) | SLA 초기 구조·health worker·Prometheus와 장애 모사 API |
+| <img src="https://avatars.githubusercontent.com/u/128033808?v=4&amp;s=128" width="32" height="32" alt=""> [jongcoding](https://github.com/jongcoding) | 플랫폼 연동·운영·QA, 장애 재현과 복구, 성능 개선, SLA·배포 연결 |
+| <img src="https://avatars.githubusercontent.com/u/244885819?v=4&amp;s=128" width="32" height="32" alt=""> [gimgyumin0207](https://github.com/gimgyumin0207) | 문제·인스턴스 API, 발행본·제공 파일·배포 버전 관리 |
+| <img src="https://avatars.githubusercontent.com/u/46455764?v=4&amp;s=128" width="32" height="32" alt=""> [samdi70](https://github.com/samdi70) | 인증·팀·관리자 API, 마일리지·QR 결제 |
+| <img src="https://avatars.githubusercontent.com/u/224767982?v=4&amp;s=128" width="32" height="32" alt=""> [jiwonnii](https://github.com/jiwonnii) | 보드 규칙·보상과 KOTH API·채점·문제별 토큰 |
+| <img src="https://avatars.githubusercontent.com/u/178199953?v=4&amp;s=128" width="32" height="32" alt=""> [dnehdx](https://github.com/dnehdx) | 점수·조회 성능, 로그인 제한과 프론트 보안 정책 |
+| <img src="https://avatars.githubusercontent.com/u/268766155?v=4&amp;s=128" width="32" height="32" alt=""> [tortoiese](https://github.com/tortoiese) | 참가자·관리자 화면, 문제·보드 UI와 API 연결 |
+| <img src="https://avatars.githubusercontent.com/u/230512345?v=4&amp;s=128" width="32" height="32" alt=""> [yes0r](https://github.com/yes0r) | 보드·KOTH·순위·부스 화면과 3D 구성 |
+| <img src="https://avatars.githubusercontent.com/u/104021663?v=4&amp;s=128" width="32" height="32" alt=""> [tember8003](https://github.com/tember8003) | 스케줄러 생성·초기화·만료·정리와 상태 이력 |
+| <img src="https://avatars.githubusercontent.com/u/143320324?v=4&amp;s=128" width="32" height="32" alt=""> [gonas0919](https://github.com/gonas0919) | 리소스 브로커, 클라우드 인벤토리·예약·관리 콘솔 |
+| <img src="https://avatars.githubusercontent.com/u/173701392?v=4&amp;s=128" width="32" height="32" alt=""> [goldsimchoi](https://github.com/goldsimchoi) | Go 런타임·K3s 격리·Gateway·Windows 실행 연결 |
+| <img src="https://avatars.githubusercontent.com/u/230291092?v=4&amp;s=128" width="32" height="32" alt=""> [wlsdnd2367](https://github.com/wlsdnd2367) | 문제 CI·이미지 검사·SBOM·발행과 노드 사전 준비 |
+| <img src="https://avatars.githubusercontent.com/u/109592496?v=4&amp;s=128" width="32" height="32" alt=""> [woalseee](https://github.com/woalseee) | 플랫폼 공통 CI와 프론트·백엔드 VM 자동 배포 |
+| <img src="https://avatars.githubusercontent.com/u/64824907?v=4&amp;s=128" width="32" height="32" alt=""> [Giheon-Jeon](https://github.com/Giheon-Jeon) | 프론트 CI·Nginx 프록시·Semgrep 검사 연결 |
+| <img src="https://avatars.githubusercontent.com/u/68321360?v=4&amp;s=128" width="32" height="32" alt=""> [minsoo0506](https://github.com/minsoo0506) | SLA 초기 구조·health worker·Prometheus와 장애 모사 API |
 
 문제 출제·수정·검수에 참여한 분들은 [문제 저장소의 기여자 목록](https://github.com/MSG-CTF/2026_MSG_CTF/blob/main/.github/README.md#함께-만든-사람들)에 따로 정리했습니다
 

@@ -8,9 +8,13 @@
 | 로고·축제 광장·파비콘 | [프론트엔드 intro 에셋](https://github.com/MSG-CTF/front-team/tree/3975fa447fc934b1e2ba253c360ec5dc186b22c6/public/assets/intro) |
 | 보드·문제·동아리 부스 화면 | [프론트엔드 화면 기록](https://github.com/MSG-CTF/front-team/tree/3975fa447fc934b1e2ba253c360ec5dc186b22c6/docs/readme), 개발 화면 포함 |
 | 색상·타이포그래피 기준 | [기존 대회 소개 페이지 스타일](https://github.com/MSG-CTF/front-team/blob/3975fa447fc934b1e2ba253c360ec5dc186b22c6/src/features/intro/intro.css) |
+| 낙엽 효과 | [기존 대회 소개 페이지의 AutumnLeaves](https://github.com/MSG-CTF/front-team/blob/3975fa447fc934b1e2ba253c360ec5dc186b22c6/src/features/intro/components/AutumnLeaves.jsx)와 intro.css, 정적 페이지에서 동작하도록 연결 |
+| 최종 스코어보드 | 운영자가 제공한 대회 종료 후 화면 원본, 외부 트랙은 왼쪽·내부 트랙은 오른쪽 |
+| 참여자 사진 | 각 참여자의 GitHub 공개 프로필 사진, 프로필 링크와 함께 표시 |
 | Pretendard | [라이선스](../assets/fonts/Pretendard-LICENSE.txt) |
 | 감탄로드 바탕체 | 태백시 · 공공누리 제1유형 · [원본 출처와 사용 조건](../assets/fonts/MSG-FONT-SOURCES.md) |
 
 이미지와 글꼴은 원본 파일을 그대로 옮겼으며 배치는 이 소개 페이지에 맞게 구성했습니다
 참가자 화면의 예시 문제명과 일정은 화면 기록에 포함된 값입니다
 클라우드 비용 0원은 2026년 11월 8일 대회 운영 사용료에 크레딧을 적용한 뒤의 추가 결제액을 뜻합니다
+참가 규모는 운영자가 확인한 전체 75팀·150명, 외부 50팀·100명, 내부 25팀·50명입니다
