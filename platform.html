@@ -28,11 +28,11 @@
   <link rel="preload" href="assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site.css?v=d53930110a5a">
   <script src="assets/site.js?v=7527561809d1" defer></script>
-  <script src="assets/platform-motion.js?v=5daeaed42d9b" defer></script>
+  <script src="assets/platform-motion.js?v=20261109-video-viewer" defer></script>
   <link rel="stylesheet" href="assets/platform-workflow.css">
   <script src="assets/platform-workflow.js" defer></script>
-  <link rel="stylesheet" href="assets/screen-viewer.css?v=20261109-gallery">
-  <script src="assets/screen-viewer.js?v=20261109-gallery" defer></script>
+  <link rel="stylesheet" href="assets/screen-viewer.css?v=20261109-video">
+  <script src="assets/screen-viewer.js?v=20261109-video" defer></script>
 </head>
 <body class="page-platform" id="page-top">
   <a class="skip-link" href="#main">본문으로 이동</a>
@@ -67,20 +67,20 @@
         <button type="button" id="tab-sla" role="tab" aria-selected="false" aria-controls="panel-sla" tabindex="-1">SLA</button>
       </div>
       <div class="screen-stage">
-        <div class="screen-panel" role="tabpanel" id="panel-intro" aria-labelledby="tab-intro" tabindex="0">
+        <div class="screen-panel" role="tabpanel" id="panel-intro" aria-labelledby="tab-intro" tabindex="0" data-screen-viewer="보드 등장">
           <video class="platform-video" controls muted playsinline preload="none" poster="assets/motion/board-intro-poster.jpg" aria-label="START부터 보드판이 나타나는 첫 진입 화면">
             <source src="assets/motion/board-intro.mp4" type="video/mp4">
             <a href="assets/motion/board-intro.mp4">보드 등장 영상 열기</a>
           </video>
-          <div class="screen-caption"><p>START에서 보드판 펼치기</p><button type="button" class="video-replay" aria-label="보드 등장 다시 보기" hidden><span aria-hidden="true">↻</span> 다시 보기</button></div>
+          <div class="screen-caption"><p>START에서 보드판 펼치기</p><div class="screen-caption-actions"><a class="text-link" data-viewer-open href="assets/motion/board-intro.mp4">크게 보기</a><button type="button" class="video-replay" aria-label="보드 등장 다시 보기" hidden><span aria-hidden="true">↻</span> 다시 보기</button></div></div>
           <p class="video-error" hidden>영상을 불러오지 못했습니다 <a href="assets/motion/board-intro.mp4">영상 직접 열기 ↗</a></p>
         </div>
-        <div class="screen-panel" role="tabpanel" id="panel-board" aria-labelledby="tab-board" tabindex="0">
+        <div class="screen-panel" role="tabpanel" id="panel-board" aria-labelledby="tab-board" tabindex="0" data-screen-viewer="주사위 굴리기">
           <video class="platform-video" controls muted playsinline preload="none" poster="assets/motion/dice-roll-poster.jpg" aria-label="보드 중앙에서 두 개의 3D 주사위가 굴러가는 화면">
             <source src="assets/motion/dice-roll.mp4" type="video/mp4">
             <a href="assets/motion/dice-roll.mp4">주사위 굴림 영상 열기</a>
           </video>
-          <div class="screen-caption"><p>주사위 이동 · 도착 칸의 문제 선택</p><button type="button" class="video-replay" aria-label="주사위 굴리기 다시 보기" hidden><span aria-hidden="true">↻</span> 다시 보기</button></div>
+          <div class="screen-caption"><p>주사위 이동 · 도착 칸의 문제 선택</p><div class="screen-caption-actions"><a class="text-link" data-viewer-open href="assets/motion/dice-roll.mp4">크게 보기</a><button type="button" class="video-replay" aria-label="주사위 굴리기 다시 보기" hidden><span aria-hidden="true">↻</span> 다시 보기</button></div></div>
           <p class="video-error" hidden>영상을 불러오지 못했습니다 <a href="assets/motion/dice-roll.mp4">영상 직접 열기 ↗</a></p>
         </div>
         <div class="screen-panel" role="tabpanel" id="panel-challenge" aria-labelledby="tab-challenge" tabindex="0" data-screen-viewer="문제 풀이">
@@ -337,7 +337,9 @@
         <button class="screen-viewer-close" type="button" aria-label="확대 화면 닫기" autofocus>닫기 <span aria-hidden="true">×</span></button>
       </header>
       <div class="screen-viewer-tabs" role="tablist" aria-label="확대할 플랫폼 화면">
-        <button type="button" role="tab" id="screen-viewer-tab-challenge" data-panel="panel-challenge" aria-selected="true" aria-controls="screen-viewer-panel" tabindex="0">문제 풀이</button>
+        <button type="button" role="tab" id="screen-viewer-tab-intro" data-panel="panel-intro" aria-selected="true" aria-controls="screen-viewer-panel" tabindex="0">보드 등장</button>
+        <button type="button" role="tab" id="screen-viewer-tab-board" data-panel="panel-board" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">주사위 굴리기</button>
+        <button type="button" role="tab" id="screen-viewer-tab-challenge" data-panel="panel-challenge" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">문제 풀이</button>
         <button type="button" role="tab" id="screen-viewer-tab-koth" data-panel="panel-koth" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">KOTH</button>
         <button type="button" role="tab" id="screen-viewer-tab-festival" data-panel="panel-festival" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">동아리 부스</button>
         <button type="button" role="tab" id="screen-viewer-tab-sla-dashboard" data-panel="sla-dashboard" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">SLA 관제</button>
@@ -346,15 +348,21 @@
         <button type="button" role="tab" id="screen-viewer-tab-sla-grafana" data-panel="sla-grafana" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">Grafana</button>
       </div>
       <div class="screen-viewer-tools" role="group" aria-label="화면 확대 조절">
-        <div class="screen-viewer-zoom">
-          <button type="button" data-zoom="out" aria-label="축소" disabled>−</button>
-          <output class="screen-viewer-scale" aria-label="확대 비율" aria-live="off">—</output>
-          <button type="button" data-zoom="in" aria-label="확대" disabled>+</button>
+        <div class="screen-viewer-image-tools">
+          <div class="screen-viewer-zoom">
+            <button type="button" data-zoom="out" aria-label="축소" disabled>−</button>
+            <output class="screen-viewer-scale" aria-label="확대 비율" aria-live="off">—</output>
+            <button type="button" data-zoom="in" aria-label="확대" disabled>+</button>
+          </div>
+          <button type="button" data-zoom="fit" disabled>화면 맞춤</button>
+          <button type="button" data-zoom="original" disabled>원본 크기</button>
         </div>
-        <button type="button" data-zoom="fit" disabled>화면 맞춤</button>
-        <button type="button" data-zoom="original" disabled>원본 크기</button>
+        <div class="screen-viewer-video-tools" hidden>
+          <button type="button" data-video-play disabled>재생</button>
+          <button type="button" data-video-replay disabled>처음부터</button>
+        </div>
       </div>
-      <div class="screen-viewer-viewport" id="screen-viewer-panel" tabindex="0" role="tabpanel" aria-labelledby="screen-viewer-tab-challenge" aria-describedby="screen-viewer-help screen-viewer-keys" aria-busy="true">
+      <div class="screen-viewer-viewport" id="screen-viewer-panel" tabindex="0" role="tabpanel" aria-labelledby="screen-viewer-tab-intro" aria-describedby="screen-viewer-help screen-viewer-keys" aria-busy="true">
         <img class="screen-viewer-image" alt="" draggable="false" hidden>
         <p class="screen-viewer-status" role="status">화면을 불러오는 중</p>
       </div>
