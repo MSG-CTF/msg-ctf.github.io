@@ -29,6 +29,8 @@
   <link rel="stylesheet" href="assets/site.css?v=98a32eebf383">
   <script src="assets/site.js?v=33fc91dee5b3" defer></script>
   <script src="assets/platform-motion.js?v=5daeaed42d9b" defer></script>
+  <link rel="stylesheet" href="assets/platform-workflow.css">
+  <script src="assets/platform-workflow.js" defer></script>
 </head>
 <body class="page-platform" id="page-top">
   <a class="skip-link" href="#main">본문으로 이동</a>
@@ -128,12 +130,99 @@
         <div class="section-heading">
           <h2 id="system-title">플랫폼 구성</h2>
         </div>
-        <ol class="lifecycle">
-          <li><h3>문제 발행</h3><p>GitHub Actions · GHCR</p><span class="step-detail">이미지 · 참가자 파일</span></li>
-          <li><h3>버전 등록</h3><p>Backend</p><span class="step-detail">파일·환경변수·비밀값 연결</span></li>
-          <li><h3>문제 실행</h3><p>Scheduler · Broker · Runtime</p><span class="step-detail">예약 후 격리 배포</span></li>
-          <li><h3>자원 반납</h3><p>Runtime · Scheduler · Broker</p><span class="step-detail">삭제 확인 후 예약 반납</span></li>
-        </ol>
+<div class="workflow-film" data-workflow aria-label="플랫폼 동작 흐름">
+<div class="workflow-panels">
+<section class="workflow-panel" id="workflow-panel-0" aria-labelledby="workflow-title-0">
+  <div class="workflow-copy"><span class="workflow-number">01 / 05</span><p class="workflow-role">DevSecOps → Backend</p><h3 id="workflow-title-0">문제를 빌드하고 버전을 등록합니다</h3><p class="workflow-description">문제 소스를 검사·빌드하고, 백엔드가 이미지·파일·환경변수를 버전으로 등록합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/msgctf-devsecops">구현 보기 ↗</a></div>
+  <div class="workflow-visual"><ol class="workflow-phases"><li>검사</li><li>빌드·스캔</li><li>발행본 등록</li></ol><svg aria-label="DevSecOps가 소스를 빌드하고 이미지 레이어를 조립한 뒤 보안 검사와 SBOM을 거쳐 GHCR에 발행하는 예시" class="pipeline-drawing" role="img" viewbox="0 0 560 360">
+<path class="transport-guide" d="M123 163h101M363 163h70"></path>
+<path class="motion transport-active" d="M123 163h101" pathlength="100"></path>
+<path class="motion transport-active publish-route" d="M363 163h70" pathlength="100"></path>
+<g transform="translate(24 83)"><g class="motion source-document"><path class="source-shadow" d="M7 8h75l23 23v104H7Z"></path><path class="source-paper" d="M0 0h75l23 23v104H0Z"></path><path class="source-fold" d="M75 0v23h23"></path><path class="code-line" d="M16 53h35m-35 15h61m-61 15h48m-48 15h58"></path><text class="object-label" x="15" y="37">SOURCE</text></g></g>
+
+<g class="motion source-check"><path d="m78 236 6 6 11-13" fill="none" stroke="#4a775b" stroke-width="2.5"></path><text class="tool-caption" x="105" y="241">Gitleaks</text></g>
+<ellipse class="motion object-shadow" cx="292" cy="248" rx="76" ry="13"></ellipse>
+<g transform="translate(224 213)"><g class="motion base-layer image-layer"><path class="layer-side" d="M0 0 68 33 136 0v10L68 43 0 10Z"></path><path class="layer-top" d="m0 0 68-33L136 0 68 33Z"></path><path class="layer-seam" d="m16 0 52 25 52-25M68 33v10"></path></g></g>
+<g transform="translate(224 184)"><g class="motion dependency-layer image-layer"><path class="layer-side" d="M0 0 68 33 136 0v10L68 43 0 10Z"></path><path class="layer-top" d="m0 0 68-33L136 0 68 33Z"></path><path class="layer-seam" d="m16 0 52 25 52-25M68 33v10"></path></g></g>
+<g transform="translate(224 155)"><g class="motion application-layer image-layer"><path class="layer-side" d="M0 0 68 33 136 0v10L68 43 0 10Z"></path><path class="layer-top" d="m0 0 68-33L136 0 68 33Z"></path><path class="layer-seam" d="m16 0 52 25 52-25M68 33v10"></path></g></g>
+<path class="motion image-scan" d="m224 155 68 33 68-33"></path>
+<g class="motion build-seal"><path d="m319 125 21-9 21 9v20c0 15-21 23-21 23s-21-8-21-23Z" fill="#f5faf6" stroke="#648b70" stroke-width="2"></path><path d="m329 140 8 8 14-18" fill="none" stroke="#4a775b" stroke-width="3"></path><text class="tool-caption" text-anchor="middle" x="340" y="105">Trivy</text></g>
+<g transform="translate(423 128)"><g class="motion registry-object"><path class="registry-wall" d="M0 0h105v104c0 24-105 24-105 0Z"></path><ellipse class="registry-top" cx="52.5" cy="0" rx="52.5" ry="15"></ellipse><path class="registry-line" d="M0 34c0 23 105 23 105 0M0 69c0 23 105 23 105 0"></path></g></g>
+<g class="motion build-manifest"><path class="source-paper" d="M411 229h62l16 16v68h-78Z"></path><path class="source-fold" d="M473 229v16h16"></path><path class="manifest-line" d="M426 273h46m-46 12h33m-33 12h41"></path><text class="object-label" x="420" y="263">SBOM</text></g>
+
+<text class="motion drawing-caption" text-anchor="middle" x="292" y="299">OCI IMAGE</text>
+<text class="motion drawing-caption registry-label" text-anchor="middle" x="475" y="99">GHCR</text>
+</svg><p class="workflow-result">GHCR 이미지 · SBOM · 참가자 파일</p></div>
+</section>
+<section class="workflow-panel" id="workflow-panel-1" aria-labelledby="workflow-title-1">
+  <div class="workflow-copy"><span class="workflow-number">02 / 05</span><p class="workflow-role">Scheduler ↔ Resource Broker</p><h3 id="workflow-title-1">맞는 클라우드 자원을 찾습니다</h3><p class="workflow-description">AWS·GCP·Azure의 실행 노드에서 조건에 맞는 후보를 찾아 자원을 예약합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/resource-broker">구현 보기 ↗</a></div>
+  <div class="workflow-visual"><ol class="workflow-phases"><li>CPU</li><li>메모리</li><li>아키텍처</li></ol><svg aria-label="Resource Broker가 AWS, Azure, GCP의 공통 인벤토리에서 조건에 맞는 후보를 제공하고 자원을 예약하는 예시" class="pipeline-drawing" role="img" viewbox="0 0 560 360">
+<g class="motion provider-node cloud-rack"><image height="41" href="assets/cloud/aws.svg" width="41" x="67.5" y="80"/><path class="motion rack-top" d="m34 139 18-13h107l-18 13Z"></path><path class="motion rack-side" d="m141 139 18-13v39l-18 13Z"></path><rect class="motion rack-front" height="39" rx="3" width="107" x="34" y="139"></rect><path class="rack-vents" d="M48 153h40m-40 10h40"></path><path class="rack-meter" d="M104 153v11m8-11v11m8-11v11"></path><path class="motion rack-top" d="m34 191 18-13h107l-18 13Z"></path><path class="motion rack-side" d="m141 191 18-13v39l-18 13Z"></path><rect class="motion rack-front" height="39" rx="3" width="107" x="34" y="191"></rect><path class="rack-vents" d="M48 205h40m-40 10h40"></path><path class="rack-meter" d="M104 205v11m8-11v11m8-11v11"></path></g><g class="motion provider-node cloud-rack"><image height="40" href="assets/cloud/azure.svg" width="40" x="250.0" y="80"/><path class="rack-top" d="m216 139 18-13h107l-18 13Z"></path><path class="rack-side" d="m323 139 18-13v39l-18 13Z"></path><rect class="rack-front" height="39" rx="3" width="107" x="216" y="139"></rect><path class="rack-vents" d="M230 153h40m-40 10h40"></path><path class="rack-meter" d="M286 153v11m8-11v11m8-11v11"></path><path class="rack-top" d="m216 191 18-13h107l-18 13Z"></path><path class="rack-side" d="m323 191 18-13v39l-18 13Z"></path><rect class="rack-front" height="39" rx="3" width="107" x="216" y="191"></rect><path class="rack-vents" d="M230 205h40m-40 10h40"></path><path class="rack-meter" d="M286 205v11m8-11v11m8-11v11"></path></g><g class="motion provider-node cloud-rack"><image height="40" href="assets/cloud/gcp.svg" width="46" x="429" y="80"/><path class="rack-top" d="m398 139 18-13h107l-18 13Z"></path><path class="rack-side" d="m505 139 18-13v39l-18 13Z"></path><rect class="rack-front" height="39" rx="3" width="107" x="398" y="139"></rect><path class="rack-vents" d="M412 153h40m-40 10h40"></path><path class="rack-meter" d="M468 153v11m8-11v11m8-11v11"></path><path class="rack-top" d="m398 191 18-13h107l-18 13Z"></path><path class="rack-side" d="m505 191 18-13v39l-18 13Z"></path><rect class="rack-front" height="39" rx="3" width="107" x="398" y="191"></rect><path class="rack-vents" d="M412 205h40m-40 10h40"></path><path class="rack-meter" d="M468 205v11m8-11v11m8-11v11"></path></g>
+<path class="transport-guide" d="M87 235v27h364v-27m-182-1v28m0 0v44"></path>
+<path class="motion transport-active" d="M87 235v27h182v44" pathlength="100"></path>
+<g class="motion reservation-object"><path d="M186 303h167l19 20-19 20H186l-19-20Z" fill="#e8eff5" stroke="#6f92af" stroke-width="1.5"></path><path d="m191 322 7 7 12-14" fill="none" stroke="#527d60" stroke-width="2.5"></path><text class="reservation-label" text-anchor="middle" x="282" y="330">HELD</text></g>
+<g class="motion broker-match"><path d="m125 122 9 9 17-20" fill="none" stroke="#4c775d" stroke-width="3"></path></g>
+</svg><p class="workflow-result">계정은 달라도 같은 배정 흐름</p></div>
+</section>
+<section class="workflow-panel" id="workflow-panel-2" aria-labelledby="workflow-title-2">
+  <div class="workflow-copy"><span class="workflow-number">03 / 05</span><p class="workflow-role">Scheduler → Runtime</p><h3 id="workflow-title-2">인스턴스를 나눠 실행합니다</h3><p class="workflow-description">Linux 문제는 K3s에서 격리해 실행하고, Windows·전용 VM은 별도 경로를 사용합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/secure-provisioner/tree/dev">구현 보기 ↗</a></div>
+  <div class="workflow-visual"><ol class="workflow-phases"><li>실행 요청</li><li>격리·비밀값 주입</li><li>준비 확인</li></ol><svg aria-label="Instance Scheduler가 예약한 대상에 Runtime 생성 작업을 전달하고 격리된 팀 공간의 컨테이너가 실행된 뒤 예약을 확정하는 예시" class="pipeline-drawing" role="img" viewbox="0 0 560 360">
+<g class="request-queue"><path class="queue-back" d="M29 49h107v66H29Z"></path><path class="queue-mid" d="M34 40h107v66H34Z"></path><path class="source-paper" d="M39 31h107v66H39Z"></path><path class="queue-lines" d="M53 72h70m-70 12h46"></path><text class="object-label" x="52" y="56">REQUEST</text></g>
+<g class="reservation-receipt"><rect height="29" rx="4" width="133" x="29" y="128"></rect><text class="motion receipt-committed" text-anchor="middle" x="95" y="148">COMMITTED</text></g>
+<path class="transport-guide" d="M157 66h296v45"></path>
+<path class="motion transport-active" d="M157 66h296v45" pathlength="100"></path>
+<image height="42" href="assets/tech/k3s.svg" width="42" x="433" y="108"/>
+<text class="drawing-caption" text-anchor="middle" x="454" y="171">Runtime</text>
+<ellipse class="object-shadow" cx="299" cy="294" rx="180" ry="20"></ellipse>
+<g class="host-object"><polygon class="iso-front" points="126.0,191.4 306.0,279.4 306.0,301.4 126.0,213.4"></polygon><polygon class="iso-side" points="450.0,209.0 306.0,279.4 306.0,301.4 450.0,231.0"></polygon><polygon class="iso-top" points="270.0,121.0 450.0,209.0 306.0,279.4 126.0,191.4"></polygon><g class="container-ribs"></g></g>
+<g class="motion team-boundary"><polygon class="namespace-boundary" points="268.2,125.7 362.7,171.9 238.5,232.6 144.0,186.4"></polygon><polygon class="namespace-boundary" points="371.7,176.3 430.2,204.9 306.0,265.6 247.5,237.0"></polygon></g>
+<g class="other-container"><polygon class="iso-front" points="290.7,198.3 325.8,215.5 325.8,246.5 290.7,229.3"></polygon><polygon class="iso-side" points="390.6,183.8 325.8,215.5 325.8,246.5 390.6,214.8"></polygon><polygon class="iso-top" points="355.5,166.6 390.6,183.8 325.8,215.5 290.7,198.3"></polygon><g class="container-ribs"><path d="M296.6 206.2 296.6 227.2"></path><path d="M302.4 209.0 302.4 230.0"></path><path d="M308.2 211.9 308.2 232.9"></path><path d="M314.1 214.8 314.1 235.8"></path><path d="M319.9 217.6 319.9 238.6"></path></g></g>
+<g class="motion scheduled-container web-container"><g class="runtime-box"><polygon class="iso-front" points="223.2,102.0 283.5,131.5 283.5,188.5 223.2,159.0"></polygon><polygon class="iso-side" points="325.8,110.8 283.5,131.5 283.5,188.5 325.8,167.8"></polygon><polygon class="iso-top" points="265.5,81.3 325.8,110.8 283.5,131.5 223.2,102.0"></polygon><g class="container-ribs"><path d="M233.2 111.9 233.2 158.9"></path><path d="M243.3 116.8 243.3 163.8"></path><path d="M253.3 121.7 253.3 168.7"></path><path d="M263.4 126.7 263.4 173.7"></path><path d="M273.4 131.6 273.4 178.6"></path></g></g></g>
+<g class="motion scheduled-container db-container"><g class="runtime-box"><polygon class="iso-front" points="175.5,143.8 221.4,166.3 221.4,208.3 175.5,185.8"></polygon><polygon class="iso-side" points="256.5,149.1 221.4,166.3 221.4,208.3 256.5,191.1"></polygon><polygon class="iso-top" points="210.6,126.7 256.5,149.1 221.4,166.3 175.5,143.8"></polygon><g class="container-ribs"><path d="M183.1 152.6 183.1 184.6"></path><path d="M190.8 156.3 190.8 188.3"></path><path d="M198.4 160.1 198.4 192.1"></path><path d="M206.1 163.8 206.1 195.8"></path><path d="M213.8 167.5 213.8 199.5"></path></g></g></g>
+<text class="drawing-caption" x="134" y="299">TEAM A</text><text class="drawing-caption muted-caption" x="357" y="315">TEAM B</text>
+<g class="motion schedule-ready"><path d="m488 127 8 8 13-17" fill="none" stroke="#456e55" stroke-width="3"></path></g>
+</svg><p class="workflow-result">Namespace · NetworkPolicy · 자원 제한</p></div>
+</section>
+<section class="workflow-panel" id="workflow-panel-3" aria-labelledby="workflow-title-3">
+  <div class="workflow-copy"><span class="workflow-number">04 / 05</span><p class="workflow-role">Runtime → Scheduler → Broker</p><h3 id="workflow-title-3">정리를 확인한 뒤 돌려줍니다</h3><p class="workflow-description">Runtime의 삭제 결과를 확인한 뒤 예약을 반납해 다음 요청에 자원을 사용합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/instance-scheduler">구현 보기 ↗</a></div>
+  <div class="workflow-visual"><ol class="workflow-phases"><li>자원 삭제</li><li>삭제 확인</li><li>예약 반납</li></ol><svg aria-label="Runtime이 한 인스턴스의 자원을 정리하고 Scheduler 확인 후 Broker 예약을 반납하는 흐름" class="pipeline-drawing cleanup-drawing" role="img" viewbox="0 0 560 360">
+<g class="request-queue"><path class="queue-back" d="M29 49h107v66H29Z"></path><path class="queue-mid" d="M34 40h107v66H34Z"></path><path class="source-paper" d="M39 31h107v66H39Z"></path><path class="queue-lines" d="M53 72h70m-70 12h46"></path><text class="object-label" x="52" y="56">DELETE</text></g>
+<g class="reservation-receipt"><rect height="29" rx="4" width="133" x="29" y="128"></rect><text class="motion receipt-committed" text-anchor="middle" x="95" y="148">RELEASED</text></g>
+<path class="transport-guide" d="M157 66h296v45"></path>
+<path class="motion transport-active" d="M157 66h296v45" pathlength="100"></path>
+<image height="42" href="assets/tech/k3s.svg" width="42" x="433" y="108"/>
+<text class="drawing-caption" text-anchor="middle" x="454" y="171">Runtime</text>
+<ellipse class="object-shadow" cx="299" cy="294" rx="180" ry="20"></ellipse>
+<g class="host-object"><polygon class="iso-front" points="126.0,191.4 306.0,279.4 306.0,301.4 126.0,213.4"></polygon><polygon class="iso-side" points="450.0,209.0 306.0,279.4 306.0,301.4 450.0,231.0"></polygon><polygon class="iso-top" points="270.0,121.0 450.0,209.0 306.0,279.4 126.0,191.4"></polygon><g class="container-ribs"></g></g>
+<g class="motion team-boundary"><polygon class="namespace-boundary" points="268.2,125.7 362.7,171.9 238.5,232.6 144.0,186.4"></polygon><polygon class="namespace-boundary" points="371.7,176.3 430.2,204.9 306.0,265.6 247.5,237.0"></polygon></g>
+<g class="other-container"><polygon class="iso-front" points="290.7,198.3 325.8,215.5 325.8,246.5 290.7,229.3"></polygon><polygon class="iso-side" points="390.6,183.8 325.8,215.5 325.8,246.5 390.6,214.8"></polygon><polygon class="iso-top" points="355.5,166.6 390.6,183.8 325.8,215.5 290.7,198.3"></polygon><g class="container-ribs"><path d="M296.6 206.2 296.6 227.2"></path><path d="M302.4 209.0 302.4 230.0"></path><path d="M308.2 211.9 308.2 232.9"></path><path d="M314.1 214.8 314.1 235.8"></path><path d="M319.9 217.6 319.9 238.6"></path></g></g>
+<g class="motion scheduled-container web-container"><g class="runtime-box"><polygon class="iso-front" points="223.2,102.0 283.5,131.5 283.5,188.5 223.2,159.0"></polygon><polygon class="iso-side" points="325.8,110.8 283.5,131.5 283.5,188.5 325.8,167.8"></polygon><polygon class="iso-top" points="265.5,81.3 325.8,110.8 283.5,131.5 223.2,102.0"></polygon><g class="container-ribs"><path d="M233.2 111.9 233.2 158.9"></path><path d="M243.3 116.8 243.3 163.8"></path><path d="M253.3 121.7 253.3 168.7"></path><path d="M263.4 126.7 263.4 173.7"></path><path d="M273.4 131.6 273.4 178.6"></path></g></g></g>
+<g class="motion scheduled-container db-container"><g class="runtime-box"><polygon class="iso-front" points="175.5,143.8 221.4,166.3 221.4,208.3 175.5,185.8"></polygon><polygon class="iso-side" points="256.5,149.1 221.4,166.3 221.4,208.3 256.5,191.1"></polygon><polygon class="iso-top" points="210.6,126.7 256.5,149.1 221.4,166.3 175.5,143.8"></polygon><g class="container-ribs"><path d="M183.1 152.6 183.1 184.6"></path><path d="M190.8 156.3 190.8 188.3"></path><path d="M198.4 160.1 198.4 192.1"></path><path d="M206.1 163.8 206.1 195.8"></path><path d="M213.8 167.5 213.8 199.5"></path></g></g></g>
+<text class="drawing-caption" x="134" y="299">정리 완료</text><text class="drawing-caption muted-caption" x="357" y="315">TEAM B</text>
+<g class="motion schedule-ready"><path d="m488 127 8 8 13-17" fill="none" stroke="#456e55" stroke-width="3"></path></g>
+</svg><p class="workflow-result">준비 후 기동 CPU 원복 · 종료 후 예약 반납</p></div>
+</section>
+<section class="workflow-panel" id="workflow-panel-4" aria-labelledby="workflow-title-4">
+  <div class="workflow-copy"><span class="workflow-number">05 / 05</span><p class="workflow-role">SLA / Sentinel</p><h3 id="workflow-title-4">서비스 상태를 한곳에서 봅니다</h3><p class="workflow-description">API·노드·인스턴스의 응답과 오류를 수집해 운영자가 상태를 확인합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/sentinel">구현 보기 ↗</a></div>
+  <div class="workflow-visual"><ol class="workflow-phases"><li>상태 조회</li><li>오류 기록</li><li>알림</li></ol><svg aria-label="SLA가 서비스 응답과 지연을 관측해 오류를 기록하는 예시" class="pipeline-drawing" role="img" viewbox="0 0 560 360">
+<path class="health-grid" d="M28 98h504M28 140h504M28 182h504M28 224h504"></path>
+<path class="motion health-trace" d="M28 214 62 211 97 216 130 207 162 211 197 213 232 202 266 207 301 196 335 199" pathlength="100"></path>
+<path class="motion health-delay" d="M335 199 364 179 392 135 423 96 456 85 492 90 532 83" pathlength="100"></path>
+<g class="motion health-marker"><path d="m427 144 19-32 19 32Z" fill="#fcf0dc" stroke="#b28743" stroke-width="1.6"></path><path d="M446 123v10m0 4v2" stroke="#9f7535" stroke-width="2"></path></g>
+<text class="drawing-caption" x="30" y="64">Runtime</text>
+<text class="drawing-caption muted-caption" text-anchor="end" x="528" y="64">SLA / Sentinel</text>
+
+
+<text class="drawing-caption" text-anchor="middle" x="280" y="300">조회 · 오류 기록 · 알림</text></svg><p class="workflow-result">상태 관측과 장애 이력</p></div>
+</section>
+</div>
+<div class="workflow-controls" hidden><div class="workflow-tabs" role="tablist" aria-label="플랫폼 단계">
+<button type="button" role="tab" id="workflow-tab-0" aria-controls="workflow-panel-0" aria-selected="false" tabindex="-1"><span>01</span> 발행<i aria-hidden="true"></i></button>
+<button type="button" role="tab" id="workflow-tab-1" aria-controls="workflow-panel-1" aria-selected="false" tabindex="-1"><span>02</span> 예약<i aria-hidden="true"></i></button>
+<button type="button" role="tab" id="workflow-tab-2" aria-controls="workflow-panel-2" aria-selected="false" tabindex="-1"><span>03</span> 실행<i aria-hidden="true"></i></button>
+<button type="button" role="tab" id="workflow-tab-3" aria-controls="workflow-panel-3" aria-selected="false" tabindex="-1"><span>04</span> 반납<i aria-hidden="true"></i></button>
+<button type="button" role="tab" id="workflow-tab-4" aria-controls="workflow-panel-4" aria-selected="false" tabindex="-1"><span>05</span> 관측<i aria-hidden="true"></i></button>
+</div><div class="workflow-caption"><span>플랫폼 동작 예시</span><button type="button" class="workflow-play" aria-pressed="false">흐름 재생 <span aria-hidden="true">▶</span></button></div></div></div>
         <details class="architecture-details">
           <summary><span>전체 구성도</span><span class="detail-action"><span class="expand-label">펼치기</span><span class="collapse-label">접기</span><span class="plus" aria-hidden="true"></span></span></summary>
           <div class="architecture-body">
