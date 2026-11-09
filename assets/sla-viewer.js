@@ -8,12 +8,14 @@
   const image = dialog.querySelector(".sla-viewer-image");
   const status = dialog.querySelector(".sla-viewer-status");
   const controls = [...dialog.querySelectorAll("[data-zoom]")];
+  const screenTabs = [...dialog.querySelectorAll('.sla-viewer-tabs [role="tab"]')];
   const pointers = new Map();
   const maxScale = 4;
   let ready = false;
   let sequence = 0;
   let frame = 0;
   let trigger;
+  let activePanel;
   let restorePage;
   let gesture;
   let scale = 1;
@@ -101,13 +103,27 @@
       window.scrollTo({ left: scrollX, top: scrollY, behavior: "instant" });
     };
   };
-  const open = async link => {
-    if (dialog.open) return;
-    trigger = link;
-    const panel = link.closest(".sla-screen-panel");
+  const showScreen = async panel => {
+    if (activePanel === panel && (ready || viewport.getAttribute("aria-busy") === "true")) return;
+    activePanel = panel;
     const source = panel.querySelector("img");
     const version = ++sequence;
     ready = false;
+    cancelAnimationFrame(frame);
+    frame = 0;
+    for (const id of pointers.keys()) {
+      if (viewport.hasPointerCapture(id)) viewport.releasePointerCapture(id);
+    }
+    pointers.clear();
+    resetGesture();
+    for (const tab of screenTabs) {
+      const selected = tab.dataset.panel === panel.id;
+      tab.setAttribute("aria-selected", String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      if (selected) viewport.setAttribute("aria-labelledby", tab.id);
+    }
+    document.getElementById(panel.getAttribute("aria-labelledby")).click();
+    trigger = panel.querySelector(trigger.matches(".screen-image-link") ? ".screen-image-link" : ".screen-caption a");
     image.hidden = true;
     status.hidden = false;
     status.textContent = "화면을 불러오는 중";
@@ -116,8 +132,6 @@
     dialog.querySelector(".sla-viewer-date").textContent = panel.querySelector(".screen-capture-note").textContent;
     dialog.querySelector(".sla-viewer-scale").value = "—";
     controls.forEach(button => { button.disabled = true; });
-    restorePage = lockPage();
-    dialog.showModal();
     measure();
     image.alt = source.alt;
     image.src = source.currentSrc || source.src;
@@ -132,10 +146,57 @@
       status.hidden = true;
     } catch {
       if (version !== sequence || !dialog.open) return;
-      status.textContent = "화면을 불러오지 못했습니다 닫고 다시 열어주세요";
+      status.textContent = "화면을 불러오지 못했습니다 탭을 다시 눌러주세요";
     }
     viewport.setAttribute("aria-busy", "false");
   };
+  const open = link => {
+    if (dialog.open) return;
+    trigger = link;
+    restorePage = lockPage();
+    dialog.showModal();
+    showScreen(link.closest(".sla-screen-panel"));
+  };
+
+  for (const tab of screenTabs) {
+    const select = () => showScreen(document.getElementById(tab.dataset.panel));
+    let touchStart;
+    let lastTouch = -Infinity;
+    // A browser may suppress the next click after a touch drag in the image.
+    tab.addEventListener("pointerdown", event => {
+      if (event.pointerType === "touch" && event.isPrimary) {
+        touchStart = { id: event.pointerId, x: event.clientX, y: event.clientY };
+      }
+    });
+    tab.addEventListener("pointercancel", () => { touchStart = null; });
+    tab.addEventListener("pointerup", event => {
+      const start = touchStart;
+      touchStart = null;
+      if (!start || event.pointerId !== start.id || Math.hypot(event.clientX - start.x, event.clientY - start.y) > 10) return;
+      const rect = tab.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) return;
+      event.preventDefault();
+      lastTouch = performance.now();
+      tab.focus({ preventScroll: true });
+      select();
+    });
+    tab.addEventListener("click", event => {
+      if (event.detail > 0 && event.pointerType !== "mouse" && performance.now() - lastTouch < 750) return;
+      select();
+    });
+    tab.addEventListener("keydown", event => {
+      const index = screenTabs.indexOf(tab);
+      let next;
+      if (event.key === "ArrowRight") next = screenTabs[(index + 1) % screenTabs.length];
+      if (event.key === "ArrowLeft") next = screenTabs[(index + screenTabs.length - 1) % screenTabs.length];
+      if (event.key === "Home") next = screenTabs[0];
+      if (event.key === "End") next = screenTabs[screenTabs.length - 1];
+      if (!next) return;
+      event.preventDefault();
+      next.click();
+      next.focus();
+    });
+  }
 
   for (const link of document.querySelectorAll(".sla-screen-panel a")) {
     link.setAttribute("role", "button");
@@ -175,6 +236,7 @@
   dialog.addEventListener("close", () => {
     ++sequence;
     ready = false;
+    activePanel = null;
     pointers.clear();
     resetGesture();
     cancelAnimationFrame(frame);

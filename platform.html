@@ -31,8 +31,8 @@
   <script src="assets/platform-motion.js?v=5daeaed42d9b" defer></script>
   <link rel="stylesheet" href="assets/platform-workflow.css">
   <script src="assets/platform-workflow.js" defer></script>
-  <link rel="stylesheet" href="assets/sla-viewer.css">
-  <script src="assets/sla-viewer.js" defer></script>
+  <link rel="stylesheet" href="assets/sla-viewer.css?v=20261109-tabs">
+  <script src="assets/sla-viewer.js?v=20261109-tabs" defer></script>
 </head>
 <body class="page-platform" id="page-top">
   <a class="skip-link" href="#main">본문으로 이동</a>
@@ -336,6 +336,12 @@
         <h2 id="sla-viewer-title">SLA</h2>
         <button class="sla-viewer-close" type="button" aria-label="확대 화면 닫기" autofocus>닫기 <span aria-hidden="true">×</span></button>
       </header>
+      <div class="sla-viewer-tabs" role="tablist" aria-label="확대할 SLA 화면">
+        <button type="button" role="tab" id="sla-viewer-tab-dashboard" data-panel="sla-dashboard" aria-selected="true" aria-controls="sla-viewer-panel" tabindex="0">관제 현황</button>
+        <button type="button" role="tab" id="sla-viewer-tab-koth" data-panel="sla-koth" aria-selected="false" aria-controls="sla-viewer-panel" tabindex="-1">KOTH</button>
+        <button type="button" role="tab" id="sla-viewer-tab-nodes" data-panel="sla-nodes" aria-selected="false" aria-controls="sla-viewer-panel" tabindex="-1">노드 상태</button>
+        <button type="button" role="tab" id="sla-viewer-tab-grafana" data-panel="sla-grafana" aria-selected="false" aria-controls="sla-viewer-panel" tabindex="-1">Grafana</button>
+      </div>
       <div class="sla-viewer-tools" role="group" aria-label="화면 확대 조절">
         <div class="sla-viewer-zoom">
           <button type="button" data-zoom="out" aria-label="축소" disabled>−</button>
@@ -345,7 +351,7 @@
         <button type="button" data-zoom="fit" disabled>화면 맞춤</button>
         <button type="button" data-zoom="original" disabled>원본 크기</button>
       </div>
-      <div class="sla-viewer-viewport" tabindex="0" role="region" aria-label="확대 이미지" aria-describedby="sla-viewer-help sla-viewer-keys" aria-busy="true">
+      <div class="sla-viewer-viewport" id="sla-viewer-panel" tabindex="0" role="tabpanel" aria-labelledby="sla-viewer-tab-dashboard" aria-describedby="sla-viewer-help sla-viewer-keys" aria-busy="true">
         <img class="sla-viewer-image" alt="" draggable="false" hidden>
         <p class="sla-viewer-status" role="status">화면을 불러오는 중</p>
       </div>
