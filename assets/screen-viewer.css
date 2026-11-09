@@ -76,6 +76,7 @@
   will-change: transform;
 }
 .screen-viewer-status { position: absolute; inset: 0; display: grid; place-content: center; padding: 20px; text-align: center; color: var(--muted); pointer-events: none; }
+.screen-viewer-viewport[data-media="video"] .screen-viewer-status { place-content: start center; padding: 16px 20px; background: linear-gradient(#0d1117eb, transparent 60%); color: var(--fg); font-size: 14px; line-height: 1.6; text-wrap: balance; text-shadow: 0 1px 3px #000; }
 .screen-viewer-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 20px; padding: 10px 18px; color: var(--muted); font-size: 12px; }
 .screen-caption-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
 .screen-caption-actions .text-link { white-space: nowrap; }
