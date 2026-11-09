@@ -28,11 +28,11 @@
   <link rel="preload" href="assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site.css?v=d53930110a5a">
   <script src="assets/site.js?v=7527561809d1" defer></script>
-  <script src="assets/platform-motion.js?v=20261109-video-viewer" defer></script>
+  <script src="assets/platform-motion.js?v=20261109-video-loading" defer></script>
   <link rel="stylesheet" href="assets/platform-workflow.css">
   <script src="assets/platform-workflow.js" defer></script>
-  <link rel="stylesheet" href="assets/screen-viewer.css?v=20261109-video">
-  <script src="assets/screen-viewer.js?v=20261109-video" defer></script>
+  <link rel="stylesheet" href="assets/screen-viewer.css?v=20261109-video-loading">
+  <script src="assets/screen-viewer.js?v=20261109-video-loading" defer></script>
 </head>
 <body class="page-platform" id="page-top">
   <a class="skip-link" href="#main">본문으로 이동</a>
@@ -69,7 +69,7 @@
       <div class="screen-stage">
         <div class="screen-panel" role="tabpanel" id="panel-intro" aria-labelledby="tab-intro" tabindex="0" data-screen-viewer="보드 등장">
           <video class="platform-video" controls muted playsinline preload="none" poster="assets/motion/board-intro-poster.jpg" aria-label="START부터 보드판이 나타나는 첫 진입 화면">
-            <source src="assets/motion/board-intro.mp4" type="video/mp4">
+            <source src="assets/motion/board-intro.mp4" data-compact-src="assets/motion/board-intro-mobile.mp4" type="video/mp4">
             <a href="assets/motion/board-intro.mp4">보드 등장 영상 열기</a>
           </video>
           <div class="screen-caption"><p>START에서 보드판 펼치기</p><div class="screen-caption-actions"><a class="text-link" data-viewer-open href="assets/motion/board-intro.mp4">크게 보기</a><button type="button" class="video-replay" aria-label="보드 등장 다시 보기" hidden><span aria-hidden="true">↻</span> 다시 보기</button></div></div>
@@ -77,7 +77,7 @@
         </div>
         <div class="screen-panel" role="tabpanel" id="panel-board" aria-labelledby="tab-board" tabindex="0" data-screen-viewer="주사위 굴리기">
           <video class="platform-video" controls muted playsinline preload="none" poster="assets/motion/dice-roll-poster.jpg" aria-label="보드 중앙에서 두 개의 3D 주사위가 굴러가는 화면">
-            <source src="assets/motion/dice-roll.mp4" type="video/mp4">
+            <source src="assets/motion/dice-roll.mp4" data-compact-src="assets/motion/dice-roll-mobile.mp4" type="video/mp4">
             <a href="assets/motion/dice-roll.mp4">주사위 굴림 영상 열기</a>
           </video>
           <div class="screen-caption"><p>주사위 이동 · 도착 칸의 문제 선택</p><div class="screen-caption-actions"><a class="text-link" data-viewer-open href="assets/motion/dice-roll.mp4">크게 보기</a><button type="button" class="video-replay" aria-label="주사위 굴리기 다시 보기" hidden><span aria-hidden="true">↻</span> 다시 보기</button></div></div>
@@ -360,6 +360,7 @@
         <div class="screen-viewer-video-tools" hidden>
           <button type="button" data-video-play disabled>재생</button>
           <button type="button" data-video-replay disabled>처음부터</button>
+          <button type="button" data-video-retry hidden>다시 불러오기</button>
         </div>
       </div>
       <div class="screen-viewer-viewport" id="screen-viewer-panel" tabindex="0" role="tabpanel" aria-labelledby="screen-viewer-tab-intro" aria-describedby="screen-viewer-help screen-viewer-keys" aria-busy="true">

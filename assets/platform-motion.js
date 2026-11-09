@@ -2,12 +2,32 @@
   'use strict';
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const viewerOpen = () => document.getElementById('screen-image-viewer')?.open;
-  const players = Array.from(document.querySelectorAll('.platform-video')).map(video => ({video, panel:video.closest('.screen-panel'), visible:false, started:false}));
+  const connection = navigator.connection;
+  const compact = matchMedia('(max-width: 900px)').matches || connection?.saveData
+    || ['slow-2g', '2g', '3g'].includes(connection?.effectiveType);
+  const players = Array.from(document.querySelectorAll('.platform-video')).map(video => {
+    const source = video.querySelector('source');
+    if (compact && source.dataset.compactSrc) {
+      source.src = source.dataset.compactSrc;
+      video.load();
+    }
+    video.dataset.playbackSrc = source.src;
+    return {video, source, panel:video.closest('.screen-panel'), visible:false, started:false, suspended:false};
+  });
   const update = () => {
     for (const player of players) {
-      const {video,panel} = player;
+      const {video,source,panel} = player;
       const enlarged = viewerOpen();
       if (enlarged && !panel.hidden) player.started = true;
+      const suspended = !!enlarged || panel.hidden;
+      if (suspended !== player.suspended) {
+        player.suspended = suspended;
+        video.pause();
+        if (suspended) source.removeAttribute('src');
+        else source.src = video.dataset.playbackSrc;
+        // pause() and preload="none" alone can leave the download running.
+        video.load();
+      }
       const onScreen = player.visible && !panel.hidden && !document.hidden && !enlarged;
       if (!onScreen) {
         if (!video.paused) video.pause();
@@ -31,15 +51,18 @@
     replay.hidden = false;
     replay.addEventListener('click', () => {
       player.started = true;
-      video.currentTime = 0;
-      video.play().catch(() => {panel.querySelector('.video-error').hidden=false;});
+      if (video.error) video.load();
+      if (video.readyState >= HTMLMediaElement.HAVE_METADATA) video.currentTime = 0;
+      video.play().catch(error => {
+        if (error.name !== 'AbortError' && !viewerOpen() && !panel.hidden) panel.querySelector('.video-error').hidden=false;
+      });
     });
     video.addEventListener('play', () => {
       player.started=true;
       if (viewerOpen() || panel.hidden || document.hidden) { video.pause(); return; }
       panel.querySelector('.video-error').hidden=true;
     });
-    const failed = () => {panel.querySelector('.video-error').hidden=false;};
+    const failed = () => {if (!player.suspended) panel.querySelector('.video-error').hidden=false;};
     video.addEventListener('error',failed);
     video.querySelector('source').addEventListener('error',failed);
     observer.observe(video);

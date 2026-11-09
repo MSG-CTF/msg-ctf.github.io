@@ -10,6 +10,7 @@
   const controls = [...dialog.querySelectorAll("[data-zoom]")];
   const playButton = dialog.querySelector("[data-video-play]");
   const replayButton = dialog.querySelector("[data-video-replay]");
+  const retryButton = dialog.querySelector("[data-video-retry]");
   const help = dialog.querySelector("#screen-viewer-help");
   const imageHelp = help.textContent;
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
@@ -22,6 +23,7 @@
   let trigger;
   let activePanel;
   let video = null;
+  let cancelVideoWait = () => {};
   let restorePage;
   let gesture;
   let scale = 1;
@@ -100,6 +102,9 @@
     playButton.textContent = video && !video.paused && !video.ended ? "일시정지" : "재생";
   };
   const stopVideo = () => {
+    cancelVideoWait();
+    cancelVideoWait = () => {};
+    retryButton.hidden = true;
     const previous = video;
     video = null;
     if (previous) {
@@ -118,6 +123,8 @@
       if (!isCurrentVideo(current)) current.pause();
     }).catch(error => {
       if (!isCurrentVideo(current) || error.name === "AbortError" || current.error) return;
+      cancelVideoWait();
+      viewport.setAttribute("aria-busy", "false");
       status.textContent = "재생 버튼을 눌러주세요";
       status.hidden = false;
       updatePlayback();
@@ -135,35 +142,91 @@
     current.tabIndex = 0;
     current.poster = source.poster;
     current.setAttribute("aria-label", source.getAttribute("aria-label"));
-    current.addEventListener("loadedmetadata", () => {
-      if (version !== sequence || video !== current || !dialog.open) return;
+    let waitTimer = 0;
+    let progress = "0:0:0";
+    const selected = () => version === sequence && video === current && dialog.open;
+    cancelVideoWait = () => {
+      clearTimeout(waitTimer);
+      waitTimer = 0;
+      retryButton.hidden = true;
+    };
+    const watchProgress = () => {
+      if (!selected() || waitTimer) return;
+      waitTimer = setTimeout(() => {
+        waitTimer = 0;
+        if (!selected() || document.hidden) return;
+        status.textContent = "영상 연결이 지연되고 있습니다 계속 기다리거나 다시 불러오세요";
+        status.hidden = false;
+        retryButton.hidden = false;
+      }, 12000);
+    };
+    const waiting = () => {
+      if (!selected()) return;
+      viewport.setAttribute("aria-busy", "true");
+      if (retryButton.hidden) status.textContent = "영상을 불러오는 중";
+      status.hidden = false;
+      watchProgress();
+    };
+    const available = () => {
+      if (!selected()) return;
       ready = true;
+      cancelVideoWait();
       viewport.setAttribute("aria-busy", "false");
-      status.hidden = true;
-      playButton.disabled = false;
-      replayButton.disabled = false;
-      if (!reducedMotion.matches && !navigator.connection?.saveData) playVideo(current);
+      status.hidden = !current.paused || current.currentTime > 0;
+      if (!status.hidden) status.textContent = "재생 버튼을 눌러주세요";
+    };
+    current.addEventListener("progress", () => {
+      if (!selected() || viewport.getAttribute("aria-busy") !== "true") return;
+      const next = `${current.readyState}:${current.buffered.length ? current.buffered.end(current.buffered.length - 1) : 0}:${current.currentTime}`;
+      if (next === progress) return;
+      progress = next;
+      clearTimeout(waitTimer);
+      waitTimer = 0;
+      watchProgress();
+    });
+    current.addEventListener("loadedmetadata", () => {
+      if (!selected()) return;
+      if (current.paused) {
+        cancelVideoWait();
+        viewport.setAttribute("aria-busy", "false");
+        status.textContent = "재생 버튼을 눌러주세요";
+      }
     }, { once: true });
     current.addEventListener("play", () => {
       if (!isCurrentVideo(current)) { current.pause(); return; }
-      status.hidden = true;
+      if (current.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) waiting();
       updatePlayback();
     });
+    current.addEventListener("waiting", waiting);
+    current.addEventListener("canplay", available);
+    current.addEventListener("playing", available);
     for (const event of ["pause", "ended"]) current.addEventListener(event, () => {
-      if (video === current) updatePlayback();
+      if (!selected() || current.error) return;
+      cancelVideoWait();
+      viewport.setAttribute("aria-busy", "false");
+      status.hidden = current.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA;
+      if (!status.hidden) status.textContent = "재생 버튼을 눌러주세요";
+      updatePlayback();
     });
     current.addEventListener("error", () => {
       if (version !== sequence || video !== current || !dialog.open) return;
+      cancelVideoWait();
       ready = false;
       viewport.setAttribute("aria-busy", "false");
-      status.textContent = "영상을 불러오지 못했습니다 탭을 다시 눌러주세요";
+      status.textContent = "영상을 불러오지 못했습니다 다시 불러오기를 눌러주세요";
       status.hidden = false;
       playButton.disabled = true;
       replayButton.disabled = true;
+      retryButton.hidden = false;
     });
     viewport.insertBefore(current, status);
-    current.src = source.currentSrc || source.querySelector("source").src;
+    current.src = source.dataset.playbackSrc || source.currentSrc || source.querySelector("source").src;
     current.load();
+    playButton.disabled = false;
+    replayButton.disabled = false;
+    waiting();
+    // Start in the user's interaction, rather than wait for mobile metadata preload.
+    if (!reducedMotion.matches && !navigator.connection?.saveData) playVideo(current);
   };
 
   const lockPage = () => {
@@ -180,8 +243,8 @@
       window.scrollTo({ left: scrollX, top: scrollY, behavior: "instant" });
     };
   };
-  const showScreen = async panel => {
-    if (activePanel === panel && (ready || viewport.getAttribute("aria-busy") === "true")) return;
+  const showScreen = async (panel, retry = false) => {
+    if (!retry && activePanel === panel && (ready || viewport.getAttribute("aria-busy") === "true")) return;
     activePanel = panel;
     const source = panel.querySelector("video, img");
     const isVideo = source.tagName === "VIDEO";
@@ -348,15 +411,16 @@
     document.dispatchEvent(new Event("platform-viewer-change"));
   });
   playButton.addEventListener("click", () => {
-    if (!ready || !video) return;
+    if (!video) return;
     if (video.paused || video.ended) playVideo(video);
     else video.pause();
   });
   replayButton.addEventListener("click", () => {
-    if (!ready || !video) return;
-    video.currentTime = 0;
+    if (!video) return;
+    if (video.readyState >= HTMLMediaElement.HAVE_METADATA) video.currentTime = 0;
     playVideo(video);
   });
+  retryButton.addEventListener("click", () => { if (video) showScreen(activePanel, true); });
   document.addEventListener("visibilitychange", () => { if (document.hidden) video?.pause(); });
   window.addEventListener("pagehide", () => video?.pause());
   reducedMotion.addEventListener("change", () => { if (reducedMotion.matches) video?.pause(); });
