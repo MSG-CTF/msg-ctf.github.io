@@ -1,14 +1,14 @@
 (() => {
   "use strict";
 
-  const dialog = document.getElementById("sla-image-viewer");
+  const dialog = document.getElementById("screen-image-viewer");
   if (!dialog || typeof dialog.showModal !== "function") return;
 
-  const viewport = dialog.querySelector(".sla-viewer-viewport");
-  const image = dialog.querySelector(".sla-viewer-image");
-  const status = dialog.querySelector(".sla-viewer-status");
+  const viewport = dialog.querySelector(".screen-viewer-viewport");
+  const image = dialog.querySelector(".screen-viewer-image");
+  const status = dialog.querySelector(".screen-viewer-status");
   const controls = [...dialog.querySelectorAll("[data-zoom]")];
-  const screenTabs = [...dialog.querySelectorAll('.sla-viewer-tabs [role="tab"]')];
+  const screenTabs = [...dialog.querySelectorAll('.screen-viewer-tabs [role="tab"]')];
   const pointers = new Map();
   const maxScale = 4;
   let ready = false;
@@ -35,7 +35,7 @@
     frame = requestAnimationFrame(() => {
       frame = 0;
       image.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
-      dialog.querySelector(".sla-viewer-scale").value = `${Math.round(scale * 100)}%`;
+      dialog.querySelector(".screen-viewer-scale").value = `${Math.round(scale * 100)}%`;
       viewport.dataset.pannable = String(scale > fitScale() + .001);
       for (const button of controls) {
         button.disabled = !ready || (button.dataset.zoom === "out" && scale <= fitScale() + .001)
@@ -122,15 +122,17 @@
       tab.tabIndex = selected ? 0 : -1;
       if (selected) viewport.setAttribute("aria-labelledby", tab.id);
     }
+    const outerPanel = panel.closest(".screen-panel");
+    if (outerPanel !== panel) document.getElementById(outerPanel.getAttribute("aria-labelledby")).click();
     document.getElementById(panel.getAttribute("aria-labelledby")).click();
-    trigger = panel.querySelector(trigger.matches(".screen-image-link") ? ".screen-image-link" : ".screen-caption a");
+    trigger = panel.querySelector(trigger.matches(".screen-image-link") ? ".screen-image-link" : ".screen-caption [data-viewer-open]");
     image.hidden = true;
     status.hidden = false;
     status.textContent = "화면을 불러오는 중";
     viewport.setAttribute("aria-busy", "true");
-    dialog.querySelector("#sla-viewer-title").textContent = `SLA · ${panel.querySelector("h3").textContent}`;
-    dialog.querySelector(".sla-viewer-date").textContent = panel.querySelector(".screen-capture-note").textContent;
-    dialog.querySelector(".sla-viewer-scale").value = "—";
+    dialog.querySelector("#screen-viewer-title").textContent = panel.dataset.screenViewer;
+    dialog.querySelector(".screen-viewer-date").textContent = panel.querySelector(".screen-capture-note")?.textContent || "개발·예시 데이터 포함";
+    dialog.querySelector(".screen-viewer-scale").value = "—";
     controls.forEach(button => { button.disabled = true; });
     measure();
     image.alt = source.alt;
@@ -155,7 +157,7 @@
     trigger = link;
     restorePage = lockPage();
     dialog.showModal();
-    showScreen(link.closest(".sla-screen-panel"));
+    showScreen(link.closest("[data-screen-viewer]"));
   };
 
   for (const tab of screenTabs) {
@@ -198,7 +200,7 @@
     });
   }
 
-  for (const link of document.querySelectorAll(".sla-screen-panel a")) {
+  for (const link of document.querySelectorAll("[data-viewer-open]")) {
     link.setAttribute("role", "button");
     link.setAttribute("aria-haspopup", "dialog");
     link.setAttribute("aria-controls", dialog.id);
@@ -213,7 +215,7 @@
       open(link);
     });
   }
-  dialog.querySelector(".sla-viewer-close").addEventListener("click", () => dialog.close());
+  dialog.querySelector(".screen-viewer-close").addEventListener("click", () => dialog.close());
   dialog.addEventListener("keydown", event => {
     if (event.key !== "Tab") return;
     const stops = [...dialog.querySelectorAll('button:not(:disabled), [tabindex="0"]')];

@@ -31,8 +31,8 @@
   <script src="assets/platform-motion.js?v=5daeaed42d9b" defer></script>
   <link rel="stylesheet" href="assets/platform-workflow.css">
   <script src="assets/platform-workflow.js" defer></script>
-  <link rel="stylesheet" href="assets/sla-viewer.css?v=20261109-tabs">
-  <script src="assets/sla-viewer.js?v=20261109-tabs" defer></script>
+  <link rel="stylesheet" href="assets/screen-viewer.css?v=20261109-gallery">
+  <script src="assets/screen-viewer.js?v=20261109-gallery" defer></script>
 </head>
 <body class="page-platform" id="page-top">
   <a class="skip-link" href="#main">본문으로 이동</a>
@@ -83,17 +83,17 @@
           <div class="screen-caption"><p>주사위 이동 · 도착 칸의 문제 선택</p><button type="button" class="video-replay" aria-label="주사위 굴리기 다시 보기" hidden><span aria-hidden="true">↻</span> 다시 보기</button></div>
           <p class="video-error" hidden>영상을 불러오지 못했습니다 <a href="assets/motion/dice-roll.mp4">영상 직접 열기 ↗</a></p>
         </div>
-        <div class="screen-panel" role="tabpanel" id="panel-challenge" aria-labelledby="tab-challenge" tabindex="0">
-          <img src="assets/screens/challenge.jpg" width="1229" height="556" alt="문제 지문, 첨부 파일, 인스턴스 제어와 플래그 제출을 모은 화면" loading="lazy">
-          <div class="screen-caption"><p>파일 다운로드 · 인스턴스 실행 · 플래그 제출</p></div>
+        <div class="screen-panel" role="tabpanel" id="panel-challenge" aria-labelledby="tab-challenge" tabindex="0" data-screen-viewer="문제 풀이">
+          <a class="screen-image-link" data-viewer-open href="assets/screens/challenge.jpg" aria-label="문제 풀이 화면 크게 보기"><img src="assets/screens/challenge.jpg" width="1229" height="556" alt="문제 지문, 첨부 파일, 인스턴스 제어와 플래그 제출을 모은 화면" loading="lazy"></a>
+          <div class="screen-caption"><p>파일 다운로드 · 인스턴스 실행 · 플래그 제출</p><a class="text-link" data-viewer-open href="assets/screens/challenge.jpg">크게 보기</a></div>
         </div>
-        <div class="screen-panel" role="tabpanel" id="panel-koth" aria-labelledby="tab-koth" tabindex="0">
-          <img src="assets/screens/koth.jpg" width="1229" height="556" alt="산길 지도 위에 여섯 문제와 세 라운드를 배치한 King of the Hill 화면" loading="lazy">
-          <div class="screen-caption"><p>라운드별 공개 · 점수 수집 · 순위 반영</p><a class="text-link" href="challenges.html?category=koth">KOTH 문제 ↗</a></div>
+        <div class="screen-panel" role="tabpanel" id="panel-koth" aria-labelledby="tab-koth" tabindex="0" data-screen-viewer="KOTH">
+          <a class="screen-image-link" data-viewer-open href="assets/screens/koth.jpg" aria-label="KOTH 화면 크게 보기"><img src="assets/screens/koth.jpg" width="1229" height="556" alt="산길 지도 위에 여섯 문제와 세 라운드를 배치한 King of the Hill 화면" loading="lazy"></a>
+          <div class="screen-caption"><p>라운드별 공개 · 점수 수집 · 순위 반영</p><div class="screen-caption-actions"><a class="text-link" data-viewer-open href="assets/screens/koth.jpg">크게 보기</a><a class="text-link" href="challenges.html?category=koth">KOTH 문제 ↗</a></div></div>
         </div>
-        <div class="screen-panel" role="tabpanel" id="panel-festival" aria-labelledby="tab-festival" tabindex="0">
-          <img src="assets/screens/festival.jpg" width="1229" height="556" alt="여섯 동아리의 부스가 가을 축제 거리처럼 놓인 화면" loading="lazy">
-          <div class="screen-caption"><p>동아리 문제 · 마일리지 · QR 결제</p></div>
+        <div class="screen-panel" role="tabpanel" id="panel-festival" aria-labelledby="tab-festival" tabindex="0" data-screen-viewer="동아리 부스">
+          <a class="screen-image-link" data-viewer-open href="assets/screens/festival.jpg" aria-label="동아리 부스 화면 크게 보기"><img src="assets/screens/festival.jpg" width="1229" height="556" alt="여섯 동아리의 부스가 가을 축제 거리처럼 놓인 화면" loading="lazy"></a>
+          <div class="screen-caption"><p>동아리 문제 · 마일리지 · QR 결제</p><a class="text-link" data-viewer-open href="assets/screens/festival.jpg">크게 보기</a></div>
         </div>
         <div class="screen-panel" role="tabpanel" id="panel-sla" aria-labelledby="tab-sla" tabindex="0">
           <div class="sla-screen-tabs" role="tablist" aria-label="SLA 화면 선택" hidden>
@@ -102,28 +102,28 @@
             <button type="button" id="sla-tab-nodes" role="tab" aria-selected="false" aria-controls="sla-nodes" tabindex="-1">노드 상태</button>
             <button type="button" id="sla-tab-grafana" role="tab" aria-selected="false" aria-controls="sla-grafana" tabindex="-1">Grafana</button>
           </div>
-          <div class="sla-screen-panel" role="tabpanel" id="sla-dashboard" aria-labelledby="sla-tab-dashboard" tabindex="0">
+          <div class="sla-screen-panel" role="tabpanel" id="sla-dashboard" aria-labelledby="sla-tab-dashboard" tabindex="0" data-screen-viewer="SLA · 관제 현황">
             <h3 class="sla-screen-title">관제 현황</h3>
-            <a class="screen-image-link" href="assets/screens/sla-dashboard.jpg" aria-label="SLA 관제 화면 크게 보기"><img src="assets/screens/sla-dashboard.jpg" width="1265" height="712" alt="Sentinel 관제 현황: 내부·외부 트랙, 공통 제어, 실행 인프라와 KOTH 상태" loading="lazy"></a>
-            <div class="screen-caption"><p>서비스 · 노드 · KOTH 상태 수집</p><a class="text-link" href="assets/screens/sla-dashboard.jpg">크게 보기</a></div>
+            <a class="screen-image-link" data-viewer-open href="assets/screens/sla-dashboard.jpg" aria-label="SLA 관제 화면 크게 보기"><img src="assets/screens/sla-dashboard.jpg" width="1265" height="712" alt="Sentinel 관제 현황: 내부·외부 트랙, 공통 제어, 실행 인프라와 KOTH 상태" loading="lazy"></a>
+            <div class="screen-caption"><p>서비스 · 노드 · KOTH 상태 수집</p><a class="text-link" data-viewer-open href="assets/screens/sla-dashboard.jpg">크게 보기</a></div>
             <p class="screen-capture-note">2026.11.03 운영 기록</p>
           </div>
-          <div class="sla-screen-panel" role="tabpanel" id="sla-koth" aria-labelledby="sla-tab-koth" tabindex="0">
+          <div class="sla-screen-panel" role="tabpanel" id="sla-koth" aria-labelledby="sla-tab-koth" tabindex="0" data-screen-viewer="SLA · KOTH">
             <h3 class="sla-screen-title">KOTH</h3>
-            <a class="screen-image-link" href="assets/screens/sla-koth.jpg" aria-label="KOTH 감시 화면 크게 보기"><img src="assets/screens/sla-koth.jpg" width="1265" height="712" alt="KOTH 게임 서버와 실행 준비 상태를 문제별로 확인하는 관제 화면" loading="lazy"></a>
-            <div class="screen-caption"><p>게임 서버 · 실행 준비 상태</p><a class="text-link" href="assets/screens/sla-koth.jpg">크게 보기</a></div>
+            <a class="screen-image-link" data-viewer-open href="assets/screens/sla-koth.jpg" aria-label="KOTH 감시 화면 크게 보기"><img src="assets/screens/sla-koth.jpg" width="1265" height="712" alt="KOTH 게임 서버와 실행 준비 상태를 문제별로 확인하는 관제 화면" loading="lazy"></a>
+            <div class="screen-caption"><p>게임 서버 · 실행 준비 상태</p><a class="text-link" data-viewer-open href="assets/screens/sla-koth.jpg">크게 보기</a></div>
             <p class="screen-capture-note">2026.11.03 운영 기록</p>
           </div>
-          <div class="sla-screen-panel" role="tabpanel" id="sla-nodes" aria-labelledby="sla-tab-nodes" tabindex="0">
+          <div class="sla-screen-panel" role="tabpanel" id="sla-nodes" aria-labelledby="sla-tab-nodes" tabindex="0" data-screen-viewer="SLA · 노드 상태">
             <h3 class="sla-screen-title">노드 상태</h3>
-            <a class="screen-image-link" href="assets/screens/sla-nodes.jpg" aria-label="노드 상태 화면 크게 보기"><img src="assets/screens/sla-nodes.jpg" width="1280" height="720" alt="K3s 실행 노드의 준비 상태, CPU와 메모리 사용량을 보여주는 상세 화면" loading="lazy"></a>
-            <div class="screen-caption"><p>K3s 노드 상태 · CPU · 메모리</p><a class="text-link" href="assets/screens/sla-nodes.jpg">크게 보기</a></div>
+            <a class="screen-image-link" data-viewer-open href="assets/screens/sla-nodes.jpg" aria-label="노드 상태 화면 크게 보기"><img src="assets/screens/sla-nodes.jpg" width="1280" height="720" alt="K3s 실행 노드의 준비 상태, CPU와 메모리 사용량을 보여주는 상세 화면" loading="lazy"></a>
+            <div class="screen-caption"><p>K3s 노드 상태 · CPU · 메모리</p><a class="text-link" data-viewer-open href="assets/screens/sla-nodes.jpg">크게 보기</a></div>
             <p class="screen-capture-note">2026.11.03 운영 기록</p>
           </div>
-          <div class="sla-screen-panel" role="tabpanel" id="sla-grafana" aria-labelledby="sla-tab-grafana" tabindex="0">
+          <div class="sla-screen-panel" role="tabpanel" id="sla-grafana" aria-labelledby="sla-tab-grafana" tabindex="0" data-screen-viewer="SLA · Grafana">
             <h3 class="sla-screen-title">Grafana</h3>
-            <a class="screen-image-link" href="assets/screens/sla-grafana.jpg" aria-label="Grafana 지표 화면 크게 보기"><img src="assets/screens/sla-grafana.jpg" width="1440" height="887" alt="Grafana의 메트릭 수집 상태, 서비스 상태 이력과 응답 시간 대시보드" loading="lazy"></a>
-            <div class="screen-caption"><p>응답 시간 · 상태 이력 · 메트릭 수집</p><a class="text-link" href="assets/screens/sla-grafana.jpg">크게 보기</a></div>
+            <a class="screen-image-link" data-viewer-open href="assets/screens/sla-grafana.jpg" aria-label="Grafana 지표 화면 크게 보기"><img src="assets/screens/sla-grafana.jpg" width="1440" height="887" alt="Grafana의 메트릭 수집 상태, 서비스 상태 이력과 응답 시간 대시보드" loading="lazy"></a>
+            <div class="screen-caption"><p>응답 시간 · 상태 이력 · 메트릭 수집</p><a class="text-link" data-viewer-open href="assets/screens/sla-grafana.jpg">크게 보기</a></div>
             <p class="screen-capture-note">2026.10.14 초기 연동 기록</p>
           </div>
         </div>
@@ -330,35 +330,38 @@
 <!-- END_TECH_STACK -->
     </section>
   </main>
-  <dialog class="sla-viewer" id="sla-image-viewer" aria-labelledby="sla-viewer-title" aria-describedby="sla-viewer-help">
-    <div class="sla-viewer-shell">
-      <header class="sla-viewer-heading">
-        <h2 id="sla-viewer-title">SLA</h2>
-        <button class="sla-viewer-close" type="button" aria-label="확대 화면 닫기" autofocus>닫기 <span aria-hidden="true">×</span></button>
+  <dialog class="screen-viewer" id="screen-image-viewer" aria-labelledby="screen-viewer-title" aria-describedby="screen-viewer-help">
+    <div class="screen-viewer-shell">
+      <header class="screen-viewer-heading">
+        <h2 id="screen-viewer-title">플랫폼 화면</h2>
+        <button class="screen-viewer-close" type="button" aria-label="확대 화면 닫기" autofocus>닫기 <span aria-hidden="true">×</span></button>
       </header>
-      <div class="sla-viewer-tabs" role="tablist" aria-label="확대할 SLA 화면">
-        <button type="button" role="tab" id="sla-viewer-tab-dashboard" data-panel="sla-dashboard" aria-selected="true" aria-controls="sla-viewer-panel" tabindex="0">관제 현황</button>
-        <button type="button" role="tab" id="sla-viewer-tab-koth" data-panel="sla-koth" aria-selected="false" aria-controls="sla-viewer-panel" tabindex="-1">KOTH</button>
-        <button type="button" role="tab" id="sla-viewer-tab-nodes" data-panel="sla-nodes" aria-selected="false" aria-controls="sla-viewer-panel" tabindex="-1">노드 상태</button>
-        <button type="button" role="tab" id="sla-viewer-tab-grafana" data-panel="sla-grafana" aria-selected="false" aria-controls="sla-viewer-panel" tabindex="-1">Grafana</button>
+      <div class="screen-viewer-tabs" role="tablist" aria-label="확대할 플랫폼 화면">
+        <button type="button" role="tab" id="screen-viewer-tab-challenge" data-panel="panel-challenge" aria-selected="true" aria-controls="screen-viewer-panel" tabindex="0">문제 풀이</button>
+        <button type="button" role="tab" id="screen-viewer-tab-koth" data-panel="panel-koth" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">KOTH</button>
+        <button type="button" role="tab" id="screen-viewer-tab-festival" data-panel="panel-festival" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">동아리 부스</button>
+        <button type="button" role="tab" id="screen-viewer-tab-sla-dashboard" data-panel="sla-dashboard" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">SLA 관제</button>
+        <button type="button" role="tab" id="screen-viewer-tab-sla-koth" data-panel="sla-koth" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">SLA KOTH</button>
+        <button type="button" role="tab" id="screen-viewer-tab-sla-nodes" data-panel="sla-nodes" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">SLA 노드</button>
+        <button type="button" role="tab" id="screen-viewer-tab-sla-grafana" data-panel="sla-grafana" aria-selected="false" aria-controls="screen-viewer-panel" tabindex="-1">Grafana</button>
       </div>
-      <div class="sla-viewer-tools" role="group" aria-label="화면 확대 조절">
-        <div class="sla-viewer-zoom">
+      <div class="screen-viewer-tools" role="group" aria-label="화면 확대 조절">
+        <div class="screen-viewer-zoom">
           <button type="button" data-zoom="out" aria-label="축소" disabled>−</button>
-          <output class="sla-viewer-scale" aria-label="확대 비율" aria-live="off">—</output>
+          <output class="screen-viewer-scale" aria-label="확대 비율" aria-live="off">—</output>
           <button type="button" data-zoom="in" aria-label="확대" disabled>+</button>
         </div>
         <button type="button" data-zoom="fit" disabled>화면 맞춤</button>
         <button type="button" data-zoom="original" disabled>원본 크기</button>
       </div>
-      <div class="sla-viewer-viewport" id="sla-viewer-panel" tabindex="0" role="tabpanel" aria-labelledby="sla-viewer-tab-dashboard" aria-describedby="sla-viewer-help sla-viewer-keys" aria-busy="true">
-        <img class="sla-viewer-image" alt="" draggable="false" hidden>
-        <p class="sla-viewer-status" role="status">화면을 불러오는 중</p>
+      <div class="screen-viewer-viewport" id="screen-viewer-panel" tabindex="0" role="tabpanel" aria-labelledby="screen-viewer-tab-challenge" aria-describedby="screen-viewer-help screen-viewer-keys" aria-busy="true">
+        <img class="screen-viewer-image" alt="" draggable="false" hidden>
+        <p class="screen-viewer-status" role="status">화면을 불러오는 중</p>
       </div>
-      <footer class="sla-viewer-footer">
-        <p id="sla-viewer-help">휠·두 손가락으로 확대 · 끌어서 이동</p>
-        <p class="sla-viewer-date"></p>
-        <span class="sr-only" id="sla-viewer-keys">키보드: +와 −로 확대·축소, 방향키로 이동, 0으로 화면 맞춤, 1로 원본 크기, Esc로 닫기</span>
+      <footer class="screen-viewer-footer">
+        <p id="screen-viewer-help">휠·두 손가락으로 확대 · 끌어서 이동</p>
+        <p class="screen-viewer-date"></p>
+        <span class="sr-only" id="screen-viewer-keys">키보드: +와 −로 확대·축소, 방향키로 이동, 0으로 화면 맞춤, 1로 원본 크기, Esc로 닫기</span>
       </footer>
     </div>
   </dialog>
