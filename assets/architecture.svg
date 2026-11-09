@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="965" viewBox="0 0 1460 965" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="1380" viewBox="0 0 1460 1380" role="img" aria-labelledby="title desc">
 <title id="title">MSG CTF 플랫폼 전체 구성</title>
 <desc id="desc">내부·외부 Frontend와 Backend, PostgreSQL과 Redis를 분리합니다 스케줄러는 브로커의 자원 예약을 거쳐 런타임에 생성을 요청합니다 KOTH 경기와 트랙별 백엔드 채점, Windows 실행 경로, 문제 CI·GHCR·발행본과 백엔드 릴리스 저장, SLA 감시를 함께 보여줍니다 현재 정상 상태나 노드 수를 표시하는 그림은 아닙니다</desc>
 <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#91a8c6"/></marker>
 <marker id="observe" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8bb5a2"/></marker>
-<style>text{font-family:system-ui,-apple-system,"Malgun Gothic",sans-serif;fill:#e4edf8;text-anchor:middle}.group{fill:#142130;stroke:#33475c;stroke-width:1.3;rx:12}.node{fill:#1c2c3d;stroke:#5d7691;stroke-width:1.4;rx:9}.heading{font-size:20px;font-weight:700;text-anchor:start}.title{font-size:18px;font-weight:650}.small{font-size:13px;fill:#b3c4d8}.note{font-size:14px;fill:#c0cddc}.lane{font-size:14px;font-weight:600;fill:#d1ddeb;text-anchor:start}.request{fill:none;stroke:#91a8c6;stroke-width:1.8;marker-end:url(#arrow)}.observe{fill:none;stroke:#8bb5a2;stroke-width:1.8;stroke-dasharray:4 5;marker-end:url(#observe)}.planned{stroke-dasharray:5 5;stroke:#788797;fill:#18222d}</style></defs>
-<rect width="1460" height="965" rx="14" fill="#0e1825"/>
+<style>text{font-family:system-ui,-apple-system,"Malgun Gothic",sans-serif;fill:#e4edf8;text-anchor:middle}.group{fill:#142130;stroke:#33475c;stroke-width:1.3;rx:12}.node{fill:#1c2c3d;stroke:#5d7691;stroke-width:1.4;rx:9}.heading{font-size:20px;font-weight:700;text-anchor:start}.title{font-size:18px;font-weight:650}.small{font-size:13px;fill:#b3c4d8}.note{font-size:14px;fill:#c0cddc}.lane{font-size:14px;font-weight:600;fill:#d1ddeb;text-anchor:start}.request{fill:none;stroke:#91a8c6;stroke-width:1.8;marker-end:url(#arrow)}.observe{fill:none;stroke:#8bb5a2;stroke-width:1.8;stroke-dasharray:4 5;marker-end:url(#observe)}.planned{stroke-dasharray:5 5;stroke:#788797;fill:#18222d}.sla-flow-embedded text{fill:revert;text-anchor:revert}</style></defs>
+<rect width="1460" height="1380" rx="14" fill="#0e1825"/>
 <text x="30" y="32" class="heading">MSG CTF · 서비스 경계와 연결</text>
 <text x="1120" y="32" class="small">실선: 요청·발행　점선: 관측　점선 테두리: 설계</text>
 <rect x="20" y="60" width="160" height="420" class="group"/><text x="36" y="90" class="heading">대회 접속</text>
@@ -127,26 +127,47 @@
 <text x="1285" y="589" class="title">Windows VM / 실행기</text>
 <text x="1285" y="613" class="small">Backend → Runtime → Pool</text>
 <path d="M925 592H905" class="request"/>
-<text x="920" y="541" class="note" style="text-anchor:middle">점수 API</text>
+<text x="920" y="650" class="note" style="text-anchor:middle">점수 API</text>
 <path d="M447 408V489H1025V547" class="request"/>
 <text x="940" y="482" class="note" style="text-anchor:middle">트랙별 채점·팀 토큰 검증</text>
 <text x="1070" y="680" class="note" style="text-anchor:middle">일반 문제와 다른 제출·채점·VM 관리 경로</text>
-<rect x="20" y="775" width="1420" height="162" class="group"/><text x="36" y="805" class="heading">SLA 관측·운영 지원</text>
-<rect x="40" y="833" width="230" height="78" class="node"/>
-<text x="155" y="869" class="title">Discord 티켓 봇</text>
-<text x="155" y="893" class="small">문의 처리·대화 백업</text>
-<rect x="315" y="833" width="320" height="78" class="node"/>
-<text x="475" y="869" class="title">노드·서비스 수집기</text>
-<text x="475" y="893" class="small">Backend·제어·실행 환경 관측</text>
-<rect x="680" y="833" width="320" height="78" class="node"/>
-<text x="840" y="869" class="title">SLA / Sentinel</text>
-<text x="840" y="893" class="small">상태·수집 시각·장애·복구 이력</text>
-<rect x="1045" y="833" width="375" height="78" class="node"/>
-<text x="1232.5" y="869" class="title">Prometheus / Grafana</text>
-<text x="1232.5" y="893" class="small">메트릭·운영 대시보드·알림</text>
-<path d="M1415 480V763H475V828" class="observe"/>
-<text x="1230" y="755" class="note" style="text-anchor:middle">조회·상태 수집</text>
-<path d="M155 833V820H840V828" class="observe"/>
-<path d="M635 872H675" class="observe"/>
-<path d="M1000 872H1040" class="request"/>
+<rect x="20" y="775" width="1420" height="490" class="group"/>
+<g class="sla-flow-embedded" transform="translate(54 797) scale(1.3)"><g font-family="Segoe UI, Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<defs><marker id="sla-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1 7 4 1 7" fill="none" stroke="#bd955f" stroke-width="1.5"/></marker></defs>
+<text x="0" y="24" font-size="23" fill="#f4ede0" font-weight="600" text-anchor="start" style="fill:#f4ede0;text-anchor:start">SLA / 상시 점검</text>
+<text x="1040" y="24" font-size="15" fill="#c7bbae" font-weight="400" text-anchor="end" style="fill:#c7bbae;text-anchor:end">화살표: 수집 데이터·결과</text>
+<rect x="0" y="52" width="292" height="88" rx="9" fill="#25211b" stroke="#655442"/>
+<text x="18" y="79" font-size="19" fill="#f4ede0" font-weight="600" text-anchor="start" style="fill:#f4ede0;text-anchor:start">서비스 API</text>
+<text x="18" y="103" font-size="16" fill="#c7bbae" font-weight="400" text-anchor="start" style="fill:#c7bbae;text-anchor:start">Frontend · Backend</text>
+<text x="18" y="125" font-size="16" fill="#c7bbae" font-weight="400" text-anchor="start" style="fill:#c7bbae;text-anchor:start">Scheduler · Broker · Runtime</text>
+<rect x="0" y="156" width="292" height="88" rx="9" fill="#25211b" stroke="#655442"/>
+<text x="18" y="183" font-size="19" fill="#f4ede0" font-weight="600" text-anchor="start" style="fill:#f4ede0;text-anchor:start">인스턴스 목록</text>
+<text x="18" y="207" font-size="16" fill="#c7bbae" font-weight="400" text-anchor="start" style="fill:#c7bbae;text-anchor:start">Scheduler 전체 목록</text>
+<text x="18" y="229" font-size="16" fill="#c7bbae" font-weight="400" text-anchor="start" style="fill:#c7bbae;text-anchor:start">Runtime 상태 대조</text>
+<rect x="0" y="260" width="292" height="88" rx="9" fill="#25211b" stroke="#655442"/>
+<text x="18" y="287" font-size="19" fill="#f4ede0" font-weight="600" text-anchor="start" style="fill:#f4ede0;text-anchor:start">노드 수집기</text>
+<text x="18" y="311" font-size="16" fill="#c7bbae" font-weight="400" text-anchor="start" style="fill:#c7bbae;text-anchor:start">CPU · 메모리 · 디스크</text>
+<text x="18" y="333" font-size="16" fill="#c7bbae" font-weight="400" text-anchor="start" style="fill:#c7bbae;text-anchor:start">K3s · Windows · 서비스 상태</text>
+<path d="M292 96H326V200H370" fill="none" stroke="#bd955f" stroke-width="1.8" marker-end="url(#sla-arrow)"/>
+<path d="M292 200H370" fill="none" stroke="#bd955f" stroke-width="1.8" marker-end="url(#sla-arrow)"/>
+<path d="M292 304H326V200H370" fill="none" stroke="#bd955f" stroke-width="1.8" marker-end="url(#sla-arrow)"/>
+<rect x="370" y="135" width="285" height="130" rx="9" fill="#34291e" stroke="#bf995f"/>
+<text x="512.5" y="179" font-size="24" fill="#f4ede0" font-weight="600" text-anchor="middle" style="fill:#f4ede0;text-anchor:middle">SLA / Sentinel</text>
+<text x="512.5" y="212" font-size="18" fill="#c7bbae" font-weight="400" text-anchor="middle" style="fill:#c7bbae;text-anchor:middle">상태 판정</text>
+<text x="512.5" y="238" font-size="18" fill="#c7bbae" font-weight="400" text-anchor="middle" style="fill:#c7bbae;text-anchor:middle">장애·복구 기록</text>
+<path d="M655 200H697V96H740" fill="none" stroke="#bd955f" stroke-width="1.8" marker-end="url(#sla-arrow)"/>
+<path d="M655 200H740" fill="none" stroke="#bd955f" stroke-width="1.8" marker-end="url(#sla-arrow)"/>
+<path d="M655 200H697V304H740" fill="none" stroke="#bd955f" stroke-width="1.8" marker-end="url(#sla-arrow)"/>
+<rect x="740" y="52" width="300" height="88" rx="9" fill="#25211b" stroke="#655442"/>
+<text x="758" y="86" font-size="19" fill="#f4ede0" font-weight="600" text-anchor="start" style="fill:#f4ede0;text-anchor:start">운영 대시보드</text>
+<text x="758" y="116" font-size="17" fill="#c7bbae" font-weight="400" text-anchor="start" style="fill:#c7bbae;text-anchor:start">현재 상태 · 수집 시각 · 이력</text>
+<rect x="740" y="156" width="300" height="88" rx="9" fill="#25211b" stroke="#655442"/>
+<text x="758" y="190" font-size="19" fill="#f4ede0" font-weight="600" text-anchor="start" style="fill:#f4ede0;text-anchor:start">Discord</text>
+<text x="758" y="220" font-size="17" fill="#c7bbae" font-weight="400" text-anchor="start" style="fill:#c7bbae;text-anchor:start">장애·복구 알림</text>
+<rect x="740" y="260" width="300" height="88" rx="9" fill="#25211b" stroke="#655442"/>
+<text x="758" y="294" font-size="19" fill="#f4ede0" font-weight="600" text-anchor="start" style="fill:#f4ede0;text-anchor:start">Prometheus → Grafana</text>
+<text x="758" y="324" font-size="17" fill="#c7bbae" font-weight="400" text-anchor="start" style="fill:#c7bbae;text-anchor:start">메트릭 저장 · 조회</text>
+</g></g>
+<text x="40" y="1312" class="heading">운영 지원</text>
+<text x="40" y="1345" class="note" style="text-anchor:start">Discord 티켓 봇 · 참가자 문의 접수와 대화 백업</text>
 </svg>

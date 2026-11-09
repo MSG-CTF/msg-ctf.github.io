@@ -36,6 +36,5 @@
 
 ## 플랫폼 흐름 그림
 
-[jongcoding 포트폴리오](https://jongcoding.github.io/)의 발행·예약·실행·관측 SVG를 바탕으로 MSG CTF 색상과 실제 역할에 맞춰 구성했습니다
-자원 반납 장면을 추가했고, SLA는 상태 관측으로 표시했습니다
-장면은 동작 설명이며 실시간 운영 지표가 아닙니다
+[jongcoding 포트폴리오](https://jongcoding.github.io/)의 발행·예약·실행 SVG에 자원 반납 장면을 더했습니다
+SLA는 별도의 상시 점검 흐름으로 표시했습니다 · [코드 근거](sla-flow.md)
