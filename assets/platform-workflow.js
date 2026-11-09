@@ -10,7 +10,7 @@
   function label() {
     play.setAttribute('aria-pressed', String(playing));
     play.innerHTML = playing ? '일시정지 <span aria-hidden="true">Ⅱ</span>' :
-      `${finished ? '다시 보기' : elapsed ? '이어서 재생' : '흐름 재생'} <span aria-hidden="true">▶</span>`;
+      `${finished ? '다시 보기' : elapsed ? '이어서 재생' : '재생'} <span aria-hidden="true">▶</span>`;
     film.dataset.playing = String(playing);
   }
   function pause() {
