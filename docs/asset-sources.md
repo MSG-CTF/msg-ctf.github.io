@@ -15,6 +15,7 @@
 | 색상·타이포그래피 기준 | [기존 대회 소개 페이지 스타일](https://github.com/MSG-CTF/front-team/blob/3975fa447fc934b1e2ba253c360ec5dc186b22c6/src/features/intro/intro.css) |
 | 낙엽 효과 | [기존 대회 소개 페이지의 AutumnLeaves](https://github.com/MSG-CTF/front-team/blob/3975fa447fc934b1e2ba253c360ec5dc186b22c6/src/features/intro/components/AutumnLeaves.jsx)와 intro.css, 정적 페이지에서 동작하도록 연결 |
 | 최종 스코어보드 | 운영자가 제공한 대회 종료 후 화면 원본, 외부 트랙은 왼쪽·내부 트랙은 오른쪽 |
+| 대회 현장 사진 6장 | 운영자가 제공한 2026 MSG CTF 현장 사진 · [사진 보기](https://msg-ctf.github.io/#photos) |
 | 플랫폼 역할별 프로필 | [노션의 팀 구분](https://app.notion.com/p/1280f19c72be8300abd701cdac2219fa)·각 팀의 작업 담당자와 GitHub 병합 기록 대조, [역할별 계정과 출처](../data/platform-team.json) |
 | 참여자 사진 | 각 참여자의 GitHub 공개 프로필 사진, 프로필 링크와 함께 표시 |
 | 기술 아이콘 | Devicon·Simple Icons의 로고를 공통 타일에 배치, [출처와 라이선스](tech-icons.md) |
@@ -26,7 +27,8 @@
 | Pretendard | [라이선스](../assets/fonts/Pretendard-LICENSE.txt) |
 | 감탄로드 바탕체 | 태백시 · 공공누리 제1유형 · [원본 출처와 사용 조건](../assets/fonts/MSG-FONT-SOURCES.md) |
 
-대회 이미지와 글꼴은 원본 파일을 그대로 옮겼으며 배치는 이 소개 페이지에 맞게 구성했습니다
+로고·일러스트·글꼴은 원본 파일을 그대로 옮겼으며 배치는 이 소개 페이지에 맞게 구성했습니다
+현장 사진은 방향을 맞춘 웹용 압축본을 사용하며, 큰 사진은 확대할 때 불러옵니다
 보드 영상은 예시 데이터로 촬영했으며 실제 대회 계정이나 API를 사용하지 않았습니다
 주사위 모델·물리 모션의 참고 코드와 저작권 고지는 [프론트의 주사위 출처](https://github.com/MSG-CTF/front-team/blob/94771a1118b70624d73714e16b55b63744f3d4fb/public/third-party/dice-roller.txt)에 있습니다
 영상은 보이는 장면만 한 번 자동 재생하고, 탭을 바꾸거나 화면 밖으로 나가면 멈춥니다
