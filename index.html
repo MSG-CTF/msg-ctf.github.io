@@ -27,7 +27,9 @@
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
   <link rel="preload" href="assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site.css?v=98a32eebf383">
+  <link rel="stylesheet" href="assets/event-photos.css?v=95927f8daff2">
   <script src="assets/site.js?v=33fc91dee5b3" defer></script>
+  <script src="assets/event-photos.js?v=50269547eff6" defer></script>
 </head>
 <body class="page-home" id="page-top">
   <a class="skip-link" href="#main">본문으로 이동</a>
@@ -69,6 +71,67 @@
           <a class="button button-primary" href="#results">스코어보드 <span aria-hidden="true">↓</span></a>
           <a class="button button-secondary" href="authors.html">출제자 <span aria-hidden="true">→</span></a>
           <a class="button button-secondary" href="platform.html">플랫폼 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="event-photos" id="photos" aria-labelledby="photos-title">
+      <div class="container photo-heading">
+        <div><p class="photo-date">2026. 11. 08</p><h2 id="photos-title">대회 현장</h2></div>
+      </div>
+      <div class="photo-reel-shell">
+        <div class="photo-reel" aria-label="대회 현장 사진">
+          <ul class="photo-track">
+            <li class="photo-card" style="--photo-ratio: 1.778; --photo-tilt: -1.3deg"><figure>
+              <a href="assets/event/hall-large.webp" data-photo="0" aria-label="대회장 전경 크게 보기">
+                <img src="assets/event/hall-thumb.webp" alt="대회 화면을 앞에 두고 노트북으로 문제를 푸는 참가자들" width="960" height="540" loading="lazy" decoding="async">
+                <span class="photo-enlarge" aria-hidden="true">↗</span>
+              </a>
+              <figcaption><span>대회장 전경</span><span aria-hidden="true">01</span></figcaption>
+            </figure></li>
+            <li class="photo-card" style="--photo-ratio: .75; --photo-tilt: 1.5deg"><figure>
+              <a href="assets/event/players-large.webp" data-photo="1" aria-label="문제 풀이 현장 크게 보기">
+                <img src="assets/event/players-thumb.webp" alt="나란히 앉아 노트북으로 문제를 푸는 참가자들" width="540" height="720" loading="lazy" decoding="async">
+                <span class="photo-enlarge" aria-hidden="true">↗</span>
+              </a>
+              <figcaption><span>문제 풀이</span><span aria-hidden="true">02</span></figcaption>
+            </figure></li>
+            <li class="photo-card" style="--photo-ratio: 1.778; --photo-tilt: -.7deg"><figure>
+              <a href="assets/event/scoreboard-large.webp" data-photo="2" aria-label="현장 스코어보드 크게 보기">
+                <img src="assets/event/scoreboard-thumb.webp" alt="대회장 대형 화면에 나란히 표시된 내부·외부 트랙 스코어보드" width="960" height="540" loading="lazy" decoding="async">
+                <span class="photo-enlarge" aria-hidden="true">↗</span>
+              </a>
+              <figcaption><span>현장 스코어보드</span><span aria-hidden="true">03</span></figcaption>
+            </figure></li>
+            <li class="photo-card" style="--photo-ratio: 1.778; --photo-tilt: 1.1deg"><figure>
+              <a href="assets/event/in-progress-large.webp" data-photo="3" aria-label="경기 중인 대회장 크게 보기">
+                <img src="assets/event/in-progress-thumb.webp" alt="스코어보드가 켜진 대회장에서 문제 풀이에 집중하는 참가자들" width="960" height="540" loading="lazy" decoding="async">
+                <span class="photo-enlarge" aria-hidden="true">↗</span>
+              </a>
+              <figcaption><span>경기 중</span><span aria-hidden="true">04</span></figcaption>
+            </figure></li>
+            <li class="photo-card" style="--photo-ratio: 1.778; --photo-tilt: -1.4deg"><figure>
+              <a href="assets/event/scoreboard-morning-large.webp" data-photo="4" aria-label="오전 스코어보드 크게 보기">
+                <img src="assets/event/scoreboard-morning-thumb.webp" alt="오전 경기 점수와 순위가 표시된 대회장 화면" width="960" height="540" loading="lazy" decoding="async">
+                <span class="photo-enlarge" aria-hidden="true">↗</span>
+              </a>
+              <figcaption><span>오전 스코어보드</span><span aria-hidden="true">05</span></figcaption>
+            </figure></li>
+            <li class="photo-card" style="--photo-ratio: 1.333; --photo-tilt: .8deg"><figure>
+              <a href="assets/event/hall-wide-large.webp" data-photo="5" aria-label="대회장 풍경 크게 보기">
+                <img src="assets/event/hall-wide-thumb.webp" alt="대회장 뒤편에서 바라본 참가자들과 현장 화면" width="960" height="720" loading="lazy" decoding="async">
+                <span class="photo-enlarge" aria-hidden="true">↗</span>
+              </a>
+              <figcaption><span>대회장 풍경</span><span aria-hidden="true">06</span></figcaption>
+            </figure></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container photo-footer">
+        <div class="photo-controls" hidden>
+          <button type="button" data-photo-step="-1" aria-label="이전 사진으로 이동"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+          <button type="button" class="photo-motion" aria-pressed="false" aria-label="사진 자동 넘김 멈추기"><svg viewBox="0 0 24 24" aria-hidden="true"><g data-photo-pause><path d="M9 7v10m6-10v10"/></g><g data-photo-play hidden><path d="m9 6 9 6-9 6Z"/></g></svg></button>
+          <button type="button" data-photo-step="1" aria-label="다음 사진으로 이동"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
         </div>
       </div>
     </section>
@@ -121,6 +184,20 @@
       </div>
     </section>
   </main>
+  <dialog class="event-photo-viewer" id="event-photo-viewer" aria-labelledby="photo-viewer-title">
+    <div class="photo-viewer-inner">
+      <header class="photo-viewer-heading"><h2 id="photo-viewer-title">대회 현장</h2><button type="button" class="photo-viewer-close" aria-label="사진 닫기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
+      <div class="photo-viewer-stage">
+        <div class="photo-viewer-image"></div>
+        <div class="photo-viewer-state" role="status" hidden><p></p><button type="button" data-photo-retry hidden>다시 시도</button></div>
+      </div>
+      <footer class="photo-viewer-footer">
+        <button type="button" data-viewer-step="-1" aria-label="이전 사진"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+        <div><p class="photo-viewer-caption"></p><p class="photo-viewer-count" aria-live="polite"></p></div>
+        <button type="button" data-viewer-step="1" aria-label="다음 사진"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      </footer>
+    </div>
+  </dialog>
   <footer class="site-footer">
     <div class="container footer-inner">
       <div><span class="footer-title">MSG CTF 2026</span></div>
