@@ -33,7 +33,7 @@
     updateMotion();
   }
 
-  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+  const tabs = Array.from(document.querySelectorAll('.screen-tabs [role="tab"]'));
   const activate = (selected) => {
     for (const tab of tabs) {
       const active = tab === selected;
@@ -59,8 +59,13 @@
     });
   }
   if (tabs.length) {
-    activate(tabs[0]);
+    const linkedTab = () => tabs.find(tab => '#' + tab.getAttribute('aria-controls') === location.hash);
+    activate(linkedTab() || tabs[0]);
     document.querySelector(".screen-tabs").hidden = false;
+    window.addEventListener('hashchange', () => {
+      const tab = linkedTab();
+      if (tab) activate(tab);
+    });
   }
 
   const catalog = document.querySelector("[data-catalog]");

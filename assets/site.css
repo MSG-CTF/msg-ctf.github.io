@@ -325,6 +325,10 @@ a.detail-author:hover { color: var(--accent); }
 .screen-tabs button[aria-selected="true"]::after { content: ""; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--accent); }
 .screen-stage { padding: 7px 7px 0; border: 1px solid #7c6546; background: #241b13; }
 .screen-panel > img { width: 100%; aspect-ratio: 1229/556; object-fit: cover; background: #3e3125; }
+.screen-image-link, .screen-image-link img { display: block; width: 100%; }
+.screen-image-link img { height: auto; }
+.screen-image-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.screen-capture-note { padding: 0 18px 14px; color: var(--muted); font-size: 12px; }
 .platform-video { display: block; width: 100%; aspect-ratio: 16/9; background: #281e12; object-fit: contain; }
 .screen-caption { padding: 18px 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .screen-caption p { font-size: 15px; color: #dfd1bd; }

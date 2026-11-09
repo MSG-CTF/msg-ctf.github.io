@@ -26,8 +26,8 @@
   <link rel="canonical" href="https://msg-ctf.github.io/platform.html">
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
   <link rel="preload" href="assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site.css?v=98a32eebf383">
-  <script src="assets/site.js?v=33fc91dee5b3" defer></script>
+  <link rel="stylesheet" href="assets/site.css?v=98527c1c90b4">
+  <script src="assets/site.js?v=0876bf6d82e7" defer></script>
   <script src="assets/platform-motion.js?v=5daeaed42d9b" defer></script>
   <link rel="stylesheet" href="assets/platform-workflow.css">
   <script src="assets/platform-workflow.js" defer></script>
@@ -55,13 +55,14 @@
       <nav class="page-jumps" aria-label="플랫폼 페이지 목차"><a href="#platform">화면</a><a href="#cloud-cost">비용 0원</a><a href="#architecture">구성</a><a href="#contributors">Contributors</a></nav>
     </section>
     <section class="platform-section section container" id="platform" aria-labelledby="platform-title">
-      <h2 class="sr-only" id="platform-title">참가자 화면</h2>
+      <h2 class="sr-only" id="platform-title">플랫폼 화면</h2>
       <div class="screen-tabs" role="tablist" aria-label="플랫폼 화면 선택" hidden>
         <button type="button" id="tab-intro" role="tab" aria-selected="true" aria-controls="panel-intro" tabindex="0">보드 등장</button>
         <button type="button" id="tab-board" role="tab" aria-selected="false" aria-controls="panel-board" tabindex="-1">주사위 굴리기</button>
         <button type="button" id="tab-challenge" role="tab" aria-selected="false" aria-controls="panel-challenge" tabindex="-1">문제 풀이</button>
         <button type="button" id="tab-koth" role="tab" aria-selected="false" aria-controls="panel-koth" tabindex="-1">KOTH</button>
         <button type="button" id="tab-festival" role="tab" aria-selected="false" aria-controls="panel-festival" tabindex="-1">동아리 부스</button>
+        <button type="button" id="tab-sla" role="tab" aria-selected="false" aria-controls="panel-sla" tabindex="-1">SLA</button>
       </div>
       <div class="screen-stage">
         <div class="screen-panel" role="tabpanel" id="panel-intro" aria-labelledby="tab-intro" tabindex="0">
@@ -92,8 +93,13 @@
           <img src="assets/screens/festival.jpg" width="1229" height="556" alt="여섯 동아리의 부스가 가을 축제 거리처럼 놓인 화면" loading="lazy">
           <div class="screen-caption"><p>동아리 문제 · 마일리지 · QR 결제</p></div>
         </div>
+        <div class="screen-panel" role="tabpanel" id="panel-sla" aria-labelledby="tab-sla" tabindex="0">
+          <a class="screen-image-link" href="assets/screens/sla-dashboard.jpg" aria-label="SLA 관제 화면 크게 보기"><img src="assets/screens/sla-dashboard.jpg" width="1265" height="712" alt="Sentinel 관제 현황: 내부·외부 트랙, 공통 제어, 실행 인프라와 KOTH 상태" loading="lazy"></a>
+          <div class="screen-caption"><p>서비스 · 노드 · KOTH 상태 수집</p><a class="text-link" href="https://github.com/MSG-CTF/sentinel#overview">화면 더 보기 ↗</a></div>
+          <p class="screen-capture-note">2026.11.03 운영 기록 · 이미지를 누르면 확대</p>
+        </div>
       </div>
-      <p class="source-note">개발 화면·예시 데이터 포함</p>
+      <p class="source-note">참가자 화면은 개발·예시 데이터 포함 · SLA는 운영 당시 캡처</p>
     </section>
 
     <section class="cost-section section container" id="cloud-cost" aria-labelledby="cost-title">
