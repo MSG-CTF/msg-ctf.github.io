@@ -51,7 +51,8 @@
     replay.hidden = false;
     replay.addEventListener('click', () => {
       player.started = true;
-      if (video.error) video.load();
+      // A failed <source> can leave video.error empty while no source is usable.
+      if (video.error || video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) video.load();
       if (video.readyState >= HTMLMediaElement.HAVE_METADATA) video.currentTime = 0;
       video.play().catch(error => {
         if (error.name !== 'AbortError' && !viewerOpen() && !panel.hidden) panel.querySelector('.video-error').hidden=false;
