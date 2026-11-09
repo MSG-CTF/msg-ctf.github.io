@@ -1,6 +1,6 @@
 <div align="center">
 <h1>MSG CTF 2026</h1>
-<p><strong>75팀·150명이 참가한 보드게임형 해킹 대회</strong></p>
+<p><strong>보드게임형 해킹 대회 · 75팀 150명</strong></p>
 <p>2026. 11. 08 · 10:00 ~ 22:00 KST</p>
 <p><a href="https://msg-ctf.github.io/">대회 기록</a> · <a href="https://msg-ctf.github.io/authors.html">출제자</a> · <a href="https://msg-ctf.github.io/challenges.html">문제 아카이브</a> · <a href="https://msg-ctf.github.io/platform.html">플랫폼</a></p>
 <a href="assets/brand/msg-ctf-2026-poster.png"><img src="assets/brand/msg-ctf-2026-poster.png" width="480" alt="2026 MSG CTF 대회 포스터"></a>
@@ -29,11 +29,11 @@
 <a href="docs/cloud-cost.md">
 <picture>
 <source media="(max-width: 600px)" srcset="assets/cloud-credits-mobile.svg">
-<img src="assets/cloud-credits.svg" width="900" alt="AWS·GCP·Azure 무료 크레딧으로 확보한 실행 자원을 브로커에 모아 문제 실행에 배정하고, 종료 후 정리·반납해 다시 사용한 구조">
+<img src="assets/cloud-credits.svg" width="900" alt="AWS·GCP·Azure 자원 배정·반납 구조 · 크레딧 적용 후 추가 결제 0원">
 </picture>
 </a>
 </p>
-<p align="center"><sub>무료 크레딧 적용 후 추가 결제액 기준</sub> · <a href="docs/cloud-cost.md">운영 구조 ↗</a></p>
+<p align="center"><sub>크레딧 적용 후 추가 결제액 기준</sub> · <a href="docs/cloud-cost.md">운영 구조 ↗</a></p>
 
 <br>
 <h2 align="center">Archive</h2>
