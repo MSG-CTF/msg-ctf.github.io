@@ -116,7 +116,7 @@ KOTH는 별도 게임 서버와 제출·채점 경로를 사용합니다
 | <img src="https://avatars.githubusercontent.com/u/64824907?v=4&amp;s=128" width="32" height="32" alt=""> [Giheon-Jeon](https://github.com/Giheon-Jeon) | 프론트 CI·Nginx 프록시·Semgrep 검사 연결 |
 | <img src="https://avatars.githubusercontent.com/u/68321360?v=4&amp;s=128" width="32" height="32" alt=""> [minsoo0506](https://github.com/minsoo0506) | SLA 초기 구조·health worker·Prometheus와 장애 모사 API |
 
-문제 출제·수정·검수에 참여한 분들은 [문제 저장소의 기여자 목록](https://github.com/MSG-CTF/2026_MSG_CTF/blob/main/.github/README.md#함께-만든-사람들)에 따로 정리했습니다
+문제별 출제자는 [출제 기록](challenge-authors.md)에 정리했습니다
 
 <details>
 <summary>문제 출제·수정·검수 참여자</summary>
