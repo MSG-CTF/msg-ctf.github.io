@@ -133,8 +133,8 @@
 <div class="workflow-film" data-workflow aria-label="플랫폼 동작 흐름">
 <div class="workflow-panels">
 <section class="workflow-panel" id="workflow-panel-0" aria-labelledby="workflow-title-0">
-  <div class="workflow-copy"><span class="workflow-number">01 / 04</span><p class="workflow-role">DevSecOps · Backend</p><h3 id="workflow-title-0">문제 발행</h3><p class="workflow-description">CI가 이미지와 파일을 발행하면 백엔드가 배포 버전과 환경변수를 등록합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/msgctf-devsecops">구현 보기 ↗</a></div>
-  <div class="workflow-visual"><ol class="workflow-phases"><li>검사</li><li>빌드·스캔</li><li>발행본 등록</li></ol><svg aria-label="DevSecOps가 소스를 빌드하고 이미지 레이어를 조립한 뒤 보안 검사와 SBOM을 거쳐 GHCR에 발행하는 예시" class="pipeline-drawing" role="img" viewbox="0 0 560 360">
+  <div class="workflow-copy"><p class="workflow-role">DevSecOps · Backend</p><h3 id="workflow-title-0">문제 발행</h3><p class="workflow-description">CI 발행본을 백엔드가 가져와 버전·파일·환경변수를 등록합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/msgctf-devsecops">구현 보기 ↗</a></div>
+  <div class="workflow-visual"><svg aria-label="DevSecOps가 소스를 빌드하고 이미지 레이어를 조립한 뒤 보안 검사와 SBOM을 거쳐 GHCR에 발행하는 예시" class="pipeline-drawing" role="img" viewBox="10 60 530 270">
 <path class="transport-guide" d="M123 163h101M363 163h70"></path>
 <path class="motion transport-active" d="M123 163h101" pathlength="100"></path>
 <path class="motion transport-active publish-route" d="M363 163h70" pathlength="100"></path>
@@ -152,21 +152,21 @@
 
 <text class="motion drawing-caption" text-anchor="middle" x="292" y="299">OCI IMAGE</text>
 <text class="motion drawing-caption registry-label" text-anchor="middle" x="475" y="99">GHCR</text>
-</svg><p class="workflow-result">검사 → 이미지·파일 발행 → 배포 버전 등록</p></div>
+</svg></div>
 </section>
 <section class="workflow-panel" id="workflow-panel-1" aria-labelledby="workflow-title-1">
-  <div class="workflow-copy"><span class="workflow-number">02 / 04</span><p class="workflow-role">Scheduler · Broker</p><h3 id="workflow-title-1">자원 예약</h3><p class="workflow-description">스케줄러가 실행 가능한 노드를 조회하고 브로커에 CPU·메모리를 예약합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/resource-broker">구현 보기 ↗</a></div>
-  <div class="workflow-visual"><ol class="workflow-phases"><li>CPU</li><li>메모리</li><li>아키텍처</li></ol><svg aria-label="Resource Broker가 AWS, Azure, GCP의 공통 인벤토리에서 조건에 맞는 후보를 제공하고 자원을 예약하는 예시" class="pipeline-drawing" role="img" viewbox="0 0 560 360">
+  <div class="workflow-copy"><p class="workflow-role">Scheduler · Broker</p><h3 id="workflow-title-1">자원 예약</h3><p class="workflow-description">실행 가능한 노드를 골라 CPU·메모리를 예약합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/resource-broker">구현 보기 ↗</a></div>
+  <div class="workflow-visual"><svg aria-label="Resource Broker가 AWS, Azure, GCP의 공통 인벤토리에서 조건에 맞는 후보를 제공하고 자원을 예약하는 예시" class="pipeline-drawing" role="img" viewBox="10 60 530 300">
 <g class="motion provider-node cloud-rack"><image height="41" href="assets/cloud/aws.svg" width="41" x="67.5" y="80"/><path class="motion rack-top" d="m34 139 18-13h107l-18 13Z"></path><path class="motion rack-side" d="m141 139 18-13v39l-18 13Z"></path><rect class="motion rack-front" height="39" rx="3" width="107" x="34" y="139"></rect><path class="rack-vents" d="M48 153h40m-40 10h40"></path><path class="rack-meter" d="M104 153v11m8-11v11m8-11v11"></path><path class="motion rack-top" d="m34 191 18-13h107l-18 13Z"></path><path class="motion rack-side" d="m141 191 18-13v39l-18 13Z"></path><rect class="motion rack-front" height="39" rx="3" width="107" x="34" y="191"></rect><path class="rack-vents" d="M48 205h40m-40 10h40"></path><path class="rack-meter" d="M104 205v11m8-11v11m8-11v11"></path></g><g class="motion provider-node cloud-rack"><image height="40" href="assets/cloud/azure.svg" width="40" x="250.0" y="80"/><path class="rack-top" d="m216 139 18-13h107l-18 13Z"></path><path class="rack-side" d="m323 139 18-13v39l-18 13Z"></path><rect class="rack-front" height="39" rx="3" width="107" x="216" y="139"></rect><path class="rack-vents" d="M230 153h40m-40 10h40"></path><path class="rack-meter" d="M286 153v11m8-11v11m8-11v11"></path><path class="rack-top" d="m216 191 18-13h107l-18 13Z"></path><path class="rack-side" d="m323 191 18-13v39l-18 13Z"></path><rect class="rack-front" height="39" rx="3" width="107" x="216" y="191"></rect><path class="rack-vents" d="M230 205h40m-40 10h40"></path><path class="rack-meter" d="M286 205v11m8-11v11m8-11v11"></path></g><g class="motion provider-node cloud-rack"><image height="40" href="assets/cloud/gcp.svg" width="46" x="429" y="80"/><path class="rack-top" d="m398 139 18-13h107l-18 13Z"></path><path class="rack-side" d="m505 139 18-13v39l-18 13Z"></path><rect class="rack-front" height="39" rx="3" width="107" x="398" y="139"></rect><path class="rack-vents" d="M412 153h40m-40 10h40"></path><path class="rack-meter" d="M468 153v11m8-11v11m8-11v11"></path><path class="rack-top" d="m398 191 18-13h107l-18 13Z"></path><path class="rack-side" d="m505 191 18-13v39l-18 13Z"></path><rect class="rack-front" height="39" rx="3" width="107" x="398" y="191"></rect><path class="rack-vents" d="M412 205h40m-40 10h40"></path><path class="rack-meter" d="M468 205v11m8-11v11m8-11v11"></path></g>
 <path class="transport-guide" d="M87 235v27h364v-27m-182-1v28m0 0v44"></path>
 <path class="motion transport-active" d="M87 235v27h182v44" pathlength="100"></path>
 <g class="motion reservation-object"><path d="M186 303h167l19 20-19 20H186l-19-20Z" fill="#e8eff5" stroke="#6f92af" stroke-width="1.5"></path><path d="m191 322 7 7 12-14" fill="none" stroke="#527d60" stroke-width="2.5"></path><text class="reservation-label" text-anchor="middle" x="282" y="330">HELD</text></g>
 <g class="motion broker-match"><path d="m125 122 9 9 17-20" fill="none" stroke="#4c775d" stroke-width="3"></path></g>
-</svg><p class="workflow-result">실행 조건과 남은 용량으로 노드 선택</p></div>
+</svg></div>
 </section>
 <section class="workflow-panel" id="workflow-panel-2" aria-labelledby="workflow-title-2">
-  <div class="workflow-copy"><span class="workflow-number">03 / 04</span><p class="workflow-role">Runtime</p><h3 id="workflow-title-2">인스턴스 실행</h3><p class="workflow-description">런타임이 환경변수와 비밀값을 주입하고 문제를 실행합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/secure-provisioner/tree/dev">구현 보기 ↗</a></div>
-  <div class="workflow-visual"><ol class="workflow-phases"><li>실행 요청</li><li>격리·비밀값 주입</li><li>준비 확인</li></ol><svg aria-label="Instance Scheduler가 예약한 대상에 Runtime 생성 작업을 전달하고 격리된 팀 공간의 컨테이너가 실행된 뒤 예약을 확정하는 예시" class="pipeline-drawing" role="img" viewbox="0 0 560 360">
+  <div class="workflow-copy"><p class="workflow-role">Runtime</p><h3 id="workflow-title-2">인스턴스 실행</h3><p class="workflow-description">환경변수와 비밀값을 주입하고 인스턴스를 실행합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/secure-provisioner/tree/dev">구현 보기 ↗</a></div>
+  <div class="workflow-visual"><svg aria-label="Instance Scheduler가 예약한 대상에 Runtime 생성 작업을 전달하고 격리된 팀 공간의 컨테이너가 실행된 뒤 예약을 확정하는 예시" class="pipeline-drawing" role="img" viewBox="10 16 530 320">
 <g class="request-queue"><path class="queue-back" d="M29 49h107v66H29Z"></path><path class="queue-mid" d="M34 40h107v66H34Z"></path><path class="source-paper" d="M39 31h107v66H39Z"></path><path class="queue-lines" d="M53 72h70m-70 12h46"></path><text class="object-label" x="52" y="56">REQUEST</text></g>
 <g class="reservation-receipt"><rect height="29" rx="4" width="133" x="29" y="128"></rect><text class="motion receipt-committed" text-anchor="middle" x="95" y="148">COMMITTED</text></g>
 <path class="transport-guide" d="M157 66h296v45"></path>
@@ -181,11 +181,11 @@
 <g class="motion scheduled-container db-container"><g class="runtime-box"><polygon class="iso-front" points="175.5,143.8 221.4,166.3 221.4,208.3 175.5,185.8"></polygon><polygon class="iso-side" points="256.5,149.1 221.4,166.3 221.4,208.3 256.5,191.1"></polygon><polygon class="iso-top" points="210.6,126.7 256.5,149.1 221.4,166.3 175.5,143.8"></polygon><g class="container-ribs"><path d="M183.1 152.6 183.1 184.6"></path><path d="M190.8 156.3 190.8 188.3"></path><path d="M198.4 160.1 198.4 192.1"></path><path d="M206.1 163.8 206.1 195.8"></path><path d="M213.8 167.5 213.8 199.5"></path></g></g></g>
 <text class="drawing-caption" x="134" y="299">TEAM A</text><text class="drawing-caption muted-caption" x="357" y="315">TEAM B</text>
 <g class="motion schedule-ready"><path d="m488 127 8 8 13-17" fill="none" stroke="#456e55" stroke-width="3"></path></g>
-</svg><p class="workflow-result">Linux는 K3s · Windows·전용 VM은 별도 경로</p></div>
+</svg></div>
 </section>
 <section class="workflow-panel" id="workflow-panel-3" aria-labelledby="workflow-title-3">
-  <div class="workflow-copy"><span class="workflow-number">04 / 04</span><p class="workflow-role">Runtime · Scheduler · Broker</p><h3 id="workflow-title-3">종료·반납</h3><p class="workflow-description">런타임이 자원을 삭제하면 스케줄러가 정리를 확인하고 예약을 반납합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/instance-scheduler">구현 보기 ↗</a></div>
-  <div class="workflow-visual"><ol class="workflow-phases"><li>자원 삭제</li><li>삭제 확인</li><li>예약 반납</li></ol><svg aria-label="Runtime이 한 인스턴스의 자원을 정리하고 Scheduler 확인 후 Broker 예약을 반납하는 흐름" class="pipeline-drawing cleanup-drawing" role="img" viewbox="0 0 560 360">
+  <div class="workflow-copy"><p class="workflow-role">Runtime · Scheduler · Broker</p><h3 id="workflow-title-3">종료·반납</h3><p class="workflow-description">실행 자원 삭제를 확인한 뒤 예약을 반납합니다</p><a class="workflow-source" href="https://github.com/MSG-CTF/instance-scheduler">구현 보기 ↗</a></div>
+  <div class="workflow-visual"><svg aria-label="Runtime이 한 인스턴스의 자원을 정리하고 Scheduler 확인 후 Broker 예약을 반납하는 흐름" class="pipeline-drawing cleanup-drawing" role="img" viewBox="10 16 530 320">
 <g class="request-queue"><path class="queue-back" d="M29 49h107v66H29Z"></path><path class="queue-mid" d="M34 40h107v66H34Z"></path><path class="source-paper" d="M39 31h107v66H39Z"></path><path class="queue-lines" d="M53 72h70m-70 12h46"></path><text class="object-label" x="52" y="56">DELETE</text></g>
 <g class="reservation-receipt"><rect height="29" rx="4" width="133" x="29" y="128"></rect><text class="motion receipt-committed" text-anchor="middle" x="95" y="148">RELEASED</text></g>
 <path class="transport-guide" d="M157 66h296v45"></path>
@@ -200,7 +200,7 @@
 <g class="motion scheduled-container db-container"><g class="runtime-box"><polygon class="iso-front" points="175.5,143.8 221.4,166.3 221.4,208.3 175.5,185.8"></polygon><polygon class="iso-side" points="256.5,149.1 221.4,166.3 221.4,208.3 256.5,191.1"></polygon><polygon class="iso-top" points="210.6,126.7 256.5,149.1 221.4,166.3 175.5,143.8"></polygon><g class="container-ribs"><path d="M183.1 152.6 183.1 184.6"></path><path d="M190.8 156.3 190.8 188.3"></path><path d="M198.4 160.1 198.4 192.1"></path><path d="M206.1 163.8 206.1 195.8"></path><path d="M213.8 167.5 213.8 199.5"></path></g></g></g>
 <text class="drawing-caption" x="134" y="299">정리 완료</text><text class="drawing-caption muted-caption" x="357" y="315">TEAM B</text>
 <g class="motion schedule-ready"><path d="m488 127 8 8 13-17" fill="none" stroke="#456e55" stroke-width="3"></path></g>
-</svg><p class="workflow-result">자원 삭제 → 정리 확인 → 예약 반납</p></div>
+</svg></div>
 </section>
 </div>
 <div class="workflow-controls" hidden><div class="workflow-tabs" role="tablist" aria-label="플랫폼 단계">
@@ -208,7 +208,7 @@
 <button type="button" role="tab" id="workflow-tab-1" aria-controls="workflow-panel-1" aria-selected="false" tabindex="-1"><span>02</span> 예약<i aria-hidden="true"></i></button>
 <button type="button" role="tab" id="workflow-tab-2" aria-controls="workflow-panel-2" aria-selected="false" tabindex="-1"><span>03</span> 실행<i aria-hidden="true"></i></button>
 <button type="button" role="tab" id="workflow-tab-3" aria-controls="workflow-panel-3" aria-selected="false" tabindex="-1"><span>04</span> 반납<i aria-hidden="true"></i></button>
-</div><div class="workflow-caption"><span>문제 발행부터 종료까지</span><button type="button" class="workflow-play" aria-pressed="false">재생 <span aria-hidden="true">▶</span></button></div></div></div>
+</div><div class="workflow-caption"><span>4단계 · 3초 간격</span><button type="button" class="workflow-play" aria-pressed="false">재생 <span aria-hidden="true">▶</span></button></div></div></div>
         <section class="monitoring-flow" aria-labelledby="monitoring-title">
           <div class="monitoring-heading"><h3 id="monitoring-title">SLA · 상시 점검</h3><a class="text-link" href="https://github.com/MSG-CTF/sentinel">구현 보기 ↗</a></div>
           <div class="monitoring-route">
