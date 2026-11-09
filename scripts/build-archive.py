@@ -137,7 +137,7 @@ def author_directory():
       {empty_state()}
       <p class="author-basis"><a href="https://github.com/MSG-CTF/msg-ctf.github.io/blob/main/docs/challenge-authors.md">출제 기록 ↗</a></p>
     </div>'''
-    (ROOT / 'authors.html').write_text(page('출제자', 'MSG CTF 출제자 30명과 함께 만든 문제들', body, 'authors.html', 'page-authors'), encoding='utf-8')
+    (ROOT / 'authors.html').write_text(page('출제자', 'MSG CTF 출제자 30명 · 문제 36개', body, 'authors.html', 'page-authors'), encoding='utf-8')
 
 
 def excerpt(c):
