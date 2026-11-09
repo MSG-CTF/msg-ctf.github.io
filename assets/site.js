@@ -33,40 +33,53 @@
     updateMotion();
   }
 
-  const tabs = Array.from(document.querySelectorAll('.screen-tabs [role="tab"]'));
-  const activate = (selected) => {
+  const setupScreenTabs = (selector, onChange = () => {}) => {
+    const group = document.querySelector(selector);
+    if (!group) return null;
+    const tabs = Array.from(group.querySelectorAll('[role="tab"]'));
+    const panelFor = tab => document.getElementById(tab.getAttribute("aria-controls"));
+    const linkedTab = () => {
+      const target = document.getElementById(location.hash.slice(1));
+      return target && tabs.find(tab => panelFor(tab).contains(target));
+    };
+    const activate = selected => {
+      for (const tab of tabs) {
+        const active = tab === selected;
+        tab.setAttribute("aria-selected", String(active));
+        tab.tabIndex = active ? 0 : -1;
+        panelFor(tab).hidden = !active;
+      }
+      onChange(selected);
+    };
     for (const tab of tabs) {
-      const active = tab === selected;
-      tab.setAttribute("aria-selected", String(active));
-      tab.tabIndex = active ? 0 : -1;
-      document.getElementById(tab.getAttribute("aria-controls")).hidden = !active;
+      tab.addEventListener("click", () => activate(tab));
+      tab.addEventListener("keydown", event => {
+        const index = tabs.indexOf(tab);
+        let next;
+        if (event.key === "ArrowRight") next = tabs[(index + 1) % tabs.length];
+        if (event.key === "ArrowLeft") next = tabs[(index + tabs.length - 1) % tabs.length];
+        if (event.key === "Home") next = tabs[0];
+        if (event.key === "End") next = tabs[tabs.length - 1];
+        if (!next) return;
+        event.preventDefault();
+        activate(next);
+        next.focus();
+      });
     }
-    document.dispatchEvent(new Event("platform-screen-change"));
-  };
-  for (const tab of tabs) {
-    tab.addEventListener("click", () => activate(tab));
-    tab.addEventListener("keydown", (event) => {
-      const index = tabs.indexOf(tab);
-      let next;
-      if (event.key === "ArrowRight") next = tabs[(index + 1) % tabs.length];
-      if (event.key === "ArrowLeft") next = tabs[(index + tabs.length - 1) % tabs.length];
-      if (event.key === "Home") next = tabs[0];
-      if (event.key === "End") next = tabs[tabs.length - 1];
-      if (!next) return;
-      event.preventDefault();
-      activate(next);
-      next.focus();
-    });
-  }
-  if (tabs.length) {
-    const linkedTab = () => tabs.find(tab => '#' + tab.getAttribute('aria-controls') === location.hash);
     activate(linkedTab() || tabs[0]);
-    document.querySelector(".screen-tabs").hidden = false;
-    window.addEventListener('hashchange', () => {
+    group.hidden = false;
+    window.addEventListener("hashchange", () => {
       const tab = linkedTab();
       if (tab) activate(tab);
     });
-  }
+    return group;
+  };
+  setupScreenTabs(".screen-tabs", selected => {
+    document.querySelector(".screen-stage").dataset.screen = selected.getAttribute("aria-controls");
+    document.dispatchEvent(new Event("platform-screen-change"));
+  });
+  const slaTabs = setupScreenTabs(".sla-screen-tabs");
+  if (slaTabs) slaTabs.closest("#panel-sla").dataset.tabsReady = "true";
 
   const catalog = document.querySelector("[data-catalog]");
   if (catalog) {

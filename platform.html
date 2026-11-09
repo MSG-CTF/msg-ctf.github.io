@@ -26,8 +26,8 @@
   <link rel="canonical" href="https://msg-ctf.github.io/platform.html">
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
   <link rel="preload" href="assets/fonts/Pretendard-common.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site.css?v=98527c1c90b4">
-  <script src="assets/site.js?v=0876bf6d82e7" defer></script>
+  <link rel="stylesheet" href="assets/site.css?v=d53930110a5a">
+  <script src="assets/site.js?v=7527561809d1" defer></script>
   <script src="assets/platform-motion.js?v=5daeaed42d9b" defer></script>
   <link rel="stylesheet" href="assets/platform-workflow.css">
   <script src="assets/platform-workflow.js" defer></script>
@@ -94,9 +94,36 @@
           <div class="screen-caption"><p>동아리 문제 · 마일리지 · QR 결제</p></div>
         </div>
         <div class="screen-panel" role="tabpanel" id="panel-sla" aria-labelledby="tab-sla" tabindex="0">
-          <a class="screen-image-link" href="assets/screens/sla-dashboard.jpg" aria-label="SLA 관제 화면 크게 보기"><img src="assets/screens/sla-dashboard.jpg" width="1265" height="712" alt="Sentinel 관제 현황: 내부·외부 트랙, 공통 제어, 실행 인프라와 KOTH 상태" loading="lazy"></a>
-          <div class="screen-caption"><p>서비스 · 노드 · KOTH 상태 수집</p><a class="text-link" href="https://github.com/MSG-CTF/sentinel#overview">화면 더 보기 ↗</a></div>
-          <p class="screen-capture-note">2026.11.03 운영 기록 · 이미지를 누르면 확대</p>
+          <div class="sla-screen-tabs" role="tablist" aria-label="SLA 화면 선택" hidden>
+            <button type="button" id="sla-tab-dashboard" role="tab" aria-selected="true" aria-controls="sla-dashboard" tabindex="0">관제 현황</button>
+            <button type="button" id="sla-tab-koth" role="tab" aria-selected="false" aria-controls="sla-koth" tabindex="-1">KOTH</button>
+            <button type="button" id="sla-tab-nodes" role="tab" aria-selected="false" aria-controls="sla-nodes" tabindex="-1">노드 상태</button>
+            <button type="button" id="sla-tab-grafana" role="tab" aria-selected="false" aria-controls="sla-grafana" tabindex="-1">Grafana</button>
+          </div>
+          <div class="sla-screen-panel" role="tabpanel" id="sla-dashboard" aria-labelledby="sla-tab-dashboard" tabindex="0">
+            <h3 class="sla-screen-title">관제 현황</h3>
+            <a class="screen-image-link" href="assets/screens/sla-dashboard.jpg" aria-label="SLA 관제 화면 크게 보기"><img src="assets/screens/sla-dashboard.jpg" width="1265" height="712" alt="Sentinel 관제 현황: 내부·외부 트랙, 공통 제어, 실행 인프라와 KOTH 상태" loading="lazy"></a>
+            <div class="screen-caption"><p>서비스 · 노드 · KOTH 상태 수집</p><a class="text-link" href="assets/screens/sla-dashboard.jpg">원본 확대 ↗</a></div>
+            <p class="screen-capture-note">2026.11.03 운영 기록</p>
+          </div>
+          <div class="sla-screen-panel" role="tabpanel" id="sla-koth" aria-labelledby="sla-tab-koth" tabindex="0">
+            <h3 class="sla-screen-title">KOTH</h3>
+            <a class="screen-image-link" href="assets/screens/sla-koth.jpg" aria-label="KOTH 감시 화면 크게 보기"><img src="assets/screens/sla-koth.jpg" width="1265" height="712" alt="KOTH 게임 서버와 실행 준비 상태를 문제별로 확인하는 관제 화면" loading="lazy"></a>
+            <div class="screen-caption"><p>게임 서버 · 실행 준비 상태</p><a class="text-link" href="assets/screens/sla-koth.jpg">원본 확대 ↗</a></div>
+            <p class="screen-capture-note">2026.11.03 운영 기록</p>
+          </div>
+          <div class="sla-screen-panel" role="tabpanel" id="sla-nodes" aria-labelledby="sla-tab-nodes" tabindex="0">
+            <h3 class="sla-screen-title">노드 상태</h3>
+            <a class="screen-image-link" href="assets/screens/sla-nodes.jpg" aria-label="노드 상태 화면 크게 보기"><img src="assets/screens/sla-nodes.jpg" width="1280" height="720" alt="K3s 실행 노드의 준비 상태, CPU와 메모리 사용량을 보여주는 상세 화면" loading="lazy"></a>
+            <div class="screen-caption"><p>K3s 노드 상태 · CPU · 메모리</p><a class="text-link" href="assets/screens/sla-nodes.jpg">원본 확대 ↗</a></div>
+            <p class="screen-capture-note">2026.11.03 운영 기록</p>
+          </div>
+          <div class="sla-screen-panel" role="tabpanel" id="sla-grafana" aria-labelledby="sla-tab-grafana" tabindex="0">
+            <h3 class="sla-screen-title">Grafana</h3>
+            <a class="screen-image-link" href="assets/screens/sla-grafana.jpg" aria-label="Grafana 지표 화면 크게 보기"><img src="assets/screens/sla-grafana.jpg" width="1440" height="887" alt="Grafana의 메트릭 수집 상태, 서비스 상태 이력과 응답 시간 대시보드" loading="lazy"></a>
+            <div class="screen-caption"><p>응답 시간 · 상태 이력 · 메트릭 수집</p><a class="text-link" href="assets/screens/sla-grafana.jpg">원본 확대 ↗</a></div>
+            <p class="screen-capture-note">2026.10.14 초기 연동 기록</p>
+          </div>
         </div>
       </div>
       <p class="source-note">참가자 화면은 개발·예시 데이터 포함 · SLA는 운영 당시 캡처</p>
