@@ -15,7 +15,7 @@
 .sla-viewer-shell {
   height: 100%;
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
 }
 .sla-viewer-heading {
   display: flex;
@@ -41,6 +41,9 @@
 .sla-viewer button:focus-visible { outline-offset: 2px; }
 .sla-viewer .sla-viewer-close { flex-shrink: 0; border-color: transparent; background: transparent; }
 .sla-viewer-close span { margin-left: 8px; font-size: 24px; vertical-align: -2px; }
+.sla-viewer-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding: 8px 18px 0; }
+.sla-viewer-tabs button { min-width: 0; padding-inline: 4px; border-color: transparent; background: transparent; color: var(--muted); white-space: nowrap; }
+.sla-viewer-tabs button[aria-selected="true"] { border-color: #82643b; background: #3b2e1d; color: #f7dfb8; }
 .sla-viewer-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 8px 18px 12px; }
 .sla-viewer-zoom { display: flex; align-items: center; }
 .sla-viewer-zoom button { font-size: 22px; padding: 4px; }
@@ -76,6 +79,8 @@
   .sla-viewer-shell { padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
   .sla-viewer-heading { padding: 8px 10px 0; }
   .sla-viewer-heading h2 { font-size: 18px; }
+  .sla-viewer-tabs { padding: 6px 10px 0; }
+  .sla-viewer-tabs button { font-size: 13px; }
   .sla-viewer-tools { padding: 6px 10px 10px; gap: 6px; }
   .sla-viewer-tools > button { padding-inline: 9px; font-size: 13px; }
   .sla-viewer-scale { width: 50px; }
